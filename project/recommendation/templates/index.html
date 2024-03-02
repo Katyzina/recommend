@@ -47,10 +47,12 @@
     <p class="item--UoQ">ИНСТИТУТ КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ</p>
     <div class="group-8-iBx">
       <div class="frame-5-Qaa">
-        <div class="frame-5-X9Q">ИНМ</div>
-        <div class="frame-7-cRk">ИКН</div>
-        <div class="frame-8-JZU">ГИ</div>
-        <div class="frame-9-Q6i">ИБО</div>
+        {% for institute in institutes %}
+          <div class="frame-5-X9Q"><a href="">{{institute.name}}</a></div>
+        {% endfor %}
+<!--        <div class="frame-7-cRk">ИКН</div>-->
+<!--        <div class="frame-8-JZU">ГИ</div>-->
+<!--        <div class="frame-9-Q6i">ИБО</div>-->
       </div>
       <p class="item--u3U">ИНСТИТУТ КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ</p>
     </div>

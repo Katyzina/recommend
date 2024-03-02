@@ -1,7 +1,7 @@
 from django.urls import path
 
-from recommendation.views import home_page
+from recommendation.views import HomePageView
 
 urlpatterns = [
-    path('', home_page),
+    path('', HomePageView.as_view()),
 ]
