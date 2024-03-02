@@ -66,136 +66,27 @@
       </div>
     </div>
     <div class="auto-group-sjqv-MrW">
+
+      {% for vacation in vacations %}
       <div class="group-2-Fwt">
         <div class="auto-group-6wtt-bF4">
           <div class="ellipse-2-J9U">
+            <img src="{{vacation.image.url}}" alt="">
           </div>
           <div class="auto-group-65a6-q9Q">
-            <p class="item--Lrr">Сбербанк</p>
-            <p class="item--Fiv">г. Москва</p>
+            <p class="item--Lrr">{{vacation.employer.employer.organization}}</p>
+            <p class="item--Fiv">г. {{vacation.city.name}}</p>
           </div>
         </div>
-        <p class="item--9JW">Системный администратор</p>
+        <p class="item--9JW">{{vacation.position}}</p>
         <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-E54">
-        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa duck, de ogen en gönera. Magigt misade, primasofi, dina.
-        <br/>
-        Gösam tes ikar. Finade hänar än geojukrorar myns, i krosås ifall kase. Senade nise vide onar.
-        <br/>
-        Medellogi nyskade laligen. Onyda dolyfod. Monofongar begt ärade i epimikal och zombiebrand.
-        <br/>
-
+        {{vacation.description}}
         </p>
         <div class="item--mz6">Подробнее</div>
       </div>
-      <div class="group-3-k5L">
-        <div class="auto-group-pdk2-sQr">
-          <div class="ellipse-2-P8J">
-          </div>
-          <div class="auto-group-bmbl-7KC">
-            <p class="item--2wx">Тинькофф</p>
-            <p class="item--Lxe">г. Москва</p>
-          </div>
-        </div>
-        <p class="item--quQ">Системный администратор</p>
-        <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-X1Y">
-        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa duck, de ogen en gönera. Magigt misade, primasofi, dina.
-        <br/>
-        Gösam tes ikar. Finade hänar än geojukrorar myns, i krosås ifall kase. Senade nise vide onar.
-        <br/>
-        Medellogi nyskade laligen. Onyda dolyfod. Monofongar begt ärade i epimikal och zombiebrand.
-        <br/>
-
-        </p>
-        <div class="item--hKL">Подробнее</div>
-      </div>
-      <div class="group-4-uwC">
-        <div class="auto-group-6jan-qZx">
-          <div class="ellipse-2-YjG">
-          </div>
-          <div class="auto-group-rggw-5DQ">
-            <p class="mailru-group-bBk">Mail.ru Group</p>
-            <p class="item--inA">г. Москва</p>
-          </div>
-        </div>
-        <p class="item--nGE">Системный администратор</p>
-        <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-C54">
-        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa duck, de ogen en gönera. Magigt misade, primasofi, dina.
-        <br/>
-        Gösam tes ikar. Finade hänar än geojukrorar myns, i krosås ifall kase. Senade nise vide onar.
-        <br/>
-        Medellogi nyskade laligen. Onyda dolyfod. Monofongar begt ärade i epimikal och zombiebrand.
-        <br/>
-
-        </p>
-        <div class="item--aLW">Подробнее</div>
-      </div>
+      {% endfor %}
     </div>
-    <div class="auto-group-6udg-QqL">
-      <div class="group-5-6y4">
-        <div class="auto-group-3a9c-qve">
-          <div class="ellipse-2-Z5x">
-          </div>
-          <div class="auto-group-uvxa-gwG">
-            <p class="vkontake-RP4">Vkontake</p>
-            <p class="item--ZEN">г. Москва</p>
-          </div>
-        </div>
-        <p class="item--4S2">Системный администратор</p>
-        <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-LuL">
-        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa duck, de ogen en gönera. Magigt misade, primasofi, dina.
-        <br/>
-        Gösam tes ikar. Finade hänar än geojukrorar myns, i krosås ifall kase. Senade nise vide onar.
-        <br/>
-        Medellogi nyskade laligen. Onyda dolyfod. Monofongar begt ärade i epimikal och zombiebrand.
-        <br/>
-
-        </p>
-        <div class="item--L2A">Подробнее</div>
-      </div>
-      <div class="group-6-mtA">
-        <div class="auto-group-zsy8-7SE">
-          <div class="ellipse-2-2p6">
-          </div>
-          <div class="auto-group-q2b8-N7G">
-            <p class="odnoklassniki-VBt">Odnoklassniki</p>
-            <p class="item--cXQ">г. Москва</p>
-          </div>
-        </div>
-        <p class="item--UJi">Системный администратор</p>
-        <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-99x">
-        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa duck, de ogen en gönera. Magigt misade, primasofi, dina.
-        <br/>
-        Gösam tes ikar. Finade hänar än geojukrorar myns, i krosås ifall kase. Senade nise vide onar.
-        <br/>
-        Medellogi nyskade laligen. Onyda dolyfod. Monofongar begt ärade i epimikal och zombiebrand.
-        <br/>
-
-        </p>
-        <div class="item--Qk6">Подробнее</div>
-      </div>
-      <div class="group-7-rc6">
-        <div class="auto-group-edfc-b3t">
-          <div class="ellipse-2-WRk">
-          </div>
-          <div class="auto-group-mkvs-SqC">
-            <p class="item--nPG">Альфа Банк</p>
-            <p class="item--JMc">г. Москва</p>
-          </div>
-        </div>
-        <p class="item--Q9k">Системный администратор</p>
-        <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-62a">
-        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa duck, de ogen en gönera. Magigt misade, primasofi, dina.
-        <br/>
-        Gösam tes ikar. Finade hänar än geojukrorar myns, i krosås ifall kase. Senade nise vide onar.
-        <br/>
-        Medellogi nyskade laligen. Onyda dolyfod. Monofongar begt ärade i epimikal och zombiebrand.
-        <br/>
-
-        </p>
-        <div class="item--GbG">Подробнее</div>
-      </div>
     </div>
-  </div>
   <div class="item--JH4">
     <div class="auto-group-qzcn-1xA">
       <div class="auto-group-ydee-9Ya">
@@ -249,5 +140,5 @@
       <p class="item-2024--Jwp">@2024 Университет науки и технологий МИСИС</p>
     </div>
   </div>
-</div>
+
 </body>
