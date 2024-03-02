@@ -1,3 +1,4 @@
+{% load filter %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +61,11 @@
   <div class="auto-group-mc1k-MAN">
     <div class="auto-group-owys-4Kg">
       <p class="item--zDL">Вакансии от работодателя</p>
-      <div class="search-GAr">Введите запрос...</div>
+      <div class="search-GAr">
+        <form action="">
+          <input type="text" placeholder="Введите запрос...">
+        </form>
+      </div>
       <div class="filter-Waz">
         <img class="tunefill0wght400grad0opsz24-1-fin" src="./static/tunefill0wght400grad0opsz24-1.png"/>
       </div>
@@ -71,7 +76,7 @@
       <div class="group-2-Fwt">
         <div class="auto-group-6wtt-bF4">
           <div class="ellipse-2-J9U">
-            <img src="{{vacation.image.url}}" alt="">
+            <img src="{{vacation.image.url}}" class="image_vacation" alt="">
           </div>
           <div class="auto-group-65a6-q9Q">
             <p class="item--Lrr">{{vacation.employer.employer.organization}}</p>
@@ -80,7 +85,7 @@
         </div>
         <p class="item--9JW">{{vacation.position}}</p>
         <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-E54">
-        {{vacation.description}}
+        {{vacation.description | first_letters }}
         </p>
         <div class="item--mz6">Подробнее</div>
       </div>
