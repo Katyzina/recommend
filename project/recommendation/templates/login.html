@@ -7,31 +7,30 @@
     <link rel="stylesheet" href="{% static 'login.css' %}"> <!-- Подключение файла со стилями -->
 <body>
 <div class="login-2wY">
-  <div class="item--TX4">
-    <div class="rectangle-11-ibQ">
-    </div>
-  </div>
- <img class="misislogoblockdeskfullinvrusrgb-01-2-n5U" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}"/>
-  <div class="group-8-ThQ">
-    <p class="item--G94">Вход в учетную запись</p>
-    <div class="email-Shk">
-      <p class="email-nWi">Email</p>
-        <div class="auto-group-bkww-so4">
-            <form action="">
-                <input type="text" placeholder="Введите...">
-            </form>
+    <div class="item--TX4">
+        <div class="rectangle-11-ibQ">
         </div>
     </div>
-    <div class="pass-7SW">
-      <p class="item--r9C">Пароль</p>
-        <div class="auto-group-pboc-Jmt">
-            <form action="">
-                <input type="text" placeholder="Введите...">
-            </form>
-        </div>
+    <img class="misislogoblockdeskfullinvrusrgb-01-2-n5U" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}"/>
+    <div class="group-8-ThQ">
+        <p class="item--G94">Вход в учетную запись</p>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="email-Shk">
+                <p class="email-nWi">Email</p>
+                <div class="auto-group-bkww-so4">
+                    <input type="text" placeholder="Введите..." name="email">
+                </div>
+            </div>
+            <div class="pass-7SW">
+                <p class="item--r9C">Пароль</p>
+                <div class="auto-group-pboc-Jmt">
+                    <input type="password" placeholder="Введите..." name="password">
+                </div>
+            </div>
+            <button type="submit"><div class="login-xbY">Войти</div></button>
+            <div class="reg-Mta"><a href="{% url 'regstud' %}">Зарегистрироваться</a></div>
+        </form>
     </div>
-    <div class="login-xbY">Войти</div>
-    <div class="reg-Mta">Зарегистрироваться</div>
-  </div>
 </div>
 </body>

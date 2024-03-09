@@ -8,97 +8,88 @@
 </head>
 <body>
 <div class="reg-stud-zWr">
-  <div class="rectangle-9-vQW">
-  </div>
-  <div class="rectangle-11-1Rx">
-  </div>
-  <img class="misislogoblockdeskfullinvrusrgb-01-2-UaS" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}"/>
-  <div class="group-8-Bjk">
-    <p class="item--fup">Регистрация</p>
-    <div class="chose-vqk">
-      <p class="item--pgE">Студент</p>
-      <div class="auto-group-xvpp-79Y">
-        <div class="line-1-DCa">
-        </div>
-        <p class="item--WxN">Работодатель</p>
-      </div>
+    <div class="rectangle-9-vQW">
     </div>
-    <div class="frame-13-cVc">
-      <div class="name-LRc">
-        <p class="item--rer">Имя</p>
-        <div class="auto-group-gjca-mWv">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="surname-1gA">
-        <p class="item--i4n">Фамилия</p>
-        <div class="auto-group-xfvp-1Jn">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="third-name-gQv">
-        <p class="item--DQr">Отчество</p>
-        <div class="auto-group-c8ej-WPx">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="email-bAW">
-        <p class="email-hDY">Email</p>
-        <div class="auto-group-jfu8-oGa">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="number-Gvr">
-        <p class="item--cjp">Номер телефона</p>
-        <div class="auto-group-5cu4-V2v">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="institut-Mqp">
-        <p class="item--VSE">Институт</p>
-        <div class="auto-group-jyt8-Lhk">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="group-cvA">
-        <p class="item--kmU">Учебная группа</p>
-        <div class="auto-group-s5ca-rJi">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="pass-Xfk">
-        <p class="item--sUi">Пароль</p>
-        <div class="auto-group-vzk8-a8E">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
-      <div class="accept-cKp">
-        <p class="item--x8n">Подтверждение</p>
-        <div class="auto-group-bksc-dVp">
-          <form action="">
-                <input type="text" placeholder="Введите...">
-          </form>
-        </div>
-      </div>
+    <div class="rectangle-11-1Rx">
     </div>
-    <div class="login-sQA">Зарегистрироваться</div>
-    <div class="reg-6Gv">Назад</div>
-  </div>
+    <img class="misislogoblockdeskfullinvrusrgb-01-2-UaS" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}"/>
+    <div class="group-8-Bjk">
+        <p class="item--fup">Регистрация</p>
+        <div class="chose-vqk">
+            <p class="item--pgE">Студент</p>
+            <div class="auto-group-xvpp-79Y">
+                <div class="line-1-DCa">
+                </div>
+                <a href="{% url 'hrlog' %}"><p class="item--WxN">Работодатель</p></a>
+            </div>
+        </div>
+        <form action="{% url 'regstud' %}" method=post>
+            {% csrf_token %}
+            <div class="frame-13-cVc">
+                <div class="name-LRc">
+                    <p class="item--rer">Имя</p>
+                    <div class="auto-group-gjca-mWv">
+                        <input type="text" placeholder="Введите..." name="first_name">
+                    </div>
+                </div>
+                <div class="surname-1gA">
+                    <p class="item--i4n">Фамилия</p>
+                    <div class="auto-group-xfvp-1Jn">
+                        <input type="text" placeholder="Введите..." name="last_name">
+                    </div>
+                </div>
+                <div class="third-name-gQv">
+                    <p class="item--DQr">Отчество</p>
+                    <div class="auto-group-c8ej-WPx">
+                        <input type="text" placeholder="Введите..." name="middle_name">
+                    </div>
+                </div>
+                <div class="email-bAW">
+                    <p class="email-hDY">Email</p>
+                    <div class="auto-group-jfu8-oGa">
+                        <input type="email" placeholder="Введите..." name="email">
+                    </div>
+                </div>
+                <div class="number-Gvr">
+                    <p class="item--cjp">Номер телефона</p>
+                    <div class="auto-group-5cu4-V2v">
+                        <input type="text" placeholder="Введите..." name="phone_number">
+                    </div>
+                </div>
+                <div class="institut-Mqp">
+                    <p class="item--VSE">Институт</p>
+                    <div class="auto-group-jyt8-Lhk">
+                        <select name="institute">
+                            {% for institute in institutes %}
+                            <option selected value="{{institute.id}}">{{institute}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="group-cvA">
+                    <p class="item--kmU">Учебная группа</p>
+                    <div class="auto-group-s5ca-rJi">
+                        <input type="text" placeholder="Введите..." name="study_group">
+                    </div>
+                </div>
+                <div class="pass-Xfk">
+                    <p class="item--sUi">Пароль</p>
+                    <div class="auto-group-vzk8-a8E">
+                        <input type="password" placeholder="Введите..." name="password">
+                    </div>
+                </div>
+                <div class="accept-cKp">
+                    <p class="item--x8n">Подтверждение</p>
+                    <div class="auto-group-bksc-dVp">
+                        <input type="password" placeholder="Введите..." name="confirm_password">
+                    </div>
+                </div>
+            </div>
+            <button type="submit">
+                <div class="login-sQA">Зарегистрироваться</div>
+            </button>
+            <div class="reg-6Gv"><a href="{% url 'login' %}">Назад</a></div>
+        </form>
+    </div>
 </div>
 </body>

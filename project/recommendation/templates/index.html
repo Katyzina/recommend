@@ -16,7 +16,7 @@
       <img class="vector-1AW" src="./static/vector.png"/>
       <img class="vector-wZx" src="./static/vector-jwt.png"/>
       <div class="group-10-gXY">
-        <img class="auto-group-hakn-Pwk" src="./static/auto-group-hakn.png"/>
+        <img class="auto-group-hakn-Pwk" src="{% static 'auto-group-hakn.png' %}"/>
         <div class="auto-group-oxfc-KaW">
           <img class="vector-qok" src="./static/vector-pQE.png"/>
           <p class="item--aWS">ПОИСК ВАКАНСИЙ</p>
@@ -31,25 +31,30 @@
     </div>
     <div class="profile-9G2">
       <div class="auto-group-ydhy-NPg">
-        <p class="item--5ot">Войти</p>
-        <p class="item--kf8">Зарегистрироваться</p>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}"><p class="item--5ot">Выйти</p></a>
+        <p class="item--5ot"> {{request.user.first_name}} {{request.user.last_name}}</p>
+        {% if request.user.employer %}
+          <p class="item--5ot">Работодатель</p>
+          {% else %}
+          <p class="item--5ot">Студент</p>
+          {% endif %}
+        {% else %}
+        <a href="{% url 'login' %}"><p class="item--5ot">Войти</p></a>
+        {% endif %}
       </div>
       <div class="ellipse-1-SH4">
       </div>
     </div>
   </div>
   <div class="group-1-7e6">
-    <div class="frame-5-FEW">
-      <div class="frame-5-XSv">ИНМ</div>
-      <div class="frame-7-YN2">ИКН</div>
-      <div class="frame-8-jSW">ГИ</div>
-      <div class="frame-9-D6n">ИБО</div>
-    </div>
+
     <p class="item--UoQ">ИНСТИТУТ КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ</p>
     <div class="group-8-iBx">
       <div class="frame-5-Qaa">
+        <div class="frame-5-X9Q"><a href="{% url 'home' %}">Все</a></div>
         {% for institute in institutes %}
-          <div class="frame-5-X9Q"><a href="">{{institute.name}}</a></div>
+          <div class="frame-5-X9Q"><a href="{% url 'filter_vacation' institute.id %}">{{institute.name}}</a></div>
         {% endfor %}
 <!--        <div class="frame-7-cRk">ИКН</div>-->
 <!--        <div class="frame-8-JZU">ГИ</div>-->
