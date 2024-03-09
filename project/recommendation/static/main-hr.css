@@ -1,6 +1,6 @@
 
 html {
-	font-size:62.5%;
+	font-size:50%;
 }
 * {
 	margin: 0;
@@ -452,7 +452,7 @@ body {
   flex-shrink: 0;
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-owys-4Kg .item--zDL {
-  margin-right: 9.8rem;
+  margin-right: 30rem;
   font-size: 6.4rem;
   font-weight: 700;
   line-height: 1.2175;
@@ -462,20 +462,23 @@ body {
   flex-shrink: 0;
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-owys-4Kg .search-GAr {
-  margin-right: 3rem;
+  margin: 0rem 1rem 0.2rem 0rem;
+  max-width: 500px;
+  position: relative;
+  background: #f7f7f7;
+  border-radius: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.search-GAr input[type="text"] {
+  margin: 0rem 28rem 0.2rem 0rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
   box-sizing: border-box;
-  padding: 2.4rem 3rem;
-  width: 53rem;
-  height: 100%;
-  font-size: 2.4rem;
-  font-weight: 500;
-  line-height: 1.2175;
-  color: rgba(0, 0, 0, 0.5);
-  font-family: Montserrat, 'Source Sans Pro';
-  white-space: nowrap;
-  background-color: #d9d9d9;
-  border-radius: 1.5rem;
-  flex-shrink: 0;
+  color: #11111;
+  text-align: left;
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-owys-4Kg .filter-Waz {
   box-sizing: border-box;
@@ -493,12 +496,13 @@ body {
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW {
   margin: 0rem 2.8rem 2.7rem 3.8rem;
-  width: calc(100% - 6.6rem);
-  height: 66rem;
+  width: calc(100% - 6.6rem); /* Adjust this width based on the actual width of the parent container */
   display: flex;
-  column-gap: 2rem;
-  align-items: center;
-  flex-shrink: 0;
+  flex-direction: row; /* This will layout the children in a row */
+  flex-wrap: wrap; /* This will allow the items to wrap onto the next line */
+  align-items: flex-start; /* Aligns items to the start of the cross axis */
+  column-gap: 2rem; /* This is the space between your columns */
+  row-gap: 2rem; /* This is the space between your rows */
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-2-Fwt {
   box-sizing: border-box;
@@ -509,6 +513,7 @@ body {
   border-radius: 3rem;
   flex-shrink: 0;
 }
+
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-2-Fwt .auto-group-6wtt-bF4 {
   margin-bottom: 2rem;
   box-sizing: border-box;
@@ -590,6 +595,18 @@ body {
   background-color: #143194;
   border-radius: 1.9962rem;
 }
+.main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-2-Fwt .auto-group-z4g6-AWz {
+  margin: -4rem 0rem -3rem 47rem;
+  width: 4.059rem;
+  height: 4.059rem;
+  position: relative;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+
+
+
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-3-k5L {
   box-sizing: border-box;
   padding-bottom: 3.2411rem;
@@ -1337,9 +1354,9 @@ body {
 }
 .main-hr-7mx .item--JH4 .auto-group-hhxr-Mjk {
   box-sizing: border-box;
-  padding: 2.3rem 68.4rem 30.8rem 68.5rem;
+  padding: 2.3rem 68.4rem 18rem 68.5rem;
   width: 100%;
-  height: 43.8rem;
+  height: 4rem;
   align-items: center;
   display: flex;
   flex-direction: column;

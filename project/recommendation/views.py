@@ -15,5 +15,27 @@ class HomePageView(View):
         return render(request, 'index.html', context={
             "institutes": institutes,
             "vacations": vacations,
-
         })
+
+
+def login_view(request):
+    return render(request, 'login.html')
+
+
+def hrlog_view(request):
+    return render(request, 'hrlog.html')
+
+
+def regstud_view(request):
+    return render(request, 'regstud.html')
+
+def support_view(request):
+    return render(request, 'support.html')
+
+def employerlist_view(request):
+    return render(request, 'employerlist.html')
+
+def studprofile_view(request):
+    return render(request, 'studprofile.html')
+
+

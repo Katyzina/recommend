@@ -127,3 +127,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads/") # путь до папки, в которую будем сохранять медиафайлы
 MEDIA_URL = "/media/"
 AUTH_USER_MODEL = "tables_app.User"
+
