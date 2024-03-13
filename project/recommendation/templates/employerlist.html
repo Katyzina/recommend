@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Работодатели</title>
     <link rel="stylesheet" href="{% static 'employerlist.css' %}"> <!-- Подключение файла со стилями -->
@@ -17,18 +18,24 @@
       </div>
     </div>
     <div class="frame-12-c6r">
-      <p class="item--Wi2">Главная</p>
+      <div class="item--Wi2"><a href="{% url 'home' %}">Главная</a></div>
       <p class="item--cFG">Работодатели</p>
-      <p class="item--Jdt">Поддержка</p>
-      <p class="item--1YJ">Сообщения</p>
+      <div class="item--Jdt"><a href="{% url 'support' %}">Поддержка</a></div>
     </div>
-    <div class="frame-42-vfG">
-      <img class="frame-41-FBk" src="{% static 'frame-41-8hU.png' %}"/>
-    </div>
+
     <div class="profile-un6">
       <div class="auto-group-5fmx-qve">
-        <p class="item--Axv">Фамилия Имя</p>
-        <p class="item--UTp">Студент</p>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}"><p class="item--Axv">Выйти</p></a>
+        <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
+        {% if request.user.employer %}
+        <p class="item--5ot">Работодатель</p>
+          {% else %}
+        <div class="item--5om"><a href="{% url 'studprofile' %}">Студент</a></div>
+          {% endif %}
+        {% else %}
+        <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
+        {% endif %}
       </div>
       <div class="ellipse-1-zBG">
       </div>
@@ -203,31 +210,38 @@
         </div>
         <div class="auto-group-5avr-cCN">
           <p class="item--YLv">Техническая поддержка сайта:</p>
-          <p class="item--EUe">Информация о разработке</p>
+          <p class="item--EUe">
+            <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
+          </p>
         </div>
         <div class="auto-group-q8sa-7oL">
           <p class="item--rW2">Контакты для связи:</p>
-          <p class="item-7-000-000-00-00-9k2">+ 7 000 000-00-00</p>
+          <p class="item-7-000-000-00-00-9k2">+ 7 499 649-44-80</p>
         </div>
-        <div class="login-svv">Поддержка</div>
+        <div class="login-svv"><a href="{% url 'support' %}">Поддержка</a></div>
       </div>
       <div class="auto-group-4ebx-9tS">
-        <p class="pochtamailru-5GJ">pochta@mail.ru</p>
-        <p class="pochtamailru-oCJ">pochta@mail.ru</p>
+        <p class="pochtamailru-5GJ">katyzinan@gmail.com</p>
+        <p class="pochtamailru-oCJ">vopros@misis.ru</p>
       </div>
       <div class="auto-group-1m1g-LT8">
-        <p class="item--Fpz">Карта сайта</p>
         <img class="vk-1-xUW" src="{% static 'vk-1-nPp.png' %}"/>
         <img class="ok-1-u8r" src="{% static 'ok-1.png' %}"/>
         <img class="telegram-1-3F4" src="{% static 'telegram-1-FNW.png' %}"/>
         <img class="youtube-1-PJv" src="{% static 'youtube-1-Wxn.png' %}"/>
       </div>
     </div>
-    <div class="auto-group-fefx-irz">
+
+    <div class="auto-group-hhxr-Mjk">
+      <p class="item--Uza">
+        <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
+      </p>
+      <p class="item--6m4">
+        <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
+      </p>
       <p class="item-2024--ULN">@2024 Университет науки и технологий МИСИС</p>
-      <p class="item--Uza">Сведения об образовательной организации</p>
-      <p class="item--6m4">Положение об обработке и защите персональных данных</p>
       <div class="rectangle-9-ivr">
+
       </div>
     </div>
   </div>

@@ -80,42 +80,44 @@ body {
   flex-shrink: 0;
 }
 .profile-stud-h26 .frame-2-K3U .frame-12-RRG {
-  margin: 1.871rem 10.959rem 1.47rem 0rem;
+  margin: 1.871rem 10.959rem 1.47rem 6rem;
   height: calc(100% - 3.3408rem);
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
-.profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--vcv {
-  margin-right: 2.9276rem;
-  font-size: 1.5012rem;
+.profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--vcv a {
+  margin-right: 4.8rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.2175;
-  color: rgba(255, 255, 255, 0.6999999881);
-  font-family: Montserrat, 'Source Sans Pro';
+  font-family: 'Montserrat', 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+  color: white !important;
+  text-decoration: none;
 }
-.profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--2fx {
-  margin-right: 3.2276rem;
-  font-size: 1.5012rem;
+.profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--2fx a {
+  margin-right: 4.8rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.2175;
-  color: rgba(255, 255, 255, 0.6999999881);
-  font-family: Montserrat, 'Source Sans Pro';
+  font-family: 'Montserrat', 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+  color: white !important;
+  text-decoration: none;
 }
-.profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--8yt {
-  margin-right: 3.1276rem;
-  font-size: 1.5012rem;
+.profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--8yt a {
+  margin-right: 4.8rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.2175;
-  text-decoration-line: underline;
-  color: #ffffff;
-  font-family: Montserrat, 'Source Sans Pro';
+  font-family: 'Montserrat', 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+  color: white !important;
+  text-decoration: none;
 }
 .profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--SDt {
   font-size: 1.5012rem;
@@ -150,7 +152,7 @@ body {
   flex-shrink: 0;
 }
 .profile-stud-h26 .frame-2-K3U .profile-GCv .auto-group-jvis-y7L .item--6Sr {
-  margin-bottom: 0.2268rem;
+  margin-bottom: 1.2268000000000008rem;
   text-align: right;
   font-size: 1.5012rem;
   font-weight: 600;
@@ -160,16 +162,30 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.profile-stud-h26 .frame-2-K3U .profile-GCv .auto-group-jvis-y7L .item--zYE {
-  margin-right: 0.0073rem;
+
+.profile-stud-h26 .frame-2-K3U .profile-GCv .auto-group-jvis-y7L .item--5o {
+margin: -2rem 0.1rem -3rem 0rem;
   text-align: right;
-  font-size: 1.251rem;
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.2175;
   color: #ffffff;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+}
+.profile-stud-h26 .frame-2-K3U .profile-GCv .auto-group-jvis-y7L .item--zYE a {
+   margin: 2rem 0.1rem -13rem 10rem;
+   box-sizing: border-box;
+   border-radius: 20rem;
+   border: 3px solid white;
+   color: white !important;
+   font-size: 12px;
+   font-style: italic;
+   font-weight: 600;
+   letter-spacing: 1.2px;
+   padding: 4.5px 40px;
+   position: relative;
 }
 .profile-stud-h26 .frame-2-K3U .profile-GCv .ellipse-1-t7p {
   width: 5.0042rem;
@@ -1152,7 +1168,7 @@ body {
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
-.profile-stud-h26 .item--KCr .login-p38 {
+.profile-stud-h26 .item--KCr .login-p38 a {
   width: 19.0158rem;
   height: 3.8157rem;
   position: absolute;
@@ -1162,7 +1178,7 @@ body {
   font-size: 1.3136rem;
   font-weight: 600;
   line-height: 1.2175;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   display: flex;
@@ -1172,6 +1188,7 @@ body {
   box-sizing: border-box;
   background-color: #143194;
   border-radius: 1.8766rem;
+  text-decoration: none;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ {
   width: 13.6599rem;
@@ -1260,33 +1277,33 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.profile-stud-h26 .item--KCr .item--CNS {
+.profile-stud-h26 .item--KCr .item--CNS a {
   width: 26.1rem;
   height: 1.4rem;
   position: absolute;
   left: 47.039rem;
-  top: 17.9524rem;
+  top: 1.9524rem;
   text-align: center;
   font-size: 1.1259rem;
   font-weight: 500;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
-.profile-stud-h26 .item--KCr .item--2cN {
+.profile-stud-h26 .item--KCr .item--2cN a {
   width: 34.5rem;
   height: 1.4rem;
   position: absolute;
   left: 42.8105rem;
-  top: 19.5163rem;
+  top: 3.5163rem;
   text-align: center;
   font-size: 1.1259rem;
   font-weight: 500;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
@@ -1383,7 +1400,7 @@ body {
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
-.profile-stud-h26 .item--KCr .item--4N2 {
+.profile-stud-h26 .item--KCr .item--4N2 a {
   width: 15.8rem;
   height: 1.4rem;
   position: absolute;
@@ -1393,7 +1410,7 @@ body {
   font-weight: 500;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }

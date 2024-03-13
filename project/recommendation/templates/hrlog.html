@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Регистрация работодателя</title>
     <link rel="stylesheet" href="{% static 'reg-hr.css' %}"> <!-- Подключение файла со стилями -->
@@ -12,7 +13,9 @@
     </div>
     <div class="rectangle-11-854">
     </div>
-    <img class="misislogoblockdeskfullinvrusrgb-01-2-2RL" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}"/>
+    <a href="{% url 'home' %}">
+    <img class="misislogoblockdeskfullinvrusrgb-01-2-2RL" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}" alt="Logo"/>
+    </a>
     <div class="group-8-K9Y">
         <p class="item--Kok">Регистрация</p>
         <div class="chose-B5G">
@@ -74,7 +77,7 @@
                         </div>
                     </div>
                     <button type="submit"><div class="login-XQa">Зарегистрироваться</div></button>
-                    <div class="reg-NAJ">Назад</div>
+                    <a href="{% url 'home' %}"><p class="reg-NAJ">Назад</p></a>
                 </div>
             </form>
         </div>

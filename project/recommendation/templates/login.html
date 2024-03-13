@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Авторизация</title>
     <link rel="stylesheet" href="{% static 'login.css' %}"> <!-- Подключение файла со стилями -->
@@ -9,9 +10,13 @@
 <div class="login-2wY">
     <div class="item--TX4">
         <div class="rectangle-11-ibQ">
+
         </div>
     </div>
-    <img class="misislogoblockdeskfullinvrusrgb-01-2-n5U" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}"/>
+
+    <a href="{% url 'home' %}">
+    <img class="misislogoblockdeskfullinvrusrgb-01-2-n5U" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}" alt="Logo"/>
+    </a>
     <div class="group-8-ThQ">
         <p class="item--G94">Вход в учетную запись</p>
         <form action="{% url 'login' %}" method="post">

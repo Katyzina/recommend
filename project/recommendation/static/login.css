@@ -129,8 +129,9 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
+
 .login-2wY .group-8-ThQ .pass-7SW .auto-group-pboc-Jmt {
-  margin: 0rem 0rem 0.541rem 1.252rem;
+ margin: 0rem 0rem 0.541rem 1.252rem;
   max-width: 500px;
   position: relative;
   background: #f7f7f7;
@@ -148,34 +149,34 @@ body {
   text-align: left;
 }
 
-.login-2wY .group-8-ThQ .login-xbY {
-  margin: 0rem 7.073rem 1.252rem 7.073rem;
-  width: calc(100% - 14.1459rem);
-  height: 3.8181rem;
-  cursor: pointer;
+.login-2wY .group-8-ThQ button {
+  margin: 0rem 1rem 2rem 0rem;
+  padding: 1.25rem 7.062rem;
+  width: 100%;
+  height: 3.8125rem;
   text-align: center;
-  font-size: 1.5022rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2175;
   color: #ffffff;
-  font-family: Montserrat, 'Source Sans Pro';
-  white-space: nowrap;
+  font-family: 'Montserrat', 'Source Sans Pro';
+  background-color: #143194;
+  border-radius: 1.875rem;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #143194;
-  border-radius: 1.8778rem;
-  flex-shrink: 0;
 }
-.login-2wY .group-8-ThQ .reg-Mta {
-  margin: 0rem 10.015rem 0rem 10.015rem;
-  width: calc(100% - 20.0296rem);
+
+.login-2wY .group-8-ThQ .reg-Mta a {
+  margin: 0rem 13.015rem 20rem 8.015rem;
+  width: calc(80% - 9.0296rem);
   height: 3.8181rem;
   text-align: center;
   font-size: 1.2519rem;
   font-weight: 600;
   line-height: 1.2175;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   display: flex;
@@ -184,4 +185,5 @@ body {
   background-color: rgba(20, 49, 148, 0.6999999881);
   border-radius: 1.8778rem;
   flex-shrink: 0;
+  text-decoration: none;
 }

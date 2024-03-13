@@ -81,21 +81,22 @@ body {
   flex-shrink: 0;
 }
 .users-JAi .frame-2-QDk .frame-12-c6r {
-  margin: 1.87rem 4.506rem 1.468rem 0rem;
+  margin: 1.87rem -7rem 1.468rem 13rem;
   height: calc(100% - 3.3378rem);
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
-.users-JAi .frame-2-QDk .frame-12-c6r .item--Wi2 {
+.users-JAi .frame-2-QDk .frame-12-c6r .item--Wi2 a {
   margin-right: 2.9258rem;
   font-size: 1.5004rem;
   font-weight: 500;
   line-height: 1.2175;
-  color: rgba(255, 255, 255, 0.6999999881);
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+  text-decoration: none;
 }
 .users-JAi .frame-2-QDk .frame-12-c6r .item--cFG {
   margin-right: 3.0258rem;
@@ -108,15 +109,16 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.users-JAi .frame-2-QDk .frame-12-c6r .item--Jdt {
+.users-JAi .frame-2-QDk .frame-12-c6r .item--Jdt a {
   margin-right: 3.1258rem;
   font-size: 1.5004rem;
   font-weight: 500;
   line-height: 1.2175;
-  color: rgba(255, 255, 255, 0.6999999881);
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+   text-decoration: none;
 }
 .users-JAi .frame-2-QDk .frame-12-c6r .item--1YJ {
   font-size: 1.5004rem;
@@ -152,7 +154,7 @@ body {
   flex-shrink: 0;
 }
 .users-JAi .frame-2-QDk .profile-un6 {
-  margin: 0.119rem 0rem 0.117rem 0rem;
+  margin: 0.119rem 0rem 0.117rem 22rem;
   height: calc(100% - 0.2365rem);
   display: flex;
   align-items: center;
@@ -167,9 +169,20 @@ body {
   flex-shrink: 0;
 }
 .users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--Axv {
-  margin-bottom: 0.2255rem;
+ margin: -2rem 0.1rem 1rem 0rem;
   text-align: right;
-  font-size: 1.5004rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--A {
+  margin: -1rem 0.1rem 1rem 0rem;
+  text-align: right;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2175;
   color: #ffffff;
@@ -177,6 +190,20 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
+
+.users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--5om a {
+   box-sizing: border-box;
+   border-radius: 20rem;
+   border: 3px solid white;
+   color: white;
+   font-size: 12px;
+   font-style: italic;
+   font-weight: 400;
+   letter-spacing: 1.2px;
+   padding: 4.5px 40px;
+   position: relative;
+}
+
 .users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--UTp {
   margin-right: 0.0109rem;
   text-align: right;
@@ -1161,12 +1188,12 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-fhs4-nYn .auto-group-5avr-cCN .item--EUe {
+.users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-fhs4-nYn .auto-group-5avr-cCN .item--EUe a {
   font-size: 1.1253rem;
   font-weight: 500;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
@@ -1197,14 +1224,14 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-fhs4-nYn .login-svv {
+.users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-fhs4-nYn .login-svv a {
   width: 19.0048rem;
   height: 3.8135rem;
   text-align: center;
   font-size: 1.3128rem;
   font-weight: 600;
   line-height: 1.2175;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   display: flex;
@@ -1213,6 +1240,7 @@ body {
   background-color: #143194;
   border-radius: 1.8755rem;
   flex-shrink: 0;
+  text-decoration: none;
 }
 .users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-4ebx-9tS {
   margin: 0rem 52.253rem 0.6rem 24.124rem;
@@ -1222,7 +1250,7 @@ body {
   flex-shrink: 0;
 }
 .users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-4ebx-9tS .pochtamailru-5GJ {
-  margin-right: 18.9947rem;
+  margin-right: 12.9947rem;
   font-size: 1.1253rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -1261,8 +1289,8 @@ body {
   flex-shrink: 0;
 }
 .users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-1m1g-LT8 .vk-1-xUW {
-  margin-right: 1.0628rem;
-  width: 1.5004rem;
+  margin-right: -23rem;
+  width: 49.5004rem;
   height: 1.5004rem;
   object-fit: contain;
   vertical-align: top;
@@ -1292,18 +1320,23 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.users-JAi .item--vmU .auto-group-fefx-irz {
+.users-JAi .item--vmU .auto-group-hhxr-Mjk {
+  box-sizing: border-box;
+  padding: 2.3rem 68.4rem 13rem 68.5rem;
   width: 100%;
-  height: 11.382rem;
-  position: relative;
+  height: 4rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.400000006) -0%, rgba(20, 49, 148, 0.400000006) 100%);
   flex-shrink: 0;
 }
-.users-JAi .item--vmU .auto-group-fefx-irz .item-2024--ULN {
+.users-JAi .item--vmU .auto-group-hhxr-Mjk .item-2024--ULN {
   width: 25.3rem;
   height: 1.3rem;
   position: absolute;
   left: 47.3995rem;
-  top: 6.8768rem;
+  top: 24.8768rem;
   text-align: center;
   font-size: 1.0003rem;
   font-weight: 500;
@@ -1312,35 +1345,29 @@ body {
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
-.users-JAi .item--vmU .auto-group-fefx-irz .item--Uza {
-  width: 26.1rem;
-  height: 1.4rem;
-  position: absolute;
-  left: 47.0119rem;
-  top: 1.4378rem;
+.users-JAi .item--vmU .auto-group-hhxr-Mjk .item--Uza a {
+  margin-bottom: 0.3rem;
   text-align: center;
-  font-size: 1.1253rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
+  flex-shrink: 0;
 }
-.users-JAi .item--vmU .auto-group-fefx-irz .item--6m4 {
-  width: 34.5rem;
-  height: 1.4rem;
-  position: absolute;
-  left: 42.7858rem;
-  top: 3.0008rem;
+.users-JAi .item--vmU .auto-group-hhxr-Mjk .item--6m4 a {
+  margin-bottom: 4rem;
   text-align: center;
-  font-size: 1.1253rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 300;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: #ffffff;
+  color: white !important;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .users-JAi .item--vmU .auto-group-fefx-irz .rectangle-9-ivr {
   width: 120.0305rem;

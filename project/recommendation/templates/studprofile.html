@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Регистрация студента</title>
     <link rel="stylesheet" href="{% static 'studprofile.css' %}"> <!-- Подключение файла со стилями -->
@@ -16,16 +17,23 @@
       </div>
     </div>
     <div class="frame-12-RRG">
-      <p class="item--vcv">Главная</p>
-      <p class="item--2fx">Пользователи</p>
-      <p class="item--8yt">Поддержка</p>
-      <p class="item--SDt">Сообщения</p>
+      <div class="item--vcv"><a href="{% url 'home' %}">Главная</a></div>
+      <div class="item--2fx"><a href="{% url 'employerlist' %}">Работодатели</a></div>
+      <div class="item--8yt"><a href="{% url 'support' %}">Поддержка</a></div>
     </div>
-    <img class="frame-42-kEa" src="{% static 'frame-42.png' %}"/>
     <div class="profile-GCv">
       <div class="auto-group-jvis-y7L">
-        <p class="item--6Sr">Фамилия Имя</p>
-        <p class="item--zYE">Студент</p>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}"><p class="item--5o">Выйти</p></a>
+        <p class="item--6Sr"> {{request.user.first_name}} {{request.user.last_name}}</p>
+        {% if request.user.employer %}
+          <p class="item--6Sr">Работодатель</p>
+          {% else %}
+          <div class="item--zYE"><a href="{% url 'studprofile' %}">Студент</a></div>
+          {% endif %}
+        {% else %}
+        <a href="{% url 'login' %}"><p class="item--5ot">Войти</p></a>
+        {% endif %}
       </div>
       <div class="ellipse-1-t7p">
       </div>
@@ -179,7 +187,7 @@
   </div>
   <div class="item--KCr">
     <p class="item-2024--odp">@2024 Университет науки и технологий МИСИС</p>
-    <div class="login-p38">Поддержка</div>
+    <div class="login-p38"><a href="{% url 'support' %}">Поддержка</a></div>
     <div class="misislogoblockdeskfullinvrusrgb-01-1-SaJ">
       <img class="vector-YdL" src="{% static 'vector-vMc.png' %}"/>
       <img class="vector-5dG" src="{% static 'vector-jGi.png' %}"/>
@@ -193,21 +201,20 @@
         </div>
       </div>
     </div>
-    <p class="item--CNS">Сведения об образовательной организации</p>
-    <p class="item--2cN">Положение об обработке и защите персональных данных</p>
     <p class="item--R8i">Контакты для связи:</p>
     <p class="item--V8a">Адрес:</p>
-    <p class="item-7-000-000-00-00-bBc">+ 7 000 000-00-00</p>
+    <p class="item-7-000-000-00-00-bBc">+ 7 499 649-44-80</p>
     <p class="item-3--JLv">ул. Крымский Вал, 3, Москва</p>
     <p class="item-900-2000-1000-1800-aJS">
     пн-пт: 9.00 - 20.00
     <br/>
     сб-вс: 10.00 - 18.00
     </p>
-    <p class="pochtamailru-4Dc">pochta@mail.ru</p>
-    <p class="pochtamailru-YuU">pochta@mail.ru</p>
-    <p class="item--4N2">Информация о разработке</p>
-    <p class="item--86z">Карта сайта</p>
+    <p class="pochtamailru-4Dc">vopros@misis.ru</p>
+    <p class="pochtamailru-YuU">katyzinan@gmail.com</p>
+     <p class="item--4N2">
+            <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
+     </p>
     <p class="item--RLz">Техническая поддержка сайта:</p>
     <img class="vk-1-hJW" src="{% static 'vk-1.png' %}"/>
     <img class="vk-2-q9p" src="{% static 'vk-2.png' %}"/>
@@ -215,6 +222,13 @@
     <img class="telegram-1-K4z" src="{% static 'telegram-1-Akn.png' %}"/>
     <img class="youtube-1-FUS" src="{% static 'youtube-1-Nzi.png' %}"/>
     <div class="rectangle-9-amc">
+      <p class="item--CNS">
+        <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
+      </p>
+      <p class="item--2cN">
+        <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
+      </p>
+
     </div>
   </div>
 </div>
