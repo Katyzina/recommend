@@ -3,6 +3,7 @@ from django.db import models
 
 class Institute(models.Model):
     name = models.CharField(max_length=100, verbose_name="Название")
+    full_name = models.CharField(max_length=255, verbose_name="Полное название")
 
     def __str__(self):
         return f"{self.name}"

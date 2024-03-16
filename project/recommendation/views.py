@@ -1,20 +1,38 @@
 from django.contrib.auth import authenticate, login, logout
+from django.db import models
+from django.db.models import Value, F, Q, Subquery, Case, When, BooleanField, Exists, OuterRef
 from django.shortcuts import render, redirect
 from django.views import View
 
-from tables_app.models import Institute, Vacation, Student, User, Employer
+from tables_app.models import Institute, Vacation, Student, User, Employer, Favourite
 
 
 class HomePageView(View):
 
     def get(self, request, *args, **kwargs):
         institutes = Institute.objects.all()
-        vacations = Vacation.objects.all()
+        vacations = Vacation.objects.annotate(
+            is_favourite=Exists(
+                Favourite.objects.filter(
+                    vacation_id=OuterRef('id'),
+                    user=request.user
+                )
+            )
+        ).all()
+        institute = None
         if kwargs.get('institute_id'):
+            institute = institutes.get(id=kwargs['institute_id'])
             vacations = vacations.filter(institute_id=kwargs['institute_id'])
+        if request.GET.get('search'):
+            vacations = vacations.filter(
+                Q(position__icontains=request.GET['search']) |
+                Q(description__icontains=request.GET['search'])
+            )
         return render(request, 'index.html', context={
             "institutes": institutes,
             "vacations": vacations,
+            "institute_id": kwargs['institute_id'] if kwargs.get('institute_id') else None,
+            "institute": institute
         })
 
 
@@ -102,17 +120,45 @@ class EmployerListView(View):
 
 class StudentProfileView(View):
     def get(self, request):
-        return render(request, 'studprofile.html')
+        favourite_vacations = Favourite.objects.filter(user=request.user).values_list('vacation__id', flat=True)
+        vacations = Vacation.objects.filter(id__in=favourite_vacations)
+        return render(request, 'studprofile.html', context={
+            "vacations": vacations
+        })
 
 
 def logout_user(request):
     logout(request)
     return redirect('home')
 
+
 class EmployerProfileView(View):
     def get(self, request):
         return render(request, 'employerprofile.html')
 
+
 class AboutVacancyView(View):
     def get(self, request):
         return render(request, 'aboutvacancy.html')
+
+
+class VacationFavouriteCreateView(View):
+
+    def get(self, request, vacation_id):
+        vacation = Vacation.objects.get(id=vacation_id)
+        Favourite.objects.create(
+            vacation=vacation,
+            user=request.user
+        )
+        return redirect('home')
+
+
+class VacationFavouriteDeleteView(View):
+
+    def get(self, request, vacation_id):
+        vacation = Vacation.objects.get(id=vacation_id)
+        Favourite.objects.filter(
+            vacation=vacation,
+            user=request.user
+        ).delete()
+        return redirect('home')

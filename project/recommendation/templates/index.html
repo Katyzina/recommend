@@ -10,141 +10,157 @@
 </head>
 <body>
 <div class="main-hr-7mx">
-  <div class="frame-2-k4E">
-    <div class="misislogoblockdeskfullinvrusrgb-01-1-GKQ">
-      <img class="vector-AQn" src="{% static 'vector-ibx.png' %}"/>
-      <img class="vector-5Xk" src="{% static 'vector-Ca2.png' %}"/>
-      <img class="vector-1AW" src="{% static 'vector.png' %}"/>
-      <img class="vector-wZx" src="{% static 'vector-jwt.png' %}"/>
-      <div class="group-10-gXY">
-        <img class="auto-group-hakn-Pwk" src="{% static 'auto-group-hakn.png' %}"/>
-        <div class="auto-group-oxfc-KaW">
-          <img class="vector-qok" src="{% static 'vector-pQE.png' %}"/>
-          <p class="item--aWS">ПОИСК ВАКАНСИЙ</p>
-        </div>
-      </div>
-    </div>
-    <div class="frame-12-8Zt">
-      <p class="item--Esp">Главная</p>
-      <div class="item--hmQ"><a href="{% url 'employerlist' %}">Работодатели</a></div>
-      <div class="item--aaJ"><a href="{% url 'support' %}">Поддержка</a></div>
-    </div>
-    <div class="profile-9G2">
-      <div class="auto-group-ydhy-NPg">
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}"><p class="item--5o">Выйти</p></a>
-        <p class="item--5ot"> {{request.user.first_name}} {{request.user.last_name}}</p>
-        {% if request.user.employer %}
-          <div class="item--5of"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
-          {% else %}
-          <div class="item--5ozz"><a href="{% url 'studprofile' %}">Студент</a></div>
-          {% endif %}
-        {% else %}
-        <a href="{% url 'login' %}"><p class="item--5ot">Войти</p></a>
-        {% endif %}
-      </div>
-      <div class="ellipse-1-SH4">
-      </div>
-    </div>
-  </div>
-  <div class="group-1-7e6">
-    <div class="group-8-iBx">
-      <div class="frame-5-Qaa">
-        <div class="frame-5-X9Q"><a href="{% url 'home' %}">Все</a></div>
-        {% for institute in institutes %}
-        <div class="frame-5-X9Q"><a href="{% url 'filter_vacation' institute.id %}">{{institute.name}}</a></div>
-        {% endfor %}
-      </div>
-      <p class="item--u3U">ИНСТИТУТ КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ</p>
-    </div>
-  </div>
-  <div class="auto-group-mc1k-MAN">
-    <div class="auto-group-owys-4Kg">
-      <p class="item--zDL">Вакансии от работодателя</p>
-      <div class="search-GAr">
-        <form action="">
-          <input type="text" placeholder="Введите запрос...">
-        </form>
-      </div>
-      <div class="filter-Waz">
-        <img class="tunefill0wght400grad0opsz24-1-fin" src="{% static 'tunefill0wght400grad0opsz24-1.png' %}"/>
-      </div>
-    </div>
-    <div class="auto-group-sjqv-MrW">
-
-      {% for vacation in vacations %}
-      <div class="group-2-Fwt">
-        <div class="auto-group-6wtt-bF4">
-          <div class="ellipse-2-J9U">
-            <img src="{{vacation.image.url}}" class="image_vacation" alt="">
-          </div>
-          <div class="auto-group-65a6-q9Q">
-            <p class="item--Lrr">{{vacation.employer.employer.organization}}</p>
-            <p class="item--Fiv">г. {{vacation.city.name}}</p>
-          </div>
-        </div>
-        <p class="item--9JW">{{vacation.position}}</p>
-        <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-E54">
-        {{vacation.description | first_letters }}
-        </p>
-        <div class="item--mz6">Подробнее</div>
-        <img class="auto-group-z4g6-AWz" src="{% static 'auto-group-z4g6.png' %}"/>
-      </div>
-      {% endfor %}
-
-    </div>
-    </div>
-  <div class="item--JH4">
-    <div class="auto-group-qzcn-1xA">
-      <div class="auto-group-ydee-9Ya">
-        <div class="misislogoblockdeskfullinvrusrgb-01-1-gHc">
-          <img class="vector-ynW" src="{% static 'vector-E4W.png' %}"/>
-          <img class="vector-7dp" src="{% static 'vector-8Y6.png' %}"/>
-          <img class="vector-1jC" src="{% static 'vector-j2W.png' %}"/>
-          <img class="vector-kAz" src="{% static 'vector-C3Y.png' %}"/>
-          <div class="group-10-Usg">
-            <img class="auto-group-66zr-CYn" src="{% static 'auto-group-66zr.png' %}"/>
-            <div class="auto-group-3emu-in2">
-              <img class="vector-efg" src="{% static 'vector-pge.png' %}"/>
-              <p class="item--bL2">ПОИСК ВАКАНСИЙ</p>
+    <div class="frame-2-k4E">
+        <div class="misislogoblockdeskfullinvrusrgb-01-1-GKQ">
+            <img class="vector-AQn" src="{% static 'vector-ibx.png' %}"/>
+            <img class="vector-5Xk" src="{% static 'vector-Ca2.png' %}"/>
+            <img class="vector-1AW" src="{% static 'vector.png' %}"/>
+            <img class="vector-wZx" src="{% static 'vector-jwt.png' %}"/>
+            <div class="group-10-gXY">
+                <img class="auto-group-hakn-Pwk" src="{% static 'auto-group-hakn.png' %}"/>
+                <div class="auto-group-oxfc-KaW">
+                    <img class="vector-qok" src="{% static 'vector-pQE.png' %}"/>
+                    <p class="item--aWS">ПОИСК ВАКАНСИЙ</p>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="auto-group-7ejy-5kz">
-          <p class="item--ckv">Техническая поддержка сайта:</p>
-          <p class="item--hXU">
-            <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
-          </p>
-          <p class="pochtamailru-abG">katyzinan@gmail.com</p>
+        <div class="frame-12-8Zt">
+            <p class="item--Esp">Главная</p>
+            <div class="item--hmQ"><a href="{% url 'employerlist' %}">Работодатели</a></div>
+            <div class="item--aaJ"><a href="{% url 'support' %}">Поддержка</a></div>
         </div>
-        <div class="auto-group-pa7q-Vy8">
-          <p class="item--EQv">Контакты для связи:</p>
-          <p class="item-7-000-000-00-00-LTx">+ 7 499 649-44-80</p>
-          <p class="pochtamailru-Smt">vopros@misis.ru</p>
+        <div class="profile-9G2">
+            <div class="auto-group-ydhy-NPg">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}"><p class="item--5o">Выйти</p></a>
+                <p class="item--5ot"> {{request.user.first_name}} {{request.user.last_name}}</p>
+                {% if request.user.employer %}
+                <div class="item--5of"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
+                {% else %}
+                <div class="item--5ozz"><a href="{% url 'studprofile' %}">Студент</a></div>
+                {% endif %}
+                {% else %}
+                <a href="{% url 'login' %}"><p class="item--5ot">Войти</p></a>
+                {% endif %}
+            </div>
+            <div class="ellipse-1-SH4">
+            </div>
         </div>
-        <div class="auto-group-svka-yG2">
-          <p class="item--VkA">Адрес:</p>
-          <p class="item-3--zwp">ул. Крымский Вал, 3, Москва</p>
-        </div>
-        <div class="login-fHG"><a href="{% url 'support' %}">Поддержка</a></div>
-      </div>
-      <div style="display: flex; align-items: center; color: #fff; font-size: 15px; width: 996px; margin-top: 6px;">
-        <div style="margin-left: 400px;">
-          <img style="width: 24px; height: 24px;" class="vk-1-tZL" src="{% static 'vk-1.png' %}"/>
-          <img style="width: 24px; height: 24px;" class="ok-1-cES" src="{% static 'ok-1.png' %}"/>
-          <img style="width: 24px; height: 24px;" class="telegram-1-jK4" src="{% static 'telegram-1.png' %}"/>
-          <img style="width: 24px; height: 24px;" class="youtube-1-SzA" src="{% static 'youtube-1.png' %}"/>
-        </div>
-      </div>
     </div>
-    <div class="auto-group-hhxr-Mjk">
-      <p class="item--eir">
-        <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
-      </p>
-      <p class="item--Uht">
-        <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
-      </p>
-      <p class="item-2024--Jwp">@2024 Университет науки и технологий МИСИС</p>
+    <div class="group-1-7e6">
+        <div class="group-8-iBx">
+            <div class="frame-5-Qaa">
+                <div class="frame-5-X9Q"><a href="{% url 'home' %}">Все</a></div>
+                {% for institute in institutes %}
+                {% if institute.id == institute_id %}
+                <div class="frame-5-X9Q border"><a href="{% url 'filter_vacation' institute.id %}">{{institute.name}}</a></div>
+                {% else %}
+                <div class="frame-5-X9Q"><a href="{% url 'filter_vacation' institute.id %}">{{institute.name}}</a></div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% if institute %}
+            <p class="item--u3U">{{institute.full_name | upper}}</p>
+            {% endif %}
+        </div>
     </div>
-  </div>
+    <div class="auto-group-mc1k-MAN">
+        <div class="auto-group-owys-4Kg">
+            <p class="item--zDL">Вакансии от работодателя</p>
+            <form action="{% url 'search_vacation' %}">
+                <div class="search-GAr">
+                    <input type="text" placeholder="Введите запрос..." name="search">
+                </div>
+                <div class="filter-Waz">
+                    <button type="submit">
+                        <img class="tunefill0wght400grad0opsz24-1-fin" src="{% static 'tunefill0wght400grad0opsz24-1.png' %}"/>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="auto-group-sjqv-MrW">
+
+            {% for vacation in vacations %}
+            <div class="group-2-Fwt">
+                <div class="auto-group-6wtt-bF4">
+                    <div class="ellipse-2-J9U">
+                        <img src="{{vacation.image.url}}" class="image_vacation" alt="">
+                    </div>
+                    <div class="auto-group-65a6-q9Q">
+                        <p class="item--Lrr">{{vacation.employer.employer.organization}}</p>
+                        <p class="item--Fiv">г. {{vacation.city.name}}</p>
+                    </div>
+                </div>
+                <p class="item--9JW">{{vacation.position}}</p>
+                <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-E54">
+                    {{vacation.description | first_letters }}
+                </p>
+                <div class="item--mz6">Подробнее</div>
+                {% if user.is_authenticated %}
+                    {% if user.student %}
+                        {% if vacation.is_favourite %}
+                        <a href="{% url 'favourite_delete' vacation.id %}"><img class="auto-group-z4g6-AWz" src="{% static 'like.png' %}"/></a>
+                        {% else %}
+                        <a href="{% url 'favourite' vacation.id %}"><img class="auto-group-z4g6-AWz" src="{% static 'auto-group-z4g6.png' %}"/></a>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <div class="item--JH4">
+        <div class="auto-group-qzcn-1xA">
+            <div class="auto-group-ydee-9Ya">
+                <div class="misislogoblockdeskfullinvrusrgb-01-1-gHc">
+                    <img class="vector-ynW" src="{% static 'vector-E4W.png' %}"/>
+                    <img class="vector-7dp" src="{% static 'vector-8Y6.png' %}"/>
+                    <img class="vector-1jC" src="{% static 'vector-j2W.png' %}"/>
+                    <img class="vector-kAz" src="{% static 'vector-C3Y.png' %}"/>
+                    <div class="group-10-Usg">
+                        <img class="auto-group-66zr-CYn" src="{% static 'auto-group-66zr.png' %}"/>
+                        <div class="auto-group-3emu-in2">
+                            <img class="vector-efg" src="{% static 'vector-pge.png' %}"/>
+                            <p class="item--bL2">ПОИСК ВАКАНСИЙ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="auto-group-7ejy-5kz">
+                    <p class="item--ckv">Техническая поддержка сайта:</p>
+                    <p class="item--hXU">
+                        <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
+                    </p>
+                    <p class="pochtamailru-abG">katyzinan@gmail.com</p>
+                </div>
+                <div class="auto-group-pa7q-Vy8">
+                    <p class="item--EQv">Контакты для связи:</p>
+                    <p class="item-7-000-000-00-00-LTx">+ 7 499 649-44-80</p>
+                    <p class="pochtamailru-Smt">vopros@misis.ru</p>
+                </div>
+                <div class="auto-group-svka-yG2">
+                    <p class="item--VkA">Адрес:</p>
+                    <p class="item-3--zwp">ул. Крымский Вал, 3, Москва</p>
+                </div>
+                <div class="login-fHG"><a href="{% url 'support' %}">Поддержка</a></div>
+            </div>
+            <div style="display: flex; align-items: center; color: #fff; font-size: 15px; width: 996px; margin-top: 6px;">
+                <div style="margin-left: 400px;">
+                    <img style="width: 24px; height: 24px;" class="vk-1-tZL" src="{% static 'vk-1.png' %}"/>
+                    <img style="width: 24px; height: 24px;" class="ok-1-cES" src="{% static 'ok-1.png' %}"/>
+                    <img style="width: 24px; height: 24px;" class="telegram-1-jK4" src="{% static 'telegram-1.png' %}"/>
+                    <img style="width: 24px; height: 24px;" class="youtube-1-SzA" src="{% static 'youtube-1.png' %}"/>
+                </div>
+            </div>
+        </div>
+        <div class="auto-group-hhxr-Mjk">
+            <p class="item--eir">
+                <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
+            </p>
+            <p class="item--Uht">
+                <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
+            </p>
+            <p class="item-2024--Jwp">@2024 Университет науки и технологий МИСИС</p>
+        </div>
+    </div>
 </body>

@@ -1454,3 +1454,8 @@ margin: 3.775rem 19rem 0rem 0rem;
     width: 10rem;
   height: 10rem;
 }
+
+.border{
+    border: 2px solid white;
+    border-radius: 9px;
+}
