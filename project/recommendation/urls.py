@@ -3,7 +3,7 @@ from django.urls import path
 from recommendation.views import (
     HomePageView, UserLoginView, EmployerRegisterView,
     StudentRegisterView, SupportCreateView, EmployerListView,
-    StudentProfileView, logout_user
+    StudentProfileView,  EmployerProfileView, AboutVacancyView, logout_user
 )
 
 urlpatterns = [
@@ -16,4 +16,6 @@ urlpatterns = [
     path('support/', SupportCreateView.as_view(), name='support'),
     path('employerlist/', EmployerListView.as_view(), name='employerlist'),
     path('studprofile/', StudentProfileView.as_view(), name='studprofile'),
+    path('employerprofile/', EmployerProfileView.as_view(), name='employerprofile'),
+    path('aboutvacancy/', AboutVacancyView.as_view(), name='aboutvacancy'),
 ]

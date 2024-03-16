@@ -124,7 +124,7 @@ body {
   flex-shrink: 0;
 }
 .main-hr-7mx .frame-2-k4E .frame-12-8Zt {
-  margin: 2.991rem 30.45rem 2.387rem 20rem;
+  margin: 2.991rem 24.45rem 2.387rem 20rem;
   height: calc(100% - 5.3784rem);
   display: flex;
   align-items: center;
@@ -188,7 +188,7 @@ body {
   flex-shrink: 0;
 }
 .main-hr-7mx .frame-2-k4E .profile-9G2 .auto-group-ydhy-NPg .item--5o {
-  margin: -3.6rem 0.1rem 1rem 0rem;
+  margin: -4.6rem 0.1rem 1rem 0rem;
   text-align: right;
   font-size: 2.4rem;
   font-weight: 100;
@@ -198,8 +198,20 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
+ .item--5of  a {
+   box-sizing: border-box;
+   border-radius: 20rem;
+   border: 3px solid white;
+   color: white !important;
+   font-size: 12px;
+   font-style: italic;
+   font-weight: 1000;
+   letter-spacing: 1.2px;
+   padding: 4.5px 40px;
+   position: relative;
+}
 .main-hr-7mx .frame-2-k4E .profile-9G2 .auto-group-ydhy-NPg .item--5ot {
-  margin: -2rem 0.1rem 1rem 0rem;
+  margin: -2rem -0.89rem 2rem -12rem;
   text-align: right;
   font-size: 2.4rem;
   font-weight: 600;
@@ -209,6 +221,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
+
 .main-hr-7mx .frame-2-k4E .profile-9G2 .auto-group-ydhy-NPg .item--5ozz a {
    box-sizing: border-box;
    border-radius: 20rem;

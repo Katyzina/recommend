@@ -108,3 +108,11 @@ class StudentProfileView(View):
 def logout_user(request):
     logout(request)
     return redirect('home')
+
+class EmployerProfileView(View):
+    def get(self, request):
+        return render(request, 'employerprofile.html')
+
+class AboutVacancyView(View):
+    def get(self, request):
+        return render(request, 'aboutvacancy.html')

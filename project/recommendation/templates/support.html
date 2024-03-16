@@ -31,7 +31,7 @@
         <a href="{% url 'logout' %}"><p class="item--5o">Выйти</p></a>
         <p class="item--7ot"> {{request.user.first_name}} {{request.user.last_name}}</p>
         {% if request.user.employer %}
-          <p class="item--7ot">Работодатель</p>
+          <div class="item--7"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
           {% else %}
           <div class="item--aSa"><a href="{% url 'studprofile' %}">Студент</a></div>
           {% endif %}

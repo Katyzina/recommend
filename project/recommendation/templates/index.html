@@ -35,7 +35,7 @@
         <a href="{% url 'logout' %}"><p class="item--5o">Выйти</p></a>
         <p class="item--5ot"> {{request.user.first_name}} {{request.user.last_name}}</p>
         {% if request.user.employer %}
-          <p class="item--5ot">Работодатель</p>
+          <div class="item--5of"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
           {% else %}
           <div class="item--5ozz"><a href="{% url 'studprofile' %}">Студент</a></div>
           {% endif %}

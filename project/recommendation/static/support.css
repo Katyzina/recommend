@@ -80,7 +80,7 @@ body {
   flex-shrink: 0;
 }
 .support-zEA .frame-2-WyC .frame-12-NGe {
-  margin: 1.871rem 6.469rem 1.47rem 12rem;
+  margin: 1.871rem 2.469rem 1.47rem 12rem;
   height: calc(100% - 3.3408rem);
   display: flex;
   align-items: center;
@@ -166,6 +166,18 @@ body {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+}
+.item--7 a {
+   box-sizing: border-box;
+   border-radius: 20rem;
+   border: 3px solid white;
+   color: white !important;
+   font-size: 12px;
+   font-style: italic;
+   font-weight: 1000;
+   letter-spacing: 1.2px;
+   padding: 4.5px 40px;
+   position: relative;
 }
 .support-zEA .frame-2-WyC .profile-HZx .auto-group-mf4a-DCi .item--7ot {
   margin: -0.9rem -0.2rem 1.2rem 10rem;

@@ -154,7 +154,7 @@ body {
   flex-shrink: 0;
 }
 .users-JAi .frame-2-QDk .profile-un6 {
-  margin: 0.119rem 0rem 0.117rem 22rem;
+  margin: 0.119rem 0rem 0.117rem 18rem;
   height: calc(100% - 0.2365rem);
   display: flex;
   align-items: center;
@@ -178,6 +178,18 @@ body {
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
+}
+.item--5ot a {
+   box-sizing: border-box;
+   border-radius: 20rem;
+   border: 3px solid white;
+   color: white !important;
+   font-size: 12px;
+   font-style: italic;
+   font-weight: 1000;
+   letter-spacing: 1.2px;
+   padding: 4.5px 40px;
+   position: relative;
 }
 .users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--A {
   margin: -1rem 0.1rem 1rem 0rem;
