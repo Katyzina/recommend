@@ -15,7 +15,7 @@ class HomePageView(View):
             is_favourite=Exists(
                 Favourite.objects.filter(
                     vacation_id=OuterRef('id'),
-                    user=request.user
+                    user=request.user if request.user.is_authenticated else None
                 )
             )
         ).all()
