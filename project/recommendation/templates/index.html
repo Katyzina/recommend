@@ -32,7 +32,6 @@
         <div class="profile-9G2">
             <div class="auto-group-ydhy-NPg">
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'logout' %}"><p class="item--5o">Выйти</p></a>
                 <p class="item--5ot"> {{request.user.first_name}} {{request.user.last_name}}</p>
                 {% if request.user.employer %}
                 <div class="item--5of"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
@@ -73,7 +72,7 @@
                 </div>
                 <div class="filter-Waz">
                     <button type="submit">
-                        <img class="tunefill0wght400grad0opsz24-1-fin" src="{% static 'tunefill0wght400grad0opsz24-1.png' %}"/>
+                        <img class="tunefill0wght400grad0opsz24-1-fin" src="{% static '44.jpg' %}"/>
                     </button>
                 </div>
             </form>

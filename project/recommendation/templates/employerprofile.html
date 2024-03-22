@@ -5,7 +5,7 @@
 <head>
     <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
-    <title>Поиск вакансий</title>
+    <title>Личный кабинет работодателя</title>
   <link rel="stylesheet" href="{% static 'global.css' %}">
     <link rel="stylesheet" href="{% static 'employerprofile.css' %}">
 </head>
@@ -42,7 +42,7 @@
         </div>
         <nav class="siblings-sub-tree">
           <nav class="parent-sub-tree">
-            <div class="div1"><a href="{% url 'employerlist' %}">Главная</a></div>
+            <div class="div1"><a href="{% url 'home' %}">Главная</a></div>
             <div class="div2"><a href="{% url 'employerlist' %}">Работодатели</a></div>
             <div class="div3"><a href="{% url 'support' %}">Поддержка</a></div>
           </nav>
@@ -53,7 +53,6 @@
             <div class="linked-nodes">
               <div class="relation-nodes">
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'logout' %}"><p class="item--Axv">Выйти</p></a>
                 <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
                 {% if request.user.employer %}
                 <div class="div4"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
@@ -62,7 +61,7 @@
                 <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
                 {% endif %}
               </div>
-            <div class="conditional-link-nodes"></div>
+            </div><div class="ellipse-1-tCN"></div>
           </div>
         </div>
       </header>
@@ -297,111 +296,14 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="depth-first-search-node">
-              <div class="tree-traversal-node">
-                <h1 class="h13">Создание проекта</h1>
-              </div>
-              <div class="cluster-analysis-node">
-                <div class="centroid-calculation-node">
-                  <div class="d-b-s-c-a-n-node">
-                    <h2 class="h24">Название организации:</h2>
-                    <input class="search" placeholder="Введите запрос..." type="text"
-                    />
-                  </div>
-                </div>
-                <div class="centroid-calculation-node1">
-                  <h2 class="h25">Институт:</h2>
-                  <div class="search1">
-                    <div class="search-child"></div>
-                    <input class="input" placeholder="Выберите институты из списка..." type="text"/>
-                  </div>
-                </div>
-                <div class="centroid-calculation-node2">
-                  <div class="parent4">
-                    <h2 class="h26">Город:</h2>
-                    <input class="frame-input" placeholder="Введите запрос..." type="text"/>
-                  </div>
-                </div>
-                <div class="centroid-calculation-node3">
-                  <div class="parent5">
-                    <h2 class="h27">Должность:</h2>
-                    <input class="frame-child4" placeholder="Введите запрос..." type="text"/>
-                  </div>
-                </div>
-                <div class="centroid-calculation-node4">
-                  <h2 class="h28">Занятость:</h2>
-                  <div class="search2">
-                    <div class="search-item"></div>
-                    <input class="input1" placeholder="Выберите институты из списка..." type="text"/>
-                  </div>
-                </div>
-                <div class="centroid-calculation-node5">
-                  <div class="parent6">
-                    <h2 class="h29">Ключевые навыки:</h2>
-                    <input class="frame-child5" placeholder="Введите запрос..." type="text"/>
-                  </div>
-                </div>
-                <div class="graph-coloring-node">
-                  <div class="bipartite-matching-node">
-                    <div class="minimum-cut-node">
-                      <div class="max-flow-algorithm-node">
-                        <h2 class="h210">Адрес:</h2>
-                        <h2 class="h211">Описание:</h2>
-                      </div>
-                      <div class="shortest-path-tree-node">
-                        <h2 class="h212">Изображение:</h2>
-                      </div>
-                    </div>
-                    <div class="data-aggregator1">
-                      <input class="search3" placeholder="Введите запрос..." type="text"/>
+              <div class="image-node">
 
-                      <div class="output-combiner">
-                        <textarea
-                          class="search4"
-                          placeholder="Введите запрос..."
-                          rows="{5}"
-                          cols="{23}"
-                        >
-                        </textarea>
-                        <div class="branch-node1">
-                          <div class="merge-node">
-                            <div class="constant-node">
-                              <div class="logopng">Logo.png</div>
-                            </div>
-                            <button class="load-pic2">
-                              <div class="load-pic-inner"></div>
-                              <div class="div42">Загрузить</div>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="error-handler">
-                <div class="queue-node">
-                  <div class="stack-node">
-                    <div class="timer-node">
-                      <button class="login1">
-                        <div class="login-item"></div>
-                        <div class="div43">Сохранить в черновики</div>
-                      </button>
-                    </div>
-                    <button class="login2">
-                      <div class="login-inner"></div>
-                      <div class="div44">Опубликовать</div>
-                    </button>
-                  </div>
-                  <div class="image-node">
-                    <div class="div45">Выйти &gt;</div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </section>
+            </div>
+            <button class="load-pic10">
+              <div class="div20"><a href="{% url 'createvacancy' %}">Создать проект</a></div>
+           </button>
+            <a href="{% url 'logout' %}"><p class="div45">Выйти ></p></a>
       </main>
       <div class="div46">
         <div class="path-node">
@@ -483,10 +385,8 @@
             <img class="radio-button-group1" alt="" src="{% static 'vector-16.png' %}"/>
           </div>
           <img class="check-box-nodes" alt="" src="{% static 'vector-17.png' %}"/>
-          <div class="image-gallery-node">
-            <img class="vk-1-icon1" alt="" src="{% static 'vkcom.png' %}"/>
-          </div>
           <img class="ok-1-icon1" alt="" src="{% static 'ok-1.png' %}"/>
+          <img class="vk-1-icon1" alt="" src="{% static 'vkcom.png' %}"/>
           <img class="telegram-1-icon1" alt="" src="{% static 'telegramcom.png' %}"/>
           <img class="youtube-1-icon1" alt="" src="{% static 'youtubecom.png' %}"/>
         </div>

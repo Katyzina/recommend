@@ -141,6 +141,10 @@ class AboutVacancyView(View):
     def get(self, request):
         return render(request, 'aboutvacancy.html')
 
+class CreateVacancyView(View):
+    def get(self, request):
+        return render(request, 'createvacancy.html')
+
 
 class VacationFavouriteCreateView(View):
 

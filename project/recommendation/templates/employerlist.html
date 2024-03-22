@@ -5,6 +5,7 @@
     <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Работодатели</title>
+  <link rel="stylesheet" href="{% static 'main-hr.css' %}"> <!-- Подключение файла со стилями -->
     <link rel="stylesheet" href="{% static 'employerlist.css' %}"> <!-- Подключение файла со стилями -->
 </head>
 <body>
@@ -26,7 +27,6 @@
     <div class="profile-un6">
       <div class="auto-group-5fmx-qve">
         {% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}"><p class="item--Axv">Выйти</p></a>
         <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
         {% if request.user.employer %}
         <div class="item--5ot"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
@@ -45,12 +45,16 @@
     <div class="auto-group-yycs-zKg">
       <p class="item--hUz">Список работодателей</p>
       <div class="auto-group-agce-o2E">
-        <div class="search-L2A">
-          <form action="">
-          <input type="text" placeholder="Введите запрос...">
-        </form>
-        </div>
-        <img class="filter-9EW" src="{% static 'filter.png' %}"/>
+         <form action="{% url 'search_vacation' %}">
+                <div class="search-L2A">
+                    <input type="text" placeholder="Введите запрос..." name="search">
+                </div>
+                <div class="filter-9EW">
+                    <button type="submit">
+                        <img class="tunefill0wght400grad0opsz24-1-fin" src="{% static '44.jpg' %}"/>
+                    </button>
+                </div>
+         </form>
       </div>
     </div>
     <div class="group-9-ewx">

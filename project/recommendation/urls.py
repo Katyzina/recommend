@@ -4,7 +4,7 @@ from recommendation.views import (
     HomePageView, UserLoginView, EmployerRegisterView,
     StudentRegisterView, SupportCreateView, EmployerListView,
     StudentProfileView, EmployerProfileView, AboutVacancyView, logout_user,
-    VacationFavouriteCreateView, VacationFavouriteDeleteView
+    VacationFavouriteCreateView, VacationFavouriteDeleteView, CreateVacancyView
 )
 
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
     path('studprofile/', StudentProfileView.as_view(), name='studprofile'),
     path('employerprofile/', EmployerProfileView.as_view(), name='employerprofile'),
     path('aboutvacancy/', AboutVacancyView.as_view(), name='aboutvacancy'),
+    path('createvacancy/', CreateVacancyView.as_view(), name='createvacancy'),
 ]

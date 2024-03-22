@@ -508,7 +508,7 @@ body {
   flex-shrink: 0;
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-owys-4Kg .search-GAr {
-  margin: 0rem 1rem 0.2rem 0rem;
+  margin: 0rem 1rem 0.2rem -6rem;
   max-width: 500px;
   position: relative;
   background: #f7f7f7;
@@ -527,6 +527,7 @@ body {
   text-align: left;
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-owys-4Kg .filter-Waz {
+margin: -8rem 87rem -3.8rem 62rem;
   box-sizing: border-box;
   padding: 2.4rem;
   height: 100%;
@@ -542,13 +543,13 @@ body {
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW {
   margin: 0rem 2.8rem 2.7rem 3.8rem;
-  width: calc(100% - 6.6rem); /* Adjust this width based on the actual width of the parent container */
+  width: calc(100% - 6.6rem);
   display: flex;
-  flex-direction: row; /* This will layout the children in a row */
-  flex-wrap: wrap; /* This will allow the items to wrap onto the next line */
-  align-items: flex-start; /* Aligns items to the start of the cross axis */
-  column-gap: 2rem; /* This is the space between your columns */
-  row-gap: 2rem; /* This is the space between your rows */
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 2rem;
+  row-gap: 2rem;
 }
 .main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-2-Fwt {
   box-sizing: border-box;
@@ -1332,7 +1333,9 @@ body {
   white-space: nowrap;
   display: flex;
   text-decoration: none;
+  border: solid 0.0626rem #eaeaea;
   align-items: center;
+
   justify-content: center;
   background-color: #143194;
   border-radius: 3rem;

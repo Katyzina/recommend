@@ -5,9 +5,13 @@
 <head>
     <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
-    <title>Регистрация студента</title>
-    <link rel="stylesheet" href="{% static 'studprofile.css' %}"> <!-- Подключение файла со стилями -->
+    <title>Личный кабинет студента</title>
+   <link rel="stylesheet" href="{% static 'main-hr.css' %}">
+    <link rel="stylesheet" href="{% static 'support.css' %}">
+  <link rel="stylesheet" href="{% static 'global.css' %}">
+    <link rel="stylesheet" href="{% static 'profile-stud.css' %}"> <!-- Подключение файла со стилями -->
 </head>
+<body>
 <div class="profile-stud-h26">
   <div class="frame-2-K3U">
     <div class="misislogoblockdeskfullinvrusrgb-01-1-jmQ">
@@ -25,7 +29,6 @@
     <div class="profile-GCv">
       <div class="auto-group-jvis-y7L">
         {% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}"><p class="item--5o">Выйти</p></a>
         <p class="item--6Sr"> {{request.user.first_name}} {{request.user.last_name}}</p>
         {% if request.user.employer %}
           <p class="item--6Sr">Работодатель</p>
@@ -56,7 +59,7 @@
           </div>
         </div>
       </div>
-      <div class="load-pic-tcv">Редактировать</div>
+      <div class="load-pic-tcv">Сохранить</div>
     </div>
     <div class="load-pic-wbC">Загрузить фото</div>
     <div class="short-info-nLv">
@@ -86,102 +89,92 @@
       </div>
       <div class="load-pic-jWN">Загрузить</div>
     </div>
-    <div class="auto-group-amcr-pXp">
-      <p class="item--idC">Телеграм:</p>
-      <p class="telegram-ELe">@telegram</p>
-    </div>
-    <div class="auto-group-2fy8-xnS">
-      <p class="item--seW">Навыки:</p>
-      <div class="frame-32-nFg">Python</div>
-      <div class="frame-33-eYn">Работа с локальными сетями</div>
-      <div class="frame-39-ioY">Настройка ПК</div>
-      <div class="frame-41-zWA">С++</div>
-      <div class="frame-36-5nW">#2k17</div>
-    </div>
-    <p class="item--Zxa">Избранные вакансии:</p>
     <div class="auto-group-ltun-SFg">
       <p class="item--m34">Сопроводительное письмо:</p>
       <p class="letterpdf-Sez">Letter.pdf</p>
       <div class="load-pic-AL6">Загрузить</div>
     </div>
-    <div class="auto-group-gu5c-pvS">
-      <div class="frame-35-xWr">Информационная безопасность</div>
-      <div class="frame-38-Swp">#ВыборыПрезидентаРоссии2024</div>
-      <div class="frame-37-jvv">#Путин</div>
+    <div class="auto-group-amcr-pXp">
+      <p class="item--idC">Телеграм:</p>
+      <p class="telegram-ELe">@telegram</p>
     </div>
-      <div class="auto-group-r9h8-pSa">
-        {% for vacation in vacations %}
-        <div class="group-7-VkJ">
-          <div class="auto-group-qfz8-d5p">
-            <div class="ellipse-2-J9U">
-                        <img src="{{vacation.image.url}}" class="image_vacation" alt="">
-                    </div>
-            <div class="auto-group-ubcz-3vE">
-              <p class="item--Nhc">{{vacation.employer.employer.organization}}</p>
-              <p class="item--YVc">{{vacation.city.name}}</p>
-            </div>
-          </div>
-          <p class="item--RZQ">{{vacation.position}}</p>
-          <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-tSz">
-            {{vacation.description | first_letters }}
-          </p>
-          <div class="auto-group-wvqn-fMG">
-            <div class="item--ngn">Подробнее</div>
-            <a href="{% url 'favourite_delete' vacation.id %}"><img class="auto-group-z4g6-AWz" src="{% static 'like.png' %}"/></a>
-<!--            <img class="item&#45;&#45;pdU" src="{% static '-3FU.png' %}"/>-->
-          </div>
-        </div>
+    <p class="item--Zxa">Избранные вакансии:</p>
 
-        {% endfor %}
-      </div>
-    <p class="item--qHg">Выйти &gt;</p>
-  </div>
-  <div class="item--KCr">
-    <p class="item-2024--odp">@2024 Университет науки и технологий МИСИС</p>
-    <div class="login-p38"><a href="{% url 'support' %}">Поддержка</a></div>
-    <div class="misislogoblockdeskfullinvrusrgb-01-1-SaJ">
-      <img class="vector-YdL" src="{% static 'vector-vMc.png' %}"/>
-      <img class="vector-5dG" src="{% static 'vector-jGi.png' %}"/>
-      <img class="vector-QfY" src="{% static 'vector-J9L.png' %}"/>
-      <img class="vector-Ymk" src="{% static 'vector-duQ.png' %}"/>
-      <div class="group-10-HUS">
-        <img class="auto-group-nhwc-Dcz" src="{% static 'auto-group-nhwc.png' %}"/>
-        <div class="auto-group-mszc-MUJ">
-          <img class="vector-yVg" src="{% static 'vector-q9Q.png' %}"/>
-          <p class="item--uu8">ПОИСК ВАКАНСИЙ</p>
+
+
+   <div class="auto-group-r9h8-pSa">
+    {% for vacation in vacations %}
+    <div class="group-7-VkJ">
+        <div class="auto-group-qfz8-d5p">
+            <div class="ellipse-2-J9U">
+                <img src="{{ vacation.image.url }}" class="image_vacation" alt="">
+            </div>
+            <div class="auto-group-ubcz-3vE">
+                <p class="item--Nhc">{{ vacation.employer.employer.organization }}</p>
+                <p class="item--YVc">{{ vacation.city.name }}</p>
+            </div>
+        </div>
+        <p class="item--RZQ">{{ vacation.position }}</p>
+        <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-tSz">
+            {{ vacation.description | first_letters }}
+        </p>
+        <div class="auto-group-wvqn-fMG">
+            <div class="item--ngn">Подробнее</div>
+            <a href="{% url 'favourite_delete' vacation.id %}">
+               <a href="{% url 'favourite_delete' vacation.id %}"><img class="auto-group-z4g6-AWz" src="{% static 'like.png' %}"/></a>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    <a href="{% url 'logout' %}"><p class="item--qHg">Выйти &gt;</p></a>
+<div class="support-zEA">
+    <div class="item--Vft">
+    <p class="item-2024--CKQ">@2024 Университет науки и технологий МИСИС</p>
+    <div class="login-AQe"><a href="{% url 'support' %}">Поддержка</a></div>
+    <div class="misislogoblockdeskfullinvrusrgb-01-1-RLa">
+      <img class="vector-Kgr" src="{% static 'vector-Yuc.png' %}"/>
+      <img class="vector-fki" src="{% static 'vector-GL6.png' %}"/>
+      <img class="vector-orv" src="{% static 'vector-DZ8.png' %}"/>
+      <img class="vector-xE2" src="{% static 'vector-bKC.png' %}"/>
+      <div class="group-10-tdU">
+        <img class="auto-group-h78i-R7c" src="{% static 'auto-group-h78i.png' %}"/>
+        <div class="auto-group-eeul-7FL">
+          <img class="vector-cht" src="{% static 'vector-TbL.png' %}"/>
+          <p class="item--xWr">ПОИСК ВАКАНСИЙ</p>
         </div>
       </div>
     </div>
-    <p class="item--R8i">Контакты для связи:</p>
-    <p class="item--V8a">Адрес:</p>
-    <p class="item-7-000-000-00-00-bBc">+ 7 499 649-44-80</p>
-    <p class="item-3--JLv">ул. Крымский Вал, 3, Москва</p>
-    <p class="item-900-2000-1000-1800-aJS">
+    <p class="item--paz">Контакты для связи:</p>
+    <p class="item--VBL">Адрес:</p>
+    <p class="item-7-000-000-00-00-oC2">+ 7 499 649-44-80</p>
+    <p class="item-3--tzA">ул. Крымский Вал, 3, Москва</p>
+    <p class="item-900-2000-1000-1800-ZaW">
     пн-пт: 9.00 - 20.00
     <br/>
     сб-вс: 10.00 - 18.00
     </p>
-    <p class="pochtamailru-4Dc">vopros@misis.ru</p>
-    <p class="pochtamailru-YuU">katyzinan@gmail.com</p>
-     <p class="item--4N2">
-            <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
-     </p>
-    <p class="item--RLz">Техническая поддержка сайта:</p>
-    <img class="vk-1-hJW" src="{% static 'vk-1.png' %}"/>
-    <img class="vk-2-q9p" src="{% static 'vk-2.png' %}"/>
-    <img class="ok-1-Aht" src="{% static 'ok-1.png' %}"/>
-    <img class="telegram-1-K4z" src="{% static 'telegram-1-Akn.png' %}"/>
-    <img class="youtube-1-FUS" src="{% static 'youtube-1-Nzi.png' %}"/>
-    <div class="rectangle-9-amc">
-      <p class="item--CNS">
+    <p class="pochtamailru-Qb8">vopros@misis.ru</p>
+    <p class="pochtamailru-6D4">katyzinan@gmail.com</p>
+    <p class="item--cBQ">
+      <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
+    </p>
+    <p class="item--yw4">Техническая поддержка сайта:</p>
+    <img class="vk-1-rEA" src="{% static 'vk-1-v6a.png' %}"/>
+    <img class="vk-2-afx" src="{% static 'vk-2.png' %}"/>
+    <img class="ok-1-gDC" src="{% static 'ok-1-efY.png' %}"/>
+    <img class="telegram-1-ChL" src="{% static 'telegram-1-DmY.png' %}"/>
+    <img class="youtube-1-Kmx" src="{% static 'youtube-1-vjQ.png' %}"/>
+    <div class="rectangle-9-T7U">
+       <p class="item--FVx">
         <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
       </p>
-      <p class="item--2cN">
+      <p class="item--GAA">
         <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
       </p>
-
     </div>
   </div>
 </div>
+      </div>
+    </div>
 </body>
-</html>

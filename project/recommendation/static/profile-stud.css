@@ -1,16 +1,31 @@
 
 html {
 	font-size:80%;
+
 }
 * {
 	margin: 0;
 	padding: 0;
+
 }
+
 ul, li {
 	list-style: none;
 }
 input {
 	border: none;
+}
+body {
+  width: 120rem;
+
+}.profile-stud-h26 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
 }
 .profile-stud-h26 .frame-2-K3U {
   box-sizing: border-box;
@@ -69,14 +84,14 @@ input {
   flex-shrink: 0;
 }
 .profile-stud-h26 .frame-2-K3U .frame-12-RRG {
-  margin: 1.871rem 10.959rem 1.47rem 6rem;
+  margin: 1.871rem 10.959rem 1.47rem 0rem;
   height: calc(100% - 3.3408rem);
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
 .profile-stud-h26 .frame-2-K3U .frame-12-RRG .item--vcv a {
-  margin-right: 4.8rem;
+margin-right: 4.8rem;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -141,22 +156,10 @@ input {
   flex-shrink: 0;
 }
 .profile-stud-h26 .frame-2-K3U .profile-GCv .auto-group-jvis-y7L .item--6Sr {
-  margin-bottom: 1.2268000000000008rem;
+   margin-bottom: 1.2268000000000008rem;
   text-align: right;
   font-size: 1.5012rem;
   font-weight: 600;
-  line-height: 1.2175;
-  color: #ffffff;
-  font-family: Montserrat, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.profile-stud-h26 .frame-2-K3U .profile-GCv .auto-group-jvis-y7L .item--5o {
-margin: -2rem 0.1rem -3rem 0rem;
-  text-align: right;
-  font-size: 1.4rem;
-  font-weight: 400;
   line-height: 1.2175;
   color: #ffffff;
   font-family: Montserrat, 'Source Sans Pro';
@@ -185,7 +188,7 @@ margin: -2rem 0.1rem -3rem 0rem;
 }
 .profile-stud-h26 .auto-group-75wu-kQv {
   width: 100%;
-  height: 162.2172rem;
+  height: 100%;
   position: relative;
   flex-shrink: 0;
 }
@@ -350,7 +353,6 @@ margin: -2rem 0.1rem -3rem 0rem;
   flex-shrink: 0;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .short-info-nLv .auto-group-tssa-uwL .auto-group-yuml-TT4 .item--fp2 {
-  margin: 0rem 31.7rem 0.5rem 0.01rem;
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -403,7 +405,6 @@ margin: -2rem 0.1rem -3rem 0rem;
   flex-shrink: 0;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .short-info-nLv .auto-group-2xxq-kDC .item--cWJ {
-  margin: 0rem 31.7rem 1rem 0rem;
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -643,7 +644,7 @@ margin: -2rem 0.1rem -3rem 0rem;
   height: 3rem;
   position: absolute;
   left: 6.1rem;
-  top: 82.8172rem;
+  top: 85rem;
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -671,7 +672,7 @@ margin: -2rem 0.1rem -3rem 0rem;
   flex-shrink: 0;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-ltun-SFg .letterpdf-Sez {
-  margin: 0rem 10rem 0.1rem -2.5rem;
+  margin: 0rem 10rem 0.1rem 0rem;
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -682,7 +683,7 @@ margin: -2rem 0.1rem -3rem 0rem;
   flex-shrink: 0;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-ltun-SFg .load-pic-AL6 {
-  margin: 0.7rem 0rem 0.9rem 0rem;
+  margin: 0.7rem 0rem 0.9rem -2rem;
   width: 17.4rem;
   height: calc(100% - 1.6rem);
   font-size: 1.6rem;
@@ -767,14 +768,7 @@ margin: -2rem 0.1rem -3rem 0rem;
   flex-shrink: 0;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa {
-  width: 106.7rem;
-  height: 41.2535rem;
-  position: absolute;
-  left: 7.8rem;
-  top: 88.4172rem;
-  display: flex;
-  align-items: center;
-  margin: 0rem 2.8rem 2.7rem 3.8rem;
+  margin: 92rem 2.8rem 2.7rem 3.8rem;
   width: calc(100% - 6.6rem);
   display: flex;
   flex-direction: row;
@@ -782,33 +776,27 @@ margin: -2rem 0.1rem -3rem 0rem;
   align-items: flex-start;
   column-gap: 2rem;
   row-gap: 2rem;
-}
-
-
-  width: calc(100% - 6.6rem);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  column-gap: 2rem;
-  row-gap: 2rem;
+  gap: 20px;
+  justify-content: space-between;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-5-k5L {
-   box-sizing: border-box;
-  padding-bottom: 3.2411rem;
-  width: 54rem;
+  margin-right: 1.2501rem;
+  box-sizing: border-box;
+  padding-bottom: 1.2945rem;
+  width: 33.7528rem;
   height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   background-color: #d9d9d9;
-  border-radius: 3rem;
-  flex-shrink: 0;
+  border-radius: 1.8752rem;
 }
-
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-5-k5L .auto-group-qbje-4ri {
   margin-bottom: 1.2501rem;
   box-sizing: border-box;
   padding: 2.188rem 12.402rem 2.188rem 3.125rem;
-  width: 100%;
-  height: 10.6259rem;
+  width: 33.7528rem;
+   height: 100%;
   display: flex;
   align-items: center;
   background-color: #143194;
@@ -1021,12 +1009,14 @@ margin: -2rem 0.1rem -3rem 0rem;
   box-sizing: border-box;
   padding-bottom: 1.2945rem;
   width: 33.7528rem;
-  height: 100%;
+  height: 45rem;
+  align-items: center;
   display: flex;
   flex-direction: column;
   background-color: #d9d9d9;
   border-radius: 1.8752rem;
-  flex-shrink: 0;
+    justify-content: space-between; /* This will push the footer button to the bottom */
+
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-qfz8-d5p {
   margin-bottom: 1.2501rem;
@@ -1038,7 +1028,19 @@ margin: -2rem 0.1rem -3rem 0rem;
   align-items: center;
   background-color: #143194;
   border-radius: 1.8752rem 1.8752rem 0 0;
+}
+
+.profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-qfz8-d5p .ellipse-2-J9U{
+  margin-right: 3rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #d9d9d9;
+  border-radius: 5rem;
   flex-shrink: 0;
+}
+.profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-qfz8-d5p .ellipse-2-J9U .image_vacation{
+  width: 5rem;
+  height: 5rem;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-qfz8-d5p .ellipse-2-isx {
   margin-right: 1.8752rem;
@@ -1056,8 +1058,8 @@ margin: -2rem 0.1rem -3rem 0rem;
   flex-shrink: 0;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-qfz8-d5p .auto-group-ubcz-3vE .item--Nhc {
-  margin-bottom: 0.5002rem;
-  font-size: 2.0002rem;
+  margin-bottom: 0.9rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.2175;
   color: #ffffff;
@@ -1075,28 +1077,28 @@ margin: -2rem 0.1rem -3rem 0rem;
   flex-shrink: 0;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .item--RZQ {
-  margin: 0rem 5.802rem 0.475rem 0rem;
+  margin: 0rem 19.5rem 1rem -5rem;
   font-size: 1.5001rem;
   font-weight: 500;
   line-height: 1.2175;
   color: #000000;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
-  flex-shrink: 0;
-  margin-left:40px;
+
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-tSz {
-  margin: 0rem 0rem 3.349rem 0.098rem;
   max-width: 27.6rem;
+  min-height: 100px;
+  right: 2rem;
   font-size: 1.5001rem;
   font-weight: 500;
   line-height: 1.2175;
   color: #000000;
   font-family: Montserrat, 'Source Sans Pro';
-  flex-shrink: 0;
-  height:230px;
-  margin-left:40px;
+  align-self: flex-start;
+  margin-left: 20px;
 }
+
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-wvqn-fMG {
   margin: 0rem 1.6rem 0rem 3.125rem;
   width: calc(100% - 4.7249rem);
@@ -1104,13 +1106,14 @@ margin: -2rem 0.1rem -3rem 0rem;
   display: flex;
   align-items: center;
   flex-shrink: 0;
+   margin-top: auto;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-wvqn-fMG .item--ngn {
-  margin: 0.791rem 12.325rem 0.731rem 0rem;
-  width: 12.6436rem;
-  height: calc(100% - 1.522rem);
+margin-left: 2rem;
+  width: 20.228rem;
+  height: 4.0589rem;
   text-align: center;
-  font-size: 0.8734rem;
+  font-size: 1.3973rem;
   font-weight: 600;
   line-height: 1.2175;
   color: #ffffff;
@@ -1120,9 +1123,52 @@ margin: -2rem 0.1rem -3rem 0rem;
   align-items: center;
   justify-content: center;
   background-color: #143194;
-  border-radius: 1.2477rem;
+  border-radius: 1.9962rem;
+}
+.support-zEA .item--Vft .login-AQe a {
+  line-height: 1.2175;
+  color: white !important;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #143194;
+  border-radius: 1.8766rem;
+  text-decoration: none;
+}
+.main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-2-Fwt .auto-group-6wtt-bF4 {
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  padding: 3.5rem 18.1rem 3.5rem 5rem;
+  width: 100%;
+  height: 17rem;
+  display: flex;
+  align-items: center;
+  background-color: #143194;
+  border-radius: 3rem 3rem 0 0;
+}
+.main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-2-Fwt .auto-group-6wtt-bF4 .ellipse-2-J9U {
+  margin-right: 3rem;
+  width: 10rem;
+  height: 10rem;
+  background-color: #d9d9d9;
+  border-radius: 5rem;
   flex-shrink: 0;
 }
+.main-hr-7mx .auto-group-mc1k-MAN .auto-group-sjqv-MrW .group-2-Fwt .auto-group-z4g6-AWz {
+  margin: -4rem 0rem -3rem 47rem;
+  width: 3.059rem;
+  height: 3.059rem;
+  position: relative;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+
+
+
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-r9h8-pSa .group-7-VkJ .auto-group-wvqn-fMG .item--pdU {
   width: 4.059rem;
   height: 4.059rem;
@@ -1142,9 +1188,9 @@ margin: -2rem 0.1rem -3rem 0rem;
 .profile-stud-h26 .auto-group-75wu-kQv .item--qHg {
   width: 10.2rem;
   height: 3rem;
-  position: absolute;
+  position: relative;
   left: 104.2rem;
-  top: 135.0172rem;
+  top: -1.8rem;
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -1154,62 +1200,41 @@ margin: -2rem 0.1rem -3rem 0rem;
 }
 .profile-stud-h26 .item--KCr {
   width: 100%;
-  overflow: hidden;
-  position: relative;
+  position: relative; /* or 'static' if you don't need to relatively position children */
   align-items: center;
   display: flex;
   flex-direction: column;
   background-color: #0a1e64;
   flex-shrink: 0;
+  clear: both;
 }
-
 .profile-stud-h26 .item--KCr .item-2024--odp {
-  width: 25.3rem;
-  height: 1.3rem;
-  position: absolute;
-  left: 47.4268rem;
-  top: 23.3945rem;
-  text-align: center;
-  font-size: 1.0008rem;
-  font-weight: 500;
-  line-height: 1.2175;
-  color: rgba(255, 255, 255, 0.6999999881);
-  font-family: Montserrat, 'Source Sans Pro';
-  white-space: nowrap;
-}
-.profile-stud-h26 .item--KCr .login-p38 a {
-  width: 19.0158rem;
-  height: 3.8157rem;
-  position: absolute;
-  left: 97.9565rem;
-  top: 2.8148rem;
-  text-align: center;
-  font-size: 1.3136rem;
-  font-weight: 600;
-  line-height: 1.2175;
-  color: white !important;
-  font-family: Montserrat, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid 0.0626rem #eaeaea;
   box-sizing: border-box;
-  background-color: #143194;
-  border-radius: 1.8766rem;
-  text-decoration: none;
+  padding: 4.5rem 5rem 4.6rem 5.012rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.profile-stud-h26 .item--KCr .login-p38 {
+ width: 100%;
+  height: 12.9rem;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ {
-  width: 13.6599rem;
-  height: 5.2408rem;
-  position: absolute;
-  left: 3.1349rem;
-  top: 2.8205rem;
+   margin: 0.009rem 19.3rem 0rem 0rem;
+  width: 21.7883rem;
+  height: 8.3784rem;
+  position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .vector-YdL {
-  width: 2.622rem;
-  height: 5.2408rem;
+ width: 4.1916rem;
+  height: 8.3784rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -1217,68 +1242,68 @@ margin: -2rem 0.1rem -3rem 0rem;
   vertical-align: top;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .vector-5dG {
-  width: 1.2583rem;
-  height: 1.2578rem;
+ width: 2.0117rem;
+  height: 2.0108rem;
   position: absolute;
-  left: 1.9928rem;
-  top: 1.9915rem;
+  left: 3.1858rem;
+  top: 3.1838rem;
   object-fit: contain;
   vertical-align: top;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .vector-QfY {
-  width: 1.9574rem;
-  height: 3.9132rem;
+  width: 3.1293rem;
+  height: 6.2559rem;
   position: absolute;
-  left: 2.622rem;
-  top: 0.6638rem;
+  left: 4.1916rem;
+  top: 1.0613rem;
   object-fit: contain;
   vertical-align: top;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .vector-Ymk {
-  width: 2.5866rem;
-  height: 2.5855rem;
+ width: 4.1351rem;
+  height: 4.1333rem;
   position: absolute;
-  left: 1.3283rem;
-  top: 1.3277rem;
+  left: 2.1234rem;
+  top: 2.1225rem;
   object-fit: contain;
   vertical-align: top;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .group-10-HUS {
-  width: 13.6599rem;
-  height: 5.2408rem;
+ width: 21.7883rem;
+  height: 8.3784rem;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 0rem;
+  top: 0rem;
   display: flex;
   align-items: center;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .group-10-HUS .auto-group-nhwc-Dcz {
-  margin-right: 0.9788rem;
-  width: 4.5793rem;
-  height: 5.2408rem;
+    margin-right: 1.5646rem;
+  width: 7.3209rem;
+  height: 8.3784rem;
   position: relative;
   object-fit: contain;
   vertical-align: top;
   flex-shrink: 0;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .group-10-HUS .auto-group-mszc-MUJ {
-  margin: 1.183rem 0rem 1.065rem 0rem;
-  height: calc(100% - 2.2483rem);
+  margin: 1.891rem 0rem 1.802rem 0rem;
+  height: calc(100% - 3.693rem);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .group-10-HUS .auto-group-mszc-MUJ .vector-yVg {
-  margin-bottom: 0.5332rem;
-  width: 7.6265rem;
-  height: 1.4593rem;
+  margin-bottom: 0.8524rem;
+  width: 12.1923rem;
+  height: 2.333rem;
   object-fit: contain;
   vertical-align: top;
   flex-shrink: 0;
 }
 .profile-stud-h26 .item--KCr .misislogoblockdeskfullinvrusrgb-01-1-SaJ .group-10-HUS .auto-group-mszc-MUJ .item--uu8 {
-  margin-left: 0.0018rem;
-  font-size: 0.7506rem;
+   margin-left: 0.0028rem;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.2175;
   color: #ffffff;
@@ -1286,33 +1311,24 @@ margin: -2rem 0.1rem -3rem 0rem;
   white-space: nowrap;
   flex-shrink: 0;
 }
-.profile-stud-h26 .item--KCr .item--CNS a {
-  width: 26.1rem;
-  height: 1.4rem;
-  position: absolute;
-  left: 47.039rem;
-  top: 1.9524rem;
-  text-align: center;
-  font-size: 1.1259rem;
-  font-weight: 500;
-  line-height: 1.2175;
-  text-decoration-line: underline;
-  color: white !important;
-  font-family: Montserrat, 'Source Sans Pro';
-  white-space: nowrap;
+.profile-stud-h26 .item--KCr .item--CNS {
+ margin: 1.1rem 8rem 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 }
-.profile-stud-h26 .item--KCr .item--2cN a {
+.profile-stud-h26 .item--KCr .item--2cN {
   width: 34.5rem;
   height: 1.4rem;
   position: absolute;
   left: 42.8105rem;
-  top: 3.5163rem;
+  top: 19.5163rem;
   text-align: center;
   font-size: 1.1259rem;
   font-weight: 500;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: white !important;
+  color: #ffffff;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
@@ -1409,7 +1425,7 @@ margin: -2rem 0.1rem -3rem 0rem;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
-.profile-stud-h26 .item--KCr .item--4N2 a {
+.profile-stud-h26 .item--KCr .item--4N2 {
   width: 15.8rem;
   height: 1.4rem;
   position: absolute;
@@ -1419,7 +1435,7 @@ margin: -2rem 0.1rem -3rem 0rem;
   font-weight: 500;
   line-height: 1.2175;
   text-decoration-line: underline;
-  color: white !important;
+  color: #ffffff;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
 }
@@ -1504,7 +1520,344 @@ margin: -2rem 0.1rem -3rem 0rem;
   background: linear-gradient(180deg, rgba(217, 217, 217, 0.400000006) -0%, rgba(20, 49, 148, 0.400000006) 100%);
 }
 
-.image_vacation{
-    width: 10rem;
-  height: 10rem;
+
+.main-hr-7mx .item--JH4 {
+ width: 120.1rem;
+  height: 26.9599rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #0a1e64;
+  flex-shrink: 0;
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA {
+  box-sizing: border-box;
+  padding: 4.5rem 5rem 4.6rem 5.012rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya {
+  width: 100%;
+  height: 12.9rem;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc {
+  margin: 0.009rem 19.3rem 0rem 0rem;
+  width: 21.7883rem;
+  height: 8.3784rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .vector-ynW {
+  width: 4.1916rem;
+  height: 8.3784rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: contain;
+  vertical-align: top;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .vector-7dp {
+  width: 2.0117rem;
+  height: 2.0108rem;
+  position: absolute;
+  left: 3.1858rem;
+  top: 3.1838rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .vector-1jC {
+  width: 3.1293rem;
+  height: 6.2559rem;
+  position: absolute;
+  left: 4.1916rem;
+  top: 1.0613rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .vector-kAz {
+  width: 4.1351rem;
+  height: 4.1333rem;
+  position: absolute;
+  left: 2.1234rem;
+  top: 2.1225rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .group-10-Usg {
+  width: 21.7883rem;
+  height: 8.3784rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  display: flex;
+  align-items: center;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .group-10-Usg .auto-group-66zr-CYn {
+  margin-right: 1.5646rem;
+  width: 7.3209rem;
+  height: 8.3784rem;
+  position: relative;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .group-10-Usg .auto-group-3emu-in2 {
+  margin: 1.891rem 0rem 1.802rem 0rem;
+  height: calc(100% - 3.693rem);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .group-10-Usg .auto-group-3emu-in2 .vector-efg {
+  margin-bottom: 0.8524rem;
+  width: 12.1923rem;
+  height: 2.333rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .misislogoblockdeskfullinvrusrgb-01-1-gHc .group-10-Usg .auto-group-3emu-in2 .item--bL2 {
+  margin-left: 0.0028rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-7ejy-5kz {
+  margin: 1.1rem 8rem 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-7ejy-5kz .item--ckv {
+margin: 1rem 2 rem 0rem 2rem;
+  margin-bottom: 3.8rem;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-7ejy-5kz .item--hXU a {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: white !important;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-7ejy-5kz .pochtamailru-abG {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-pa7q-Vy8 {
+  margin: 1.1rem 9rem 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-pa7q-Vy8 .item--EQv {
+  margin-bottom: 3.8rem;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-pa7q-Vy8 .item-7-000-000-00-00-LTx {
+  margin-bottom: 0rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-pa7q-Vy8 .pochtamailru-Smt {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-svka-yG2 {
+  margin: 1.1rem 11.1rem 1rem 0rem;
+  height: calc(100% - 2.1rem);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-svka-yG2 .item--VkA {
+  margin-bottom: 3.8rem;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .auto-group-svka-yG2 .item-3--zwp {
+  max-width: 24.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ydee-9Ya .login-fHG a {
+  width: 30.4rem;
+  height: 6.1rem;
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: white !important;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #143194;
+  border-radius: 3rem;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ndnw-6dU {
+  margin: 0rem 44.4rem 0rem 41.088rem;
+  width: calc(100% - 85.4883rem);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ndnw-6dU .item--CgW {
+  margin: 0rem 34.5rem 0.2rem 0rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ndnw-6dU .vk-1-tZL {
+  margin: 0.775rem 1.7rem 0rem 0rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ndnw-6dU .ok-1-cES {
+  margin: 0.775rem 1.7rem 0rem 0rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: relative;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ndnw-6dU .telegram-1-jK4 {
+  margin: 0.775rem 1.7rem 0rem 0rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ndnw-6dU .youtube-1-SzA {
+  margin: 0.775rem 19rem 0rem 0rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-qzcn-1xA .auto-group-ndnw-6dU .item-900-2000-1000-1800-A9U {
+  max-width: 16.7rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-hhxr-Mjk {
+  box-sizing: border-box;
+  padding: 2.3rem 68.4rem 18rem 68.5rem;
+  width: 100%;
+  height: 4rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.400000006) -0%, rgba(20, 49, 148, 0.400000006) 100%);
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-hhxr-Mjk .item--eir a {
+  margin-bottom: 0.3rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: white !important;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-hhxr-Mjk .item--Uht a {
+  margin-bottom: 4rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  text-decoration-line: underline;
+  color: white !important;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.main-hr-7mx .item--JH4 .auto-group-hhxr-Mjk .item-2024--Jwp {
+margin: 3.775rem 19rem 0rem 0rem;
+  margin-right: 0.1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.2175;
+  color: rgba(255, 255, 255, 0.6999999881);
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.image_vacationn{
+  width: 5rem;
+  height: 5rem;
 }

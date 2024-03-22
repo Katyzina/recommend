@@ -1,0 +1,262 @@
+{% load filter %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
+    <meta charset="UTF-8">
+    <title>Создание проекта</title>
+  <link rel="stylesheet" href="{% static 'global.css' %}">
+    <link rel="stylesheet" href="{% static 'createvacancy.css' %}">
+</head>
+<body>
+  <div class="employer">
+      <header class="function-block">
+        <div class="function-block-child"></div>
+        <img class="loop-node-icon" alt="" src="{% static 'loop-node.png' %}"/>
+        <div class="input-port">
+          <img class="output-port-icon" alt="" src="{% static 'vector-1.png' %}"/>
+          <img class="conditional-node-icon" alt="" src="{% static 'loop-node.png' %}"/>
+          <img class="output-port-icon1" alt="" src="{% static 'vector-1.png' %}"/>
+        </div>
+        <div class="branch-node">
+          <div class="leaf-node">
+            <div class="parent-node">
+              <img class="sibling-nodes-icon" alt="" src="{% static 'vector-4.png' %}"/>
+              <img class="sibling-nodes-icon1" alt="" src="{% static 'vector-4.png' %}"/>
+            </div>
+            <div class="child-nodes">
+              <div class="connection-nodes">
+                <img class="container-nodes-icon" alt="" src="{% static 'vector-6.png' %}"/>
+                <img class="container-nodes-icon1" alt="" src="{% static 'vector-6.png' %}"/>
+              </div>
+            </div>
+          </div>
+          <div class="nested-containers">
+            <div class="root-node">
+              <img class="leaf-container-icon" alt="" src="{% static 'vector-8.png' %}"/>
+              <div class="div">ПОИСК ВАКАНСИЙ</div>
+            </div>
+          </div>
+        </div>
+        <nav class="siblings-sub-tree">
+          <nav class="parent-sub-tree">
+            <div class="div1"><a href="{% url 'home' %}">Главная</a></div>
+            <div class="div2"><a href="{% url 'employerlist' %}">Работодатели</a></div>
+            <div class="div3"><a href="{% url 'support' %}">Поддержка</a></div>
+          </nav>
+        </nav>
+
+      <div class="descendant-nodes">
+          <div class="node-cluster">
+          <div class="node-cluster">
+            <div class="linked-nodes">
+              <div class="relation-nodes">
+                {% if request.user.is_authenticated %}
+                <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
+                {% if request.user.employer %}
+                <div class="div4"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
+                {% endif %}
+                {% else %}
+                <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
+                {% endif %}
+              </div>
+            </div><div class="ellipse-1-tCN"></div>
+          </div>
+        </div>
+    </div>
+    </header>
+    <main class="branch-link-nodes">
+        <section class="loop-link-nodes">
+          <div class="connection-link-nodes">
+            <div class="path-nodes">
+              <div class="flow-nodes">
+                <div class="control-nodes">
+                  <div class="process-nodes">
+                    <div class="depth-first-search-node">
+                        <h1 class="h24">Создание проекта</h1>
+                      </div>
+                      <div class="cluster-analysis-node">
+                        <div class="centroid-calculation-node">
+                          <div class="d-b-s-c-a-n-node">
+                            <h2 class="h13">Название организации:</h2>
+                            <input class="frame-input" placeholder="Введите запрос..." type="text"/>
+                          </div>
+                        </div>
+                        <div class="centroid-calculation-node1">
+                          <h2 class="h25">Институт:</h2>
+                          <div class="search1">
+                            <div class="search-child"></div>
+                            <input class="input" placeholder="Выберите институты из списка..." type="text"/>
+                          </div>
+                        </div>
+                <div class="centroid-calculation-node2">
+                  <div class="parent4">
+                    <h2 class="h26">Город:</h2>
+                    <input class="frame-input" placeholder="Введите запрос..." type="text"/>
+                  </div>
+                </div>
+                <div class="centroid-calculation-node3">
+                  <div class="parent5">
+                    <h2 class="h27">Должность:</h2>
+                    <input class="frame-child4" placeholder="Введите запрос..." type="text"/>
+                  </div>
+                </div>
+                <div class="centroid-calculation-node4">
+                  <h2 class="h28">Занятость:</h2>
+                  <div class="search2">
+                    <div class="search-item"></div>
+                    <input class="input1" placeholder="Выберите институты из списка..." type="text"/>
+                  </div>
+                </div>
+                <div class="centroid-calculation-node5">
+                  <div class="parent6">
+                    <h2 class="h29">Ключевые навыки:</h2>
+                    <input class="frame-child5" placeholder="Введите запрос..." type="text"/>
+                  </div>
+                </div>
+                <div class="graph-coloring-node">
+                  <div class="bipartite-matching-node">
+                    <div class="minimum-cut-node">
+                      <div class="max-flow-algorithm-node">
+                        <h2 class="h210">Адрес:</h2>
+                        <h2 class="h211">Описание:</h2>
+                      </div>
+                      <div class="shortest-path-tree-node">
+                        <h2 class="h212">Изображение:</h2>
+                      </div>
+                    </div>
+                    <div class="data-aggregator1">
+                      <input class="search3" placeholder="Введите запрос..." type="text"/>
+
+                      <div class="output-combiner">
+                        <textarea class="search4" placeholder="Введите запрос..." rows="{5}" cols="{23}">
+                        </textarea>
+                        <div class="branch-node1">
+                          <div class="merge-node">
+                            <div class="constant-node">
+                              <div class="logopng">Logo.png</div>
+                            </div>
+                            <button class="load-pic2">
+                              <div class="load-pic-inner"></div>
+                              <div class="div42">Загрузить</div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="error-handler">
+                <div class="queue-node">
+                  <div class="stack-node">
+                    <div class="timer-node">
+                    </div>
+                    <button class="login2">
+                      <div class="login-inner"></div>
+                      <div class="div44">Опубликовать</div>
+                    </button>
+                  </div>
+                  <div class="image-node">
+                    <a href="{% url 'employerprofile' %}"><p class="div45">Выйти ></p></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div></div>
+
+        </section>
+</main>
+      <div class="div46">
+        <div class="path-node">
+          <div class="polygon-node">
+            <div class="div47">ПОИСК ВАКАНСИЙ</div>
+          </div>
+          <div class="rectangle-node">
+            <div class="circle-node">
+              <div class="line-node">
+                <div class="div48">Техническая поддержка сайта:</div>
+                <div class="textbox-node">
+                  <p class="div49">
+                    <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
+                  </p>
+                  <div class="pochtamailru3">katyzinan@gmail.com</div>
+                </div>
+              </div>
+            </div>
+            <div class="circle-node1">
+              <div class="parent7">
+                <div class="div50">Контакты для связи:</div>
+                <div class="parent8">
+                  <div class="div51">+ 7 499 649-44-80</div>
+                  <div class="pochtamailru4">vopros@misis.ru</div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-node">
+              <div class="align-node">
+                <div class="div52">Адрес:</div>
+                <div class="divider-node">
+                  <div class="div53">ул. Крымский Вал, 3, Москва</div>
+                  <div class="div54">
+                    <p class="p2">пн-пт: 9.00 - 20.00</p>
+                    <p class="p3">сб-вс: 10.00 - 18.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="login3">
+              <div class="login-child1"></div>
+              <div class="div55"><a href="{% url 'support' %}">Поддержка</a></div>
+            </button>
+          </div>
+        </div>
+        <div class="frame-layout-node">
+          <div class="row-layout-node">
+            <div class="column-layout-node">
+              <div class="stack-layout-node">
+                <p class="div56">
+                  <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
+                </p>
+              </div>
+              <p class="div57">
+                <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
+              </p>
+            </div>
+            <div class="margin-node">
+              <div class="div58">
+                @2024 Университет науки и технологий МИСИС
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blur-node">
+          <div class="reflection-node"></div>
+          <img class="data-container-icon" alt="" src="{% static 'loop-node.png' %}"/>
+          <div class="conditional-branch">
+            <img class="input-field-group" alt="" src="{% static 'vector-4.png' %}"/>
+            <img class="input-field-group1" alt="" src="{% static 'vector-10.png' %}"/>
+          </div>
+          <div class="list-item-collection">
+            <img class="text-input-node" alt="" src="{% static 'vector-6.png' %}"/>
+            <img class="text-input-node1" alt="" src="{% static 'vector-13.png' %}"/>
+          </div>
+          <div class="date-picker-node">
+            <img class="radio-button-group" alt="" src="{% static 'vector-1.png' %}"/>
+            <img class="progress-bar-node" alt="" src="{% static 'vector-15.png' %}"/>
+            <img class="radio-button-group1" alt="" src="{% static 'vector-16.png' %}"/>
+          </div>
+          <img class="check-box-nodes" alt="" src="{% static 'vector-17.png' %}"/>
+          <img class="ok-1-icon1" alt="" src="{% static 'ok-1.png' %}"/>
+          <img class="vk-1-icon1" alt="" src="{% static 'vkcom.png' %}"/>
+          <img class="telegram-1-icon1" alt="" src="{% static 'telegramcom.png' %}"/>
+          <img class="youtube-1-icon1" alt="" src="{% static 'youtubecom.png' %}"/>
+        </div>
+        </div>
+    </div>
+      </div>
+  </body>
+</html>

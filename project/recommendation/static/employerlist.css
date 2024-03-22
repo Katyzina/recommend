@@ -269,7 +269,7 @@ body {
   flex-shrink: 0;
 }
 .users-JAi .auto-group-xyre-foC .auto-group-yycs-zKg .auto-group-agce-o2E .search-L2A {
-  margin: 0rem 1rem 0.2rem 0rem;
+  margin: 1rem 1rem -7rem 0rem;
   max-width: 500px;
   position: relative;
   background: #f7f7f7;
@@ -288,13 +288,24 @@ body {
   text-align: left;
 }
 .users-JAi .auto-group-xyre-foC .auto-group-yycs-zKg .auto-group-agce-o2E .filter-9EW {
-  margin-bottom: 0.0238rem;
-  width: 4.8762rem;
-  height: 4.8762rem;
+  margin: 2rem -1rem 1rem 43.563rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    height: 100%;
+    background-color: #d9d9d9;
+    border-radius: 1.5rem;
+}
+.users-JAi .auto-group-xyre-foC .auto-group-yycs-zKg .auto-group-agce-o2E .tunefill0wght400grad0opsz24-1-fin  {
+top: 3rem;
+   width: 2rem;
+  height: 2rem;
+  left: 10rem;
   object-fit: contain;
   vertical-align: top;
-  flex-shrink: 0;
 }
+
+
+
 .users-JAi .auto-group-xyre-foC .group-9-ewx {
   width: 100%;
   row-gap: 2.5006rem;
@@ -1253,6 +1264,7 @@ body {
   border-radius: 1.8755rem;
   flex-shrink: 0;
   text-decoration: none;
+  border: solid 0.0626rem #eaeaea;
 }
 .users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-4ebx-9tS {
   margin: 0rem 52.253rem 0.6rem 24.124rem;
