@@ -10,6 +10,20 @@ class Vacation(models.Model):
     institute = models.ForeignKey("Institute", on_delete=models.SET_NULL, null=True, verbose_name="Институт")
     employer = models.ForeignKey("User", on_delete=models.CASCADE, verbose_name="Работодатель")
 
+    FULL = "FULL"
+    FLEXIBLE = "FLEXIBLE"
+    SHIFT_WORK = "SHIFT_WORK"
+
+    BUSYNESS_CHOICE = (
+        (FULL, "Полная занятось"),
+        (FLEXIBLE, "Гибкий график"),
+        (SHIFT_WORK, "Сменный график")
+    )
+
+    busyness = models.CharField(max_length=10, choices=BUSYNESS_CHOICE, default=FULL, verbose_name="Занятость")
+    skills = models.CharField(max_length=255, verbose_name="Ключевые навыки")
+    address = models.CharField(max_length=150, verbose_name="Адрес")
+
     def __str__(self):
         return f"{self.position} {self.employer.first_name} {self.employer.phone_number}  "
 

@@ -6,3 +6,4 @@ from tables_app.models.student import Student
 from tables_app.models.support import Support
 from tables_app.models.user import User
 from tables_app.models.vacation import Vacation
+from tables_app.models.reply import Reply

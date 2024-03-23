@@ -10,344 +10,296 @@
     <link rel="stylesheet" href="{% static 'about-vacancy.css' %}">
 </head>
 <body>
-    <div class="about-vacancy">
-      <div class="logic-branch">
+<div class="about-vacancy">
+    <div class="logic-branch">
         <header class="input-container">
-          <div class="input-container-child"></div>
-          <img class="condition-checker-icon" alt="" src="{% static 'loop-node.png' %}"/>
+            <div class="input-container-child"></div>
+            <img class="condition-checker-icon" alt="" src="{% static 'loop-node.png' %}"/>
 
-          <div class="output-processor1">
-            <img class="function-call-icon" alt="" src="{% static 'vector-1.png' %}"/>
-          </div>
-          <div class="loop-control">
-            <div class="event-handler">
-              <div class="data-filter">
-                <img class="error-handler-icon" alt="" src="{% static 'vector-4.png' %}"/>
-              </div>
-              <div class="connection-node">
-                <div class="splitter">
-                  <img class="merger-icon" alt="" src="{% static 'vector-6.png' %}"/>
+            <div class="output-processor1">
+                <img class="function-call-icon" alt="" src="{% static 'vector-1.png' %}"/>
+            </div>
+            <div class="loop-control">
+                <div class="event-handler">
+                    <div class="data-filter">
+                        <img class="error-handler-icon" alt="" src="{% static 'vector-4.png' %}"/>
+                    </div>
+                    <div class="connection-node">
+                        <div class="splitter">
+                            <img class="merger-icon" alt="" src="{% static 'vector-6.png' %}"/>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="sequence">
-              <div class="parallel">
-                <img class="stack-icon" alt="" src="{% static 'vector-8.png' %}"/>
+                <div class="sequence">
+                    <div class="parallel">
+                        <img class="stack-icon" alt="" src="{% static 'vector-8.png' %}"/>
 
-                <div class="div59">ПОИСК ВАКАНСИЙ</div>
-              </div>
+                        <div class="div59">ПОИСК ВАКАНСИЙ</div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <nav class="timer">
-            <nav class="counter">
-              <div class="div60">Главная</div>
-              <div class="div61">Пользователи</div>
-              <div class="div62">Поддержка</div>
+            <nav class="timer">
+                <nav class="counter">
+                    <div class="div60">Главная</div>
+                    <div class="div61">Пользователи</div>
+                    <div class="div62">Поддержка</div>
+                </nav>
             </nav>
-          </nav>
-          <div class="comparator">
-            <div class="transformer">
-              <div class="indexer">
-                <div class="validator">
-                  <div class="div63">Фамилия Имя</div>
-                  <div class="div64">Студент</div>
+            <div class="comparator">
+                <div class="transformer">
+                    <div class="indexer">
+                        <div class="validator">
+                            <div class="div63">Фамилия Имя</div>
+                            <div class="div64">Студент</div>
+                        </div>
+                    </div>
+                    <div class="selector"></div>
                 </div>
-              </div>
-              <div class="selector"></div>
             </div>
-          </div>
         </header>
-      </div>
-      <main class="mapper">
+    </div>
+    <main class="mapper">
         <section class="reducer">
-          <div class="accumulator">
-            <div class="filter-bank">
-              <div class="cache">
-                <h1 class="h14">Подробнее о вакансии</h1>
-                <div class="flow-controller">
-                  <div class="div65">&lt; Назад</div>
-                </div>
-              </div>
-              <div class="hub">
-                <div class="port">
-                  <img class="proxy-icon" loading="lazy" alt="" src="{% static 'ellipse-2@2x.png' %}"/>
-
-                  <div class="forwarder">
-                    <div class="monitor">
-                      <div class="alert">
-                        <h2 class="h213">Системный администратор</h2>
-                        <div class="settings">
-                          <div class="properties">
-                            <div class="help">
-                              <div class="div66">Компания:</div>
-                              <div class="div67">Город:</div>
-                            </div>
-                            <div class="help1">
-                              <div class="div68">Сбер</div>
-                              <div class="div69">Москва</div>
-                            </div>
-                          </div>
+            <div class="accumulator">
+                <div class="filter-bank">
+                    <div class="cache">
+                        <h1 class="h14">Подробнее о вакансии</h1>
+                        <div class="flow-controller">
+                            <div class="div65">&lt; Назад</div>
                         </div>
-                      </div>
-                      <div class="interface">
-                        <button class="login4">
-                          <div class="login-child2"></div>
-                          <div class="div70">Откликнуться</div>
+                    </div>
+                    <div class="hub">
+                        <div class="port">
+                            <img class="proxy-icon" loading="lazy" alt="" src="{{ vacation.employer.image.url }}"/>
+
+                            <div class="forwarder">
+                                <div class="monitor">
+                                    <div class="alert">
+                                        <h2 class="h213">{{ vacation.position }}</h2>
+                                        <div class="settings">
+                                            <div class="properties">
+                                                <div class="help">
+                                                    <div style="width:600px" class="div66">Компания: {{ vacation.employer.employer.organization }}</div>
+                                                    <div class="div67">Город: {{ vacation.city.name }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="interface">
+                                        {% if user.is_authenticated %}
+                                        {% if user.student %}
+                                        {% if vacation.reply_exists %}
+                                        <button class="login4">
+                                            <div class="login-child2"></div>
+                                            <div class="div70">Вы уже откликнулись</div>
+                                        </button>
+                                        {% else %}
+                                        <a href="{% url 'reply' vacation.id %}">
+                                            <button class="login4">
+                                                <div class="login-child2"></div>
+                                                <div class="div70">Откликнуться</div>
+                                            </button>
+                                        </a>
+                                        {% endif %}
+                                        {% endif %}
+                                        {% endif %}
+                                        <div class="data-aggregator2">
+                                            {% if user.is_authenticated %}
+                                            {% if user.student %}
+                                            {% if vacation.is_favourite %}
+                                            <a href="{% url 'favourite_delete' vacation.id %}"><img class="auto-group-z4g6-AWz" src="{% static 'like.png' %}"/></a>
+                                            {% else %}
+                                            <a href="{% url 'favourite' vacation.id %}">
+                                                <img class="auto-group-z4g6-AWz" style="height:3.000rem;width:3.000rem;" src="{% static 'auto-group-z4g6.png' %}"/>
+                                            </a>
+                                            {% endif %}
+                                            {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logic-branch1">
+                <div class="input-cluster">
+                    <div class="output-fork">
+                        <div class="output-fork-child"></div>
+                        <div class="rule-set">
+                            <div class="value-comparator">
+                                <div class="div71">Требования:</div>
+                                <div class="control-flow">
+                                    <div class="sequence-flow">
+                                        <div class="div72">
+                                            <p class="p4">Университет: МИСИС</p>
+                                            <p class="p5">Институт: {{vacation.institute.full_name}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="condition-node1">
+                            <div class="loop-node">
+                                <div class="div74">Должностные обязанности:</div>
+                                <div class="grouping-node">
+                                    <div class="ms-windows-1011-container">
+                                        <p class="ms-windows-1011">{{vacation.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="merge-node1">
+                                <div class="split-node">
+                                    <div class="div75">Занятость:</div>
+                                    <div class="div76">{{vacation.get_busyness_display}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-node1">
+                    <div class="priority-queue-node">
+                        <div class="r-tree-node">
+                            <div class="nav-mesh-node">
+                                <h2 class="h214">Адрес:</h2>
+                                <div class="dijkstra-node">
+                                    <div class="div81">
+                                        {{ vacation.address }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="image-2-icon1" loading="lazy" alt="" src="{% static 'image-21@2x.png' %}"/>
+                    </div>
+                </div>
+                <div class="breadth-first-search-node">
+                    <div class="div82">
+                        Напишите телефон, чтобы работодатель смог с вами связаться
+                    </div>
+                    <form action="">
+                        <input class="b-f-s-queue-node" placeholder="+ 7 (922) 485-60-73" type="text"/>
+                        <button class="login6" type="reset">
+                            <div class="login-child4"></div>
+                            <div class="div83">Продолжить</div>
                         </button>
-                        <div class="data-aggregator2">
-                          <img class="icon" loading="lazy" alt="" src="{% static '.png' %}"/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="logic-branch1">
-            <div class="input-cluster">
-              <div class="output-fork">
-                <div class="output-fork-child"></div>
-                <div class="rule-set">
-                  <div class="value-comparator">
-                    <div class="div71">Требования:</div>
-                    <div class="control-flow">
-                      <div class="sequence-flow">
-                        <div class="div72">
-                          <p class="p4">Университет:</p>
-                          <p class="p5">Институт:</p>
-                        </div>
-                        <div class="div73">
-                          <p class="p6">Хогвартс</p>
-                          <p class="p7">Пуффендуй</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="condition-node1">
-                  <div class="loop-node">
-                    <div class="div74">Должностные обязанности:</div>
-                    <div class="grouping-node">
-                      <div class="ms-windows-1011-container">
-                        <p class="ms-windows-1011">
-                          – Администрирование, поддержка и обновление парка
-                          компьютеров (до 20) с ОС MS Windows 10/11 и
-                          прикладного ПО;
-                        </p>
-                        <p class="p8">
-                          – Настройка, администрирование, оптимизация и
-                          поддержка рабочего состояния локальной сети, серверов
-                          и коммуникационного оборудования;
-                        </p>
-                        <p class="p9">
-                          – Модернизация и развитие программно-аппаратного
-                          комплекса организации в целом;
-                        </p>
-                        <p class="p10">
-                          – Взаимодействие с пользователями на рабочих местах,
-                          решение текущих проблем с ПК и ПО;
-                        </p>
-                        <p class="p11">
-                          – Обеспечение информационной безопасности;
-                        </p>
-                        <p class="p12">
-                          – Настройка и мониторинг системы защиты от вирусов,
-                          несанкционированного доступа и спама, ограничение прав
-                          пользователей, борьба с утечкой конфиденциальной
-                          информации;
-                        </p>
-                        <p class="p13">
-                          – Разработка и внедрение политики резервного
-                          копирования информации и повышения отказоустойчивости
-                          системы
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="merge-node1">
-                    <div class="split-node">
-                      <div class="div75">Занятость:</div>
-                      <div class="div76">Полная, частичная</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stack-node1">
-              <div class="priority-queue-node">
-                <div class="binary-tree-node">
-                  <div class="binary-search-tree-node">
-                    <div class="huffman-tree-node">
-                      <div class="a-v-l-tree-node">
-                        <div class="div77">Контактная информация:</div>
-                      </div>
-                      <button class="login5">
-                        <div class="login-child3"></div>
-                        <div class="div78">Показать контакты</div>
-                      </button>
-                    </div>
-                    <div class="trie-node">
-                      <div class="wrapper-rectangle-20">
-                        <img class="wrapper-rectangle-20-child" loading="lazy" alt="" src="{% static 'rectangle-20.png' %}"/>
-                      </div>
-                      <div class="div79">
-                        Посмотреть контакты можно будет после регистрации
-                      </div>
-                      <button class="button3">
-                        <div class="child15"></div>
-                        <div class="div80">Войти</div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="r-tree-node">
-                  <div class="nav-mesh-node">
-                    <h2 class="h214">Адрес:</h2>
-                    <div class="dijkstra-node">
-                      <div class="div81">
-                        Москва, Библиотека им. Ленина, Косой переулок 14, к3
-                      </div>
-                      <div class="floyd-warshall-node"></div>
-                    </div>
-                  </div>
-                </div>
-                <img class="image-2-icon1" loading="lazy" alt="" src="./public/image-21@2x.png"/>
-              </div>
-            </div>
-            <div class="breadth-first-search-node">
-              <div class="div82">
-                Напишите телефон, чтобы работодатель смог с вами связаться
-              </div>
-              <input class="b-f-s-queue-node" placeholder="+ 7 (922) 485-60-73" type="text"/>
-
-              <button class="login6">
-                <div class="login-child4"></div>
-                <div class="div83">Продолжить</div>
-              </button>
-              <div class="div84">
-                Нажимая «Продолжить», вы подтверждаете, что полностью принимаете
-                условия
-                <span class="span"
-                  >Соглашения об оказании услуг по содействию в трудоустройстве
+                    </form>
+                    <div class="div84">
+                        Нажимая «Продолжить», вы подтверждаете, что полностью принимаете
+                        условия
+                        <span class="span"
+                        >Соглашения об оказании услуг по содействию в трудоустройстве
                   (оферта)</span
-                > и ознакомились с
-                <span class="span1">политикой конфиденциальности</span>
-              </div>
+                        > и ознакомились с
+                        <span class="span1">политикой конфиденциальности</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="weighted-edge-node">
-            <div class="div85">
-              <p class="p14">
-                Вакансия опубликована 30 февраля 2051 в Саратове
-              </p>
-            </div>
-          </div>
         </section>
-      </main>
-      <div class="div86">
+    </main>
+    <div class="div86">
         <footer class="rectangle-footer"></footer>
         <img class="data-aggregator-icon" alt="" src="{% static 'loop-node.png' %}"/>
 
         <div class="input-processor">
-          <img class="output-generator-icon" alt="" src="{% static 'vector-1.png' %}"/>
+            <img class="output-generator-icon" alt="" src="{% static 'vector-1.png' %}"/>
 
-          <img class="condition-checker-icon1" alt="" src="{% static 'vector-15.png' %}"/>
+            <img class="condition-checker-icon1" alt="" src="{% static 'vector-15.png' %}"/>
 
-          <img class="output-generator-icon1" alt="" src="{% static 'vector-16.png' %}"/>
+            <img class="output-generator-icon1" alt="" src="{% static 'vector-16.png' %}"/>
         </div>
         <div class="branch-splitter">
-          <div class="loop-controller">
-            <div class="variable-holder">
-              <div class="function-node1">
-                <img class="constant-node-icon" alt="" src="{% static 'vector-4.png' %}"/>
+            <div class="loop-controller">
+                <div class="variable-holder">
+                    <div class="function-node1">
+                        <img class="constant-node-icon" alt="" src="{% static 'vector-4.png' %}"/>
 
-                <img class="constant-node-icon1" alt="" src="{% static 'vector-10.png' %}"/>
-              </div>
-              <div class="connection-node1">
-                <div class="container-node">
-                  <img class="text-node-icon" alt="" src="{% static 'vector-6.png' %}"/>
+                        <img class="constant-node-icon1" alt="" src="{% static 'vector-10.png' %}"/>
+                    </div>
+                    <div class="connection-node1">
+                        <div class="container-node">
+                            <img class="text-node-icon" alt="" src="{% static 'vector-6.png' %}"/>
 
-                  <img class="text-node-icon1" alt="" src="{% static 'vector-13.png' %}"/>
+                            <img class="text-node-icon1" alt="" src="{% static 'vector-13.png' %}"/>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="shape-node">
-              <div class="frame-node">
-                <img class="image-node-icon" alt=""src="{% static 'vector-17.png' %}"/>
+                <div class="shape-node">
+                    <div class="frame-node">
+                        <img class="image-node-icon" alt="" src="{% static 'vector-17.png' %}"/>
 
-                <div class="div87">ПОИСК ВАКАНСИЙ</div>
-              </div>
-            </div>
-          </div>
-          <div class="path-node1">
-            <div class="group-node1">
-              <div class="div88">Техническая поддержка сайта:</div>
-              <div class="align-node1">
-                <div class="div89">Информация о разработке</div>
-                <div class="pochtamailru5">pochta@mail.ru</div>
-              </div>
-            </div>
-          </div>
-          <div class="padding-node">
-            <div class="fill-node">
-              <div class="stroke-node">
-                <div class="div90">Контакты для связи:</div>
-              </div>
-              <div class="blend-mode-node">
-                <div class="opacity-node">
-                  <div class="anchoring-node">+ 7 000 000-00-00</div>
+                        <div class="div87">ПОИСК ВАКАНСИЙ</div>
+                    </div>
                 </div>
-                <div class="opacity-node1">
-                  <div class="pochtamailru6">pochta@mail.ru</div>
+            </div>
+            <div class="path-node1">
+                <div class="group-node1">
+                    <div class="div88">Техническая поддержка сайта:</div>
+                    <div class="align-node1">
+                        <div class="div89">Информация о разработке</div>
+                        <div class="pochtamailru5">pochta@mail.ru</div>
+                    </div>
                 </div>
-                <div class="proportions-node">
-                  <div class="rotation-node">
-                    <img class="vk-1-icon2" alt="" src="{% static 'vkcom.png' %}"/>
-                  </div>
-                  <img class="ok-1-icon2" loading="lazy" alt="" src="{% static 'ok-1.png' %}"/>
+            </div>
+            <div class="padding-node">
+                <div class="fill-node">
+                    <div class="stroke-node">
+                        <div class="div90">Контакты для связи:</div>
+                    </div>
+                    <div class="blend-mode-node">
+                        <div class="opacity-node">
+                            <div class="anchoring-node">+ 7 000 000-00-00</div>
+                        </div>
+                        <div class="opacity-node1">
+                            <div class="pochtamailru6">pochta@mail.ru</div>
+                        </div>
+                        <div class="proportions-node">
+                            <div class="rotation-node">
+                                <img class="vk-1-icon2" alt="" src="{% static 'vkcom.png' %}"/>
+                            </div>
+                            <img class="ok-1-icon2" loading="lazy" alt="" src="{% static 'ok-1.png' %}"/>
 
-                  <img class="telegram-1-icon2" loading="lazy" alt="" src="{% static 'telegramcom.png' %}"/>
+                            <img class="telegram-1-icon2" loading="lazy" alt="" src="{% static 'telegramcom.png' %}"/>
 
-                  <img class="youtube-1-icon2" loading="lazy" alt="" src="{% static 'youtubecom.png' %}"/>
+                            <img class="youtube-1-icon2" loading="lazy" alt="" src="{% static 'youtubecom.png' %}"/>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="lock-aspect-ratio-node">
-            <div class="parent-constraint-node">
-              <div class="div91">Адрес:</div>
-              <div class="absolute-positioning-node">
-                <div class="div92">ул. Крымский Вал, 3, Москва</div>
-                <div class="div93">
-                  <p class="p15">пн-пт: 9.00 - 20.00</p>
-                  <p class="p16">сб-вс: 10.00 - 18.00</p>
+            <div class="lock-aspect-ratio-node">
+                <div class="parent-constraint-node">
+                    <div class="div91">Адрес:</div>
+                    <div class="absolute-positioning-node">
+                        <div class="div92">ул. Крымский Вал, 3, Москва</div>
+                        <div class="div93">
+                            <p class="p15">пн-пт: 9.00 - 20.00</p>
+                            <p class="p16">сб-вс: 10.00 - 18.00</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <button class="login7">
-            <div class="login-child5"></div>
-            <div class="div94">Поддержка</div>
-          </button>
+            <button class="login7">
+                <div class="login-child5"></div>
+                <div class="div94">Поддержка</div>
+            </button>
         </div>
         <div class="text-baseline-node">
-          <div class="text-leading-node">
-            <div class="text-paragraph-node">
-              <div class="text-character-node">
-                <div class="div95">Сведения об образовательной организации</div>
-              </div>
-              <div class="div96">
-                Положение об обработке и защите персональных данных
-              </div>
+            <div class="text-leading-node">
+                <div class="text-paragraph-node">
+                    <div class="text-character-node">
+                        <div class="div95">Сведения об образовательной организации</div>
+                    </div>
+                    <div class="div96">
+                        Положение об обработке и защите персональных данных
+                    </div>
+                </div>
+                <div class="text-background-node">
+                    <div class="div97">
+                        @2024 Университет науки и технологий МИСИС
+                    </div>
+                </div>
             </div>
-            <div class="text-background-node">
-              <div class="div97">
-                @2024 Университет науки и технологий МИСИС
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
 </html>

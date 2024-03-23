@@ -45,7 +45,7 @@
     <div class="auto-group-yycs-zKg">
       <p class="item--hUz">Список работодателей</p>
       <div class="auto-group-agce-o2E">
-         <form action="{% url 'search_vacation' %}">
+         <form action="{% url 'search_employer' %}">
                 <div class="search-L2A">
                     <input type="text" placeholder="Введите запрос..." name="search">
                 </div>
@@ -59,140 +59,15 @@
     </div>
     <div class="group-9-ewx">
       <div class="frame-14-PuY">
+        {% for employer in employers %}
         <div class="group-2-8ML">
           <div class="ellipse-2-f6N">
           </div>
           <div class="auto-group-3vvj-az2">
-            <p class="item--iqL">Должность</p>
-            <p class="item--EYn">ООО, г. Москва</p>
+            <a href=""><p class="item--iqL">{{employer.organization}}</p></a>
           </div>
         </div>
-        <div class="group-3-Uxv">
-          <div class="ellipse-2-1hx">
-          </div>
-          <div class="auto-group-hq1g-YSz">
-            <p class="item--H9g">Должность</p>
-            <p class="item--bgA">ООО, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-4-euL">
-          <div class="ellipse-2-nVk">
-          </div>
-          <div class="auto-group-wjcr-ieJ">
-            <p class="item--enr">Должность</p>
-            <p class="item--AmC">ООО, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-5-Rx2">
-          <div class="ellipse-2-Aei">
-          </div>
-          <div class="auto-group-rqa6-huY">
-            <p class="item--eZt">Должность</p>
-            <p class="item--aCe">ООО, г. Москва</p>
-          </div>
-        </div>
-      </div>
-      <div class="frame-15-yVg">
-        <div class="group-2-HmG">
-          <div class="ellipse-2-2Tx">
-          </div>
-          <div class="auto-group-jutx-N22">
-            <p class="item--rxn">Должность</p>
-            <p class="item--z3Q">ООО, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-3-RuQ">
-          <div class="ellipse-2-YUE">
-          </div>
-          <div class="auto-group-7mca-SZc">
-            <p class="item--m66">Фамилия И.</p>
-            <p class="item--sup">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-4-LYW">
-          <div class="ellipse-2-3hp">
-          </div>
-          <div class="auto-group-crdc-wYJ">
-            <p class="item--eSi">Фамилия И.</p>
-            <p class="item--ZJn">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-5-CMk">
-          <div class="ellipse-2-KSN">
-          </div>
-          <div class="auto-group-wmrg-Smt">
-            <p class="item--yG2">Фамилия И.</p>
-            <p class="item--gw8">Студент, г. Москва</p>
-          </div>
-        </div>
-      </div>
-      <div class="frame-16-YCe">
-        <div class="group-2-5Ca">
-          <div class="ellipse-2-Pyx">
-          </div>
-          <div class="auto-group-7nra-XqG">
-            <p class="item--Typ">Фамилия И.</p>
-            <p class="item--P6n">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-3-qjU">
-          <div class="ellipse-2-m7L">
-          </div>
-          <div class="auto-group-661u-69c">
-            <p class="item--opi">Фамилия И.</p>
-            <p class="item--VBk">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-4-gn2">
-          <div class="ellipse-2-1JW">
-          </div>
-          <div class="auto-group-uyb4-wT4">
-            <p class="item--TwC">Фамилия И.</p>
-            <p class="item--b1p">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-5-eVt">
-          <div class="ellipse-2-Zsk">
-          </div>
-          <div class="auto-group-1v3c-hj4">
-            <p class="item--Rf4">Фамилия И.</p>
-            <p class="item--Vup">Студент, г. Москва</p>
-          </div>
-        </div>
-      </div>
-      <div class="frame-17-xHc">
-        <div class="group-2-VHY">
-          <div class="ellipse-2-d8r">
-          </div>
-          <div class="auto-group-2wzj-xB8">
-            <p class="item--5We">Фамилия И.</p>
-            <p class="item--CrA">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-3-5QA">
-          <div class="ellipse-2-1Hp">
-          </div>
-          <div class="auto-group-cotc-whG">
-            <p class="item--UhC">Фамилия И.</p>
-            <p class="item--oUa">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-4-5S6">
-          <div class="ellipse-2-p8n">
-          </div>
-          <div class="auto-group-wv5y-k2S">
-            <p class="item--BtS">Фамилия И.</p>
-            <p class="item--WQv">Студент, г. Москва</p>
-          </div>
-        </div>
-        <div class="group-5-ZPC">
-          <div class="ellipse-2-tgN">
-          </div>
-          <div class="auto-group-umhx-q5p">
-            <p class="item--kyU">Фамилия И.</p>
-            <p class="item--tJz">Студент, г. Москва</p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

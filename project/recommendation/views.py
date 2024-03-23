@@ -4,7 +4,7 @@ from django.db.models import Value, F, Q, Subquery, Case, When, BooleanField, Ex
 from django.shortcuts import render, redirect
 from django.views import View
 
-from tables_app.models import Institute, Vacation, Student, User, Employer, Favourite
+from tables_app.models import Institute, Vacation, Student, User, Employer, Favourite, Reply
 
 
 class HomePageView(View):
@@ -115,7 +115,12 @@ class SupportCreateView(View):
 class EmployerListView(View):
 
     def get(self, request):
-        return render(request, 'employerlist.html')
+        employers = Employer.objects.all()
+        if request.GET.get('search'):
+            employers = employers.filter(organization__icontains=request.GET['search'])
+        return render(request, 'employerlist.html', context={
+            'employers':employers
+        })
 
 
 class StudentProfileView(View):
@@ -138,8 +143,25 @@ class EmployerProfileView(View):
 
 
 class AboutVacancyView(View):
-    def get(self, request):
-        return render(request, 'aboutvacancy.html')
+    def get(self, request, vacation_id):
+        vacation = Vacation.objects.annotate(
+            is_favourite=Exists(
+                Favourite.objects.filter(
+                    vacation_id=OuterRef('id'),
+                    user=request.user if request.user.is_authenticated else None
+                )
+            ),
+            reply_exists=Exists(
+                Reply.objects.filter(
+                    vacation_id=OuterRef('id'),
+                    student=request.user if request.user.is_authenticated else None
+                )
+            )
+        ).get(id=vacation_id)
+        return render(request, 'aboutvacancy.html', context={
+            "vacation": vacation
+        })
+
 
 class CreateVacancyView(View):
     def get(self, request):
@@ -166,3 +188,19 @@ class VacationFavouriteDeleteView(View):
             user=request.user
         ).delete()
         return redirect('home')
+
+
+class VacationReplyView(View):
+
+    def get(self, request, vacation_id):
+        vacation = Vacation.objects.get(id=vacation_id)
+        reply = Reply.objects.filter(
+            student=request.user,
+            vacation=vacation
+        )
+        if not reply.exists():
+            Reply.objects.create(
+                student=request.user,
+                vacation=vacation
+            )
+        return redirect('aboutvacancy', vacation.id)

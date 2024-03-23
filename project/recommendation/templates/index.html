@@ -94,7 +94,7 @@
                 <p class="lrem-ipsum-dopyprade-hck-heterokrati-psykomani-kysa-duck-de-ogen-en-gnera-magigt-misade-primasofi-dina-gsam-tes-ikar-finade-hnar-n-geojukrorar-myns-i-kross-ifall-kase-senade-nise-vide-onar-medellogi-nyskade-laligen-onyda-dolyfod-monofongar-begt-rade-i-epimikal-och-zombiebrand-E54">
                     {{vacation.description | first_letters }}
                 </p>
-                <div class="item--mz6">Подробнее</div>
+                <a href="{% url 'aboutvacancy' vacation.id %}"><div class="item--mz6">Подробнее</div></a>
                 {% if user.is_authenticated %}
                     {% if user.student %}
                         {% if vacation.is_favourite %}
