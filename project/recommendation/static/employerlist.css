@@ -14,7 +14,7 @@ input {
 }
 body {
   width: 118.8rem;
-  height: 7rem;
+
 }.users-JAi {
   width: 100%;
   overflow: hidden;
@@ -316,11 +316,13 @@ top: 3rem;
 }
 .users-JAi .auto-group-xyre-foC .group-9-ewx .frame-14-PuY {
   width: 100%;
-  height: 8.7522rem;
-  display: flex;
+  height: 100%;
   column-gap: 1.8755rem;
   align-items: center;
   flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 .users-JAi .auto-group-xyre-foC .group-9-ewx .frame-14-PuY .group-2-8ML {
   box-sizing: border-box;
@@ -353,7 +355,7 @@ top: 3rem;
   margin-bottom: 0.3506rem;
   font-size: 1.5004rem;
   font-weight: 700;
-  line-height: 1.2175;
+  line-height: 2.2175;
   color: #0a1e64;
   font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
@@ -1083,15 +1085,13 @@ top: 3rem;
   flex-shrink: 0;
 }
 .users-JAi .item--vmU {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  background-color: #0a1e64;
-  flex-shrink: 0;
-}
+  width: 120.1rem;
+
+    position: relative;
+    overflow: hidden;
+    background-color: #0a1e64;
+
+ }
 .users-JAi .item--vmU .auto-group-dwqg-fDG {
   box-sizing: border-box;
   padding: 2.813rem 3.126rem 3.259rem 3.133rem;
@@ -1222,7 +1222,7 @@ top: 3rem;
   flex-shrink: 0;
 }
 .users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-fhs4-nYn .auto-group-q8sa-7oL {
-  margin: 0.688rem 26.948rem 0rem 0rem;
+  margin: 0.688rem 26.948rem 0rem 10rem;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -1285,6 +1285,7 @@ top: 3rem;
   flex-shrink: 0;
 }
 .users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-4ebx-9tS .pochtamailru-oCJ {
+  margin: 0rem 25.948rem 0rem 10rem;
   font-size: 1.1253rem;
   font-weight: 500;
   line-height: 1.2175;
@@ -1295,7 +1296,7 @@ top: 3rem;
   flex-shrink: 0;
 }
 .users-JAi .item--vmU .auto-group-dwqg-fDG .auto-group-1m1g-LT8 {
-  margin: 0rem 52.263rem 0rem 24.124rem;
+  margin: 0rem 36.263rem 0rem 24.124rem;
   width: calc(100% - 76.3871rem);
   display: flex;
   align-items: flex-end;
@@ -1359,7 +1360,7 @@ top: 3rem;
   width: 25.3rem;
   height: 1.3rem;
   position: absolute;
-  left: 47.3995rem;
+  left: 56.3995rem;
   top: 24.8768rem;
   text-align: center;
   font-size: 1.0003rem;

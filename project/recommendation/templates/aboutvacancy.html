@@ -5,7 +5,7 @@
 <head>
     <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
-    <title>Поиск вакансий</title>
+    <title>Подробнее</title>
     <link rel="stylesheet" href="{% static 'global.css' %}">
     <link rel="stylesheet" href="{% static 'about-vacancy.css' %}">
 </head>
@@ -40,20 +40,29 @@
             </div>
             <nav class="timer">
                 <nav class="counter">
-                    <div class="div60">Главная</div>
-                    <div class="div61">Пользователи</div>
-                    <div class="div62">Поддержка</div>
+                    <div class="div60"><a href="{% url 'home' %}">Главная</a></div>
+                    <div class="div61"><a href="{% url 'employerlist' %}">Работодатели</a></div>
+                    <div class="div62"><a href="{% url 'support' %}">Поддержка</a></div>
                 </nav>
             </nav>
             <div class="comparator">
                 <div class="transformer">
                     <div class="indexer">
                         <div class="validator">
-                            <div class="div63">Фамилия Имя</div>
-                            <div class="div64">Студент</div>
+                            {% if request.user.is_authenticated %}
+                            <p class="div63"> {{request.user.first_name}} {{request.user.last_name}}</p>
+                            {% if request.user.employer %}
+                            <div class="div6z"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
+                            {% else %}
+                            <div class="div64"><a href="{% url 'studprofile' %}">Студент</a></div>
+                            {% endif %}
+                            {% else %}
+                        <a href="{% url 'login' %}"><p class="div6zz">Войти</p></a>
+                            {% endif %}
+                        </div>
+                        <div class="selector">
                         </div>
                     </div>
-                    <div class="selector"></div>
                 </div>
             </div>
         </header>
@@ -65,7 +74,7 @@
                     <div class="cache">
                         <h1 class="h14">Подробнее о вакансии</h1>
                         <div class="flow-controller">
-                            <div class="div65">&lt; Назад</div>
+                            <a href="/" style="text-decoration: none; color: black !important;font-weight: 500;position: relative;"><p class="div65">&lt; Назад</p></a>
                         </div>
                     </div>
                     <div class="hub">
@@ -134,7 +143,8 @@
                                     <div class="sequence-flow">
                                         <div class="div72">
                                             <p class="p4">Университет: МИСИС</p>
-                                            <p class="p5">Институт: {{vacation.institute.full_name}}</p>
+                                            <p class="p5">Институт: </p>
+                                            <p class="pz"> {{vacation.institute.full_name}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -236,8 +246,11 @@
                 <div class="group-node1">
                     <div class="div88">Техническая поддержка сайта:</div>
                     <div class="align-node1">
-                        <div class="div89">Информация о разработке</div>
-                        <div class="pochtamailru5">pochta@mail.ru</div>
+                        <p class="div89">
+                            <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
+                        </p>
+
+                        <div class="pochtamailru5">katyzinan@gmail.com</div>
                     </div>
                 </div>
             </div>
@@ -248,10 +261,10 @@
                     </div>
                     <div class="blend-mode-node">
                         <div class="opacity-node">
-                            <div class="anchoring-node">+ 7 000 000-00-00</div>
+                            <div class="anchoring-node">+ 7 499 649-44-80</div>
                         </div>
                         <div class="opacity-node1">
-                            <div class="pochtamailru6">pochta@mail.ru</div>
+                            <div class="pochtamailru6">vopros@misis.ru</div>
                         </div>
                         <div class="proportions-node">
                             <div class="rotation-node">
@@ -280,18 +293,20 @@
             </div>
             <button class="login7">
                 <div class="login-child5"></div>
-                <div class="div94">Поддержка</div>
+                <div class="div94"><a href="{% url 'support' %}">Поддержка</a></div>
             </button>
         </div>
         <div class="text-baseline-node">
             <div class="text-leading-node">
                 <div class="text-paragraph-node">
                     <div class="text-character-node">
-                        <div class="div95">Сведения об образовательной организации</div>
+                        <p class="div95">
+                            <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
+                        </p>
                     </div>
-                    <div class="div96">
-                        Положение об обработке и защите персональных данных
-                    </div>
+                    <p class="div96">
+                        <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
+                    </p>
                 </div>
                 <div class="text-background-node">
                     <div class="div97">

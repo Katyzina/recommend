@@ -119,7 +119,7 @@
             {{ vacation.description | first_letters }}
         </p>
         <div class="auto-group-wvqn-fMG">
-            <div class="item--ngn">Подробнее</div>
+             <a href="{% url 'aboutvacancy' vacation.id %}"><div class="item--ngn">Подробнее</div></a>
             <a href="{% url 'favourite_delete' vacation.id %}">
                <a href="{% url 'favourite_delete' vacation.id %}"><img class="auto-group-z4g6-AWz" src="{% static 'like.png' %}"/></a>
             </a>

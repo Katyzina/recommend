@@ -6,134 +6,138 @@
     <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Личный кабинет работодателя</title>
-  <link rel="stylesheet" href="{% static 'global.css' %}">
-    <link rel="stylesheet" href="{% static 'employerprofile.css' %}">
+  <link rel="stylesheet" href="{% static 'gl.css' %}">
+    <link rel="stylesheet" href="{% static 'hh.css' %}">
+
 </head>
 <body>
-    <div class="employer">
-      <header class="function-block">
-        <div class="function-block-child"></div>
-        <img class="loop-node-icon" alt="" src="{% static 'loop-node.png' %}"/>
-        <div class="input-port">
-          <img class="output-port-icon" alt="" src="{% static 'vector-1.png' %}"/>
-          <img class="conditional-node-icon" alt="" src="{% static 'loop-node.png' %}"/>
-          <img class="output-port-icon1" alt="" src="{% static 'vector-1.png' %}"/>
-        </div>
-        <div class="branch-node">
-          <div class="leaf-node">
-            <div class="parent-node">
-              <img class="sibling-nodes-icon" alt="" src="{% static 'vector-4.png' %}"/>
-              <img class="sibling-nodes-icon1" alt="" src="{% static 'vector-4.png' %}"/>
+    <div class="profile-stud">
+      <div class="condition-checker">
+        <header class="output-splitter">
+          <div class="output-splitter-child"></div>
+          <img class="value-processor-icon" alt="" src="{% static 'loop-node.png' %}"/>
+          <div class="vector-parent">
+            <img class="vector-icon" alt="" src="{% static 'vector-1.png' %}"/>
+            <img class="vector-icon1" alt="" src="{% static 'loop-node.png' %}"/>
+            <img class="vector-icon2" alt="" src="{% static 'vector-1.png' %}"/>
+          </div>
+          <div class="frame-parent">
+            <div class="frame-group">
+              <div class="vector-group">
+                <img class="vector-icon3" alt="" src="{% static 'vector-4.png' %}"/>
+                <img class="vector-icon4" alt="" src="{% static 'vector-4.png' %}"/>
+              </div>
+              <div class="frame-wrapper">
+                <div class="vector-container">
+                  <img class="vector-icon5" alt="" src="{% static 'vector-6.png' %}"/>
+                  <img class="vector-icon6" alt="" src="{% static 'vector-6.png' %}"/>
+                </div>
+              </div>
             </div>
-            <div class="child-nodes">
-              <div class="connection-nodes">
-                <img class="container-nodes-icon" alt="" src="{% static 'vector-6.png' %}"/>
-                <img class="container-nodes-icon1" alt="" src="{% static 'vector-6.png' %}"/>
+            <div class="frame-container">
+              <div class="frame-div">
+                <img class="vector-icon7" alt="" src="{% static 'vector-8.png' %}"/>
 
+                <div class="div">ПОИСК ВАКАНСИЙ</div>
               </div>
             </div>
           </div>
-          <div class="nested-containers">
-            <div class="root-node">
-              <img class="leaf-container-icon" alt="" src="{% static 'vector-8.png' %}"/>
-              <div class="div">ПОИСК ВАКАНСИЙ</div>
-            </div>
-          </div>
-        </div>
-        <nav class="siblings-sub-tree">
-          <nav class="parent-sub-tree">
-            <div class="div1"><a href="{% url 'home' %}">Главная</a></div>
-            <div class="div2"><a href="{% url 'employerlist' %}">Работодатели</a></div>
-            <div class="div3"><a href="{% url 'support' %}">Поддержка</a></div>
+          <nav class="output-splitter-inner">
+            <nav class="parent">
+              <div class="div1"><a href="{% url 'home' %}">Главная</a></div>
+              <div class="div2"><a href="{% url 'employerlist' %}">Работодатели</a></div>
+              <div class="div3"><a href="{% url 'support' %}">Поддержка</a></div>
+            </nav>
           </nav>
-        </nav>
-
-        <div class="descendant-nodes">
-          <div class="node-cluster">
-            <div class="linked-nodes">
-              <div class="relation-nodes">
-                {% if request.user.is_authenticated %}
-                <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
-                {% if request.user.employer %}
-                <div class="div4"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
-                {% endif %}
-                {% else %}
-                <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
-                {% endif %}
+          <div class="output-splitter-inner1">
+            <div class="frame-parent1">
+              <div class="frame-wrapper1">
+                <div class="group">
+                  {% if request.user.is_authenticated %}
+                  <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
+                  {% if request.user.employer %}
+                  <div class="div4"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
+                  {% endif %}
+                  {% else %}
+                  <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
+                  {% endif %}
+                </div>
               </div>
-            </div><div class="ellipse-1-tCN"></div>
+              </div><div class="frame-child"></div>
+            </div>
           </div>
-        </div>
-      </header>
-      <main class="branch-link-nodes">
-        <section class="loop-link-nodes">
-          <img class="loop-link-nodes-child" loading="lazy" alt="" src="{% static 'line-7.png' %}"/>
-          <div class="connection-link-nodes">
-            <div class="path-nodes">
-              <div class="flow-nodes">
-                <div class="control-nodes">
-                  <div class="process-nodes">
-                    <div class="data-processing-nodes">
-                      <img class="logic-processing-nodes" loading="lazy" alt="" src="{% static 'ellipse-2@2x.png' %}"/>
-                    </div>
-                    <div class="visualization-nodes">
-                      <button class="load-pic">
-                        <div class="load-pic-child"></div>
-                        <div class="div19">Загрузить фото</div>
-                      </button>
-                    </div>
-                    <div class="integration-nodes">
-                      <h2 class="h2">Организация:</h2>
-                      <div class="splitting-nodes">
-                        <h2 class="h21">Должность:</h2>
-                      </div>
+        </header>
+      </div>
+      <img class="profile-stud-child" loading="lazy" alt="" src="{% static 'line-7.png' %}"/>
+      </div>
+      <main class="profile-stud-inner">
+        <section class="frame-section">
+          <div class="frame-parent2">
+            <div class="frame-wrapper2">
+              <div class="frame-parent3">
+                <div class="frame-parent4">
+                  <div class="ellipse-wrapper">
+                    <img class="frame-inner" loading="lazy" alt="" src="{% static 'ellipse-2@2x.png' %}"/>
+                  </div>
+                  <div class="load-pic-wrapper">
+                    <button class="load-pic">
+                      <div class="load-pic-child"></div>
+                      <div class="div19">Загрузить фото</div>
+                    </button>
+                  </div>
+                  <div class="container">
+                    <h2 class="h2">Организация:</h2>
+                    <div class="wrapper">
+                      <h2 class="h21">Должность:</h2>
                     </div>
                   </div>
-                  <div class="merger-nodes">
-                    <div class="transformation-nodes">
-                      <div class="modification-nodes">
-                        <h1 class="h1">Фамилия Имя Отчество</h1>
-                        <div class="sorting-nodes">
-                          <div class="search-nodes">
-                            <div class="data-aggregator-wrapper">
-                              <div class="data-aggregator">
-                                <h1 class="h11">Работодатель</h1>
-                                <h1 class="pochtamailru2">pochta@mail.ru</h1>
-                              </div>
+                </div>
+                <div class="frame-parent5">
+                  <div class="frame-wrapper3">
+                    <div class="parent1">
+                      <h1 class="h1">Фамилия Имя Отчество</h1>
+                      <div class="frame-wrapper4">
+                        <div class="frame-parent6">
+                          <div class="data-processor-wrapper">
+                            <div class="data-processor">
+                              <h1 class="h11">Работодатель</h1>
+                              <h1 class="pochtamailru2">pochta@mail.ru</h1>
                             </div>
-                            <div class="output-processor">
-                              <h1 class="h12">г. Москва</h1>
-                              <div class="condition-node">+7(777)777-77-77</div>
-                            </div>
+                          </div>
+                          <div class="output-aggregator">
+                            <h1 class="h12">г. Москва</h1>
+                            <div class="error-handler">+7(777)777-77-77</div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="iteration-node">
-                      <h2 class="h22">Сбер</h2>
-                      <div class="function-node">
-                        <h2 class="hr">HR</h2>
-                      </div>
+                  </div>
+                  <div class="log-manager">
+                    <h2 class="h22">Сбер</h2>
+                    <div class="data-comparator">
+                      <h2 class="hr">HR</h2>
                     </div>
                   </div>
                 </div>
               </div>
-              <button class="load-pic1">
-                <div class="load-pic-item"></div>
-                <div class="div20">Редактировать</div>
-              </button>
             </div>
-            <h2 class="h23">Проекты:</h2>
-            <div class="while-node">
+            <button class="load-pic1">
+              <div class="load-pic-item"></div>
+              <div class="div20">Сохранить</div>
+            </button>
+          </div>
+          <h2 class="h23">Проекты:</h2>
+          <div class="frame-parent7">
+            <div class="frame-parent8">
               <div class="rectangle-group">
-                <div class="frame-item"></div>
-                <div class="switch-node">
-                  <div class="switch-node-child"></div>
-                  <div class="case-node">
-                    <div class="default-node">
-                      <div class="group-node"></div>
-                      <div class="subgroup-node">
-                        <div class="root-node1">
+                <div class="rectangle-div"></div>
+                <div class="rectangle-container">
+                  <div class="frame-child1"></div>
+                  <div class="frame-wrapper5">
+                    <div class="ellipse-parent">
+                      <div class="ellipse-div"></div>
+                      <div class="frame-wrapper6">
+                        <div class="parent2">
                           <b class="b">Сбер</b>
                           <div class="div21">г. Москва</div>
                         </div>
@@ -142,8 +146,8 @@
                   </div>
                   <img class="image-2-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
                 </div>
-                <div class="child-nodes1">
-                  <div class="ancestor-nodes">
+                <div class="frame-wrapper7">
+                  <div class="parent3">
                     <div class="div22">Системный администратор</div>
                     <div class="lrem-ipsum-dopyprade-container">
                       <p class="lrem-ipsum-dopyprade">
@@ -161,8 +165,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="isolated-components">
-                  <div class="node-graph">
+                <div class="frame-wrapper8">
+                  <div class="parent4">
                     <button class="button">
                       <div class="child"></div>
                       <div class="item"></div>
@@ -170,11 +174,11 @@
                     </button>
                     <div class="div24">
                       <div class="inner"></div>
-                      <div class="rectangle-div"></div>
+                      <div class="child1"></div>
                       <div class="div25">
                         <div class="div26">Редактировать</div>
-                        <div class="child1"></div>
                         <div class="child2"></div>
+                        <div class="child3"></div>
                         <div class="div27">Редактировать</div>
                         <div class="exclude-icon">Редактировать</div>
                       </div>
@@ -182,15 +186,15 @@
                   </div>
                 </div>
               </div>
-              <div class="until-node">
-                <div class="until-node-child"></div>
-                <div class="rectangle-container">
-                  <div class="frame-inner"></div>
-                  <div class="frame-wrapper">
-                    <div class="ellipse-parent">
-                      <div class="ellipse-div"></div>
-                      <div class="frame-container">
-                        <div class="parent">
+              <div class="rectangle-parent1">
+                <div class="frame-child2"></div>
+                <div class="rectangle-parent2">
+                  <div class="frame-child3"></div>
+                  <div class="frame-wrapper9">
+                    <div class="ellipse-group">
+                      <div class="frame-child4"></div>
+                      <div class="frame-wrapper10">
+                        <div class="parent5">
                           <b class="b1">Сбер</b>
                           <div class="div28">г. Москва</div>
                         </div>
@@ -199,8 +203,8 @@
                   </div>
                   <img class="image-3-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
                 </div>
-                <div class="until-node-inner">
-                  <div class="group">
+                <div class="frame-wrapper11">
+                  <div class="parent6">
                     <div class="div29">Системный администратор</div>
                     <div class="lrem-ipsum-dopyprade-container1">
                       <p class="lrem-ipsum-dopyprade1">
@@ -218,20 +222,20 @@
                     </div>
                   </div>
                 </div>
-                <div class="frame-div">
-                  <div class="container">
+                <div class="frame-wrapper12">
+                  <div class="parent7">
                     <button class="button1">
-                      <div class="child3"></div>
                       <div class="child4"></div>
+                      <div class="child5"></div>
                       <div class="div30">Подробнее</div>
                     </button>
                     <div class="div31">
-                      <div class="child5"></div>
                       <div class="child6"></div>
+                      <div class="child7"></div>
                       <div class="div32">
                         <div class="div33">Редактировать</div>
-                        <div class="child7"></div>
                         <div class="child8"></div>
+                        <div class="child9"></div>
                         <div class="div34">Редактировать</div>
                         <div class="exclude-icon1">Редактировать</div>
                       </div>
@@ -240,14 +244,14 @@
                 </div>
               </div>
               <div class="group-div">
-                <div class="frame-child1"></div>
-                <div class="rectangle-parent1">
-                  <div class="frame-child2"></div>
-                  <div class="frame-wrapper1">
-                    <div class="ellipse-group">
-                      <div class="frame-child3"></div>
-                      <div class="frame-wrapper2">
-                        <div class="parent1">
+                <div class="frame-child5"></div>
+                <div class="rectangle-parent3">
+                  <div class="frame-child6"></div>
+                  <div class="frame-wrapper13">
+                    <div class="ellipse-container">
+                      <div class="frame-child7"></div>
+                      <div class="frame-wrapper14">
+                        <div class="parent8">
                           <b class="b2">Сбер</b>
                           <div class="div35">г. Москва</div>
                         </div>
@@ -256,8 +260,8 @@
                   </div>
                   <img class="image-4-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
                 </div>
-                <div class="frame-wrapper3">
-                  <div class="parent2">
+                <div class="frame-wrapper15">
+                  <div class="parent9">
                     <div class="div36">Системный администратор</div>
                     <div class="lrem-ipsum-dopyprade-container2">
                       <p class="lrem-ipsum-dopyprade2">
@@ -275,16 +279,16 @@
                     </div>
                   </div>
                 </div>
-                <div class="frame-wrapper4">
-                  <div class="parent3">
+                <div class="frame-wrapper16">
+                  <div class="parent10">
                     <button class="button2">
-                      <div class="child9"></div>
                       <div class="child10"></div>
+                      <div class="child11"></div>
                       <div class="div37">Подробнее</div>
                     </button>
                     <div class="div38">
-                      <div class="child11"></div>
                       <div class="child12"></div>
+                      <div class="child13"></div>
                       <div class="div39">
                         <div class="div40">Редактировать</div>
                         <div class="child13"></div>
@@ -296,100 +300,238 @@
                   </div>
                 </div>
               </div>
-              <div class="image-node">
-
             </div>
-            </div>
-            <button class="load-pic10">
-              <div class="div20"><a href="{% url 'createvacancy' %}">Создать проект</a></div>
-           </button>
-            <a href="{% url 'logout' %}"><p class="div45">Выйти ></p></a>
-      </main>
-      <div class="div46">
-        <div class="path-node">
-          <div class="polygon-node">
-            <div class="div47">ПОИСК ВАКАНСИЙ</div>
-          </div>
-          <div class="rectangle-node">
-            <div class="circle-node">
-              <div class="line-node">
-                <div class="div48">Техническая поддержка сайта:</div>
-                <div class="textbox-node">
-                  <p class="div49">
-                    <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
-                  </p>
-                  <div class="pochtamailru3">katyzinan@gmail.com</div>
+            <div class="frame-wrapper17">
+              <div class="frame-parent9">
+                <div class="load-pic-container">
+                  <button class="load-pic2">
+                    <div class="div42"><a href="{% url 'createvacancy' %}">Создать проект</a></div>
+                  </button>
                 </div>
-              </div>
-            </div>
-            <div class="circle-node1">
-              <div class="parent7">
-                <div class="div50">Контакты для связи:</div>
-                <div class="parent8">
-                  <div class="div51">+ 7 499 649-44-80</div>
-                  <div class="pochtamailru4">vopros@misis.ru</div>
+                <div class="frame">
+                  <h2 class="h24">Отклики:</h2>
                 </div>
-              </div>
-            </div>
-            <div class="grid-node">
-              <div class="align-node">
-                <div class="div52">Адрес:</div>
-                <div class="divider-node">
-                  <div class="div53">ул. Крымский Вал, 3, Москва</div>
-                  <div class="div54">
-                    <p class="p2">пн-пт: 9.00 - 20.00</p>
-                    <p class="p3">сб-вс: 10.00 - 18.00</p>
+                <div class="frame-parent10">
+                  <div class="rectangle-parent4">
+                    <div class="frame-child8"></div>
+                    <div class="frame-parent11">
+                      <div class="frame-parent12">
+                        <div class="rectangle-parent5">
+                          <div class="frame-child9"></div>
+                          <div class="frame-wrapper18">
+                            <div class="ellipse-parent1">
+                              <div class="frame-child10"></div>
+                              <div class="frame-wrapper19">
+                                <div class="telegram-parent">
+                                  <div class="telegram">Telegram:</div>
+                                  <b class="katyzina">@katyzina</b>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <img class="image-5-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                        </div>
+                        <div class="sequence-manager">
+                          <div class="div43">Институт компьютерных наук</div>
+                        </div>
+                      </div>
+                      <div class="container1">
+                        <div class="div44">
+                          <p class="p2">
+                            Направление: Информационные системы и технологии
+                          </p>
+                          <p class="blank-line">&nbsp;</p>
+                          <p class="p3">Группа: БИСТ-20-2</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comparator">
+                      <button class="button3">
+                        <div class="child16"></div>
+                        <div class="child17"></div>
+                        <div class="div45">Подробнее</div>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="rectangle-parent6">
+                    <div class="frame-child11"></div>
+                    <div class="frame-parent13">
+                      <div class="frame-parent14">
+                        <div class="rectangle-parent7">
+                          <div class="frame-child12"></div>
+                          <div class="ellipse-frame">
+                            <div class="frame-child13"></div>
+                          </div>
+                          <div class="number-cruncher-parent">
+                            <div class="number-cruncher">
+                              <div class="link-collector">
+                                <div class="telegram1">Telegram:</div>
+                              </div>
+                              <img class="image-7-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                            </div>
+                            <b class="nekatyzina">@nekatyzina</b>
+                          </div>
+                        </div>
+                        <div class="wrapper1">
+                          <div class="div46">Горный институт</div>
+                        </div>
+                      </div>
+                      <div class="wrapper2">
+                        <div class="div47">
+                          <p class="p4">Направление: Горное дело</p>
+                          <p class="blank-line1">&nbsp;</p>
+                          <p class="blank-line2">&nbsp;</p>
+                          <p class="p5">Группа: ГИ-20-1</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper3">
+                      <button class="button4">
+                        <div class="child18"></div>
+                        <div class="child19"></div>
+                        <div class="div48">Подробнее</div>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="rectangle-parent8">
+                    <div class="frame-child14"></div>
+                    <div class="frame-parent15">
+                      <div class="frame-parent16">
+                        <div class="rectangle-parent9">
+                          <div class="frame-child15"></div>
+                          <div class="frame-wrapper20">
+                            <div class="ellipse-parent2">
+                              <div class="frame-child16"></div>
+                              <div class="frame-wrapper21">
+                                <div class="telegram-group">
+                                  <div class="telegram2">Telegram:</div>
+                                  <b class="nastya">@nastya</b>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <img class="image-6-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                        </div>
+                        <div class="wrapper4">
+                          <div class="div49">Институт наноматериалов</div>
+                        </div>
+                      </div>
+                      <div class="wrapper5">
+                        <div class="div50">
+                          <p class="p6">Направление: Химическая технология</p>
+                          <p class="blank-line3">&nbsp;</p>
+                          <p class="p7">Группа: ИНМ-19-2</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper6">
+                      <button class="button5">
+                        <div class="child20"></div>
+                        <div class="child21"></div>
+                        <div class="div51">Подробнее</div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <button class="login3">
-              <div class="login-child1"></div>
-              <div class="div55"><a href="{% url 'support' %}">Поддержка</a></div>
+          </div>
+        </section>
+      </main>
+      <div class="input-processor">
+        <a href="{% url 'logout' %}"><p class="div52">Выйти ></p></a>
+      </div>
+      <div class="div53">
+        <div class="decision-maker">
+          <div class="connector">
+            <div class="div54">ПОИСК ВАКАНСИЙ</div>
+          </div>
+          <div class="logic-operator-parent">
+            <div class="logic-operator">
+              <div class="signal-processor">
+                <div class="div55">Техническая поддержка сайта:</div>
+                <div class="property-handler">
+                  <div class="div56">Информация о разработке</div>
+                  <div class="pochtamailru3">pochta@mail.ru</div>
+                </div>
+              </div>
+            </div>
+            <div class="logic-operator1">
+              <div class="parent11">
+                <div class="div57">Контакты для связи:</div>
+                <div class="parent12">
+                  <div class="div58">+ 7 000 000-00-00</div>
+                  <div class="pochtamailru4">pochta@mail.ru</div>
+                </div>
+              </div>
+            </div>
+            <div class="array-processor-wrapper">
+              <div class="array-processor">
+                <div class="div59">Адрес:</div>
+                <div class="function-library">
+                  <div class="div60">ул. Крымский Вал, 3, Москва</div>
+                  <div class="div61">
+                    <p class="p8">пн-пт: 9.00 - 20.00</p>
+                    <p class="p9">сб-вс: 10.00 - 18.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="login1">
+              <div class="login-item"></div>
+             <div class="div62"><a href="{% url 'support' %}">Поддержка</a></div>
             </button>
           </div>
         </div>
-        <div class="frame-layout-node">
-          <div class="row-layout-node">
-            <div class="column-layout-node">
-              <div class="stack-layout-node">
-                <p class="div56">
+        <div class="inner1">
+          <div class="frame-parent17">
+            <div class="frame-parent18">
+              <div class="wrapper7">
+                <p class="div63">
                   <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
                 </p>
               </div>
-              <p class="div57">
+              <p class="div64">
                 <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
               </p>
             </div>
-            <div class="margin-node">
-              <div class="div58">
+            <div class="wrapper8">
+              <div class="div65">
                 @2024 Университет науки и технологий МИСИС
               </div>
             </div>
           </div>
         </div>
-        <div class="blur-node">
-          <div class="reflection-node"></div>
-          <img class="data-container-icon" alt="" src="{% static 'loop-node.png' %}"/>
-          <div class="conditional-branch">
-            <img class="input-field-group" alt="" src="{% static 'vector-4.png' %}"/>
-            <img class="input-field-group1" alt="" src="{% static 'vector-10.png' %}"/>
+        <div class="rectangle-parent10">
+          <div class="frame-child17"></div>
+          <img class="vector-icon17" alt="" src="{% static 'loop-node.png' %}"/>
+
+          <div class="vector-parent4">
+            <img class="vector-icon18" alt="" src="{% static 'vector-4.png' %}"/>
+            <img class="vector-icon19" alt="" src="{% static 'vector-10.png' %}"/>
           </div>
-          <div class="list-item-collection">
-            <img class="text-input-node" alt="" src="{% static 'vector-6.png' %}"/>
-            <img class="text-input-node1" alt="" src="{% static 'vector-13.png' %}"/>
+          <div class="vector-parent5">
+            <img class="vector-icon20" alt="" src="{% static 'vector-6.png' %}"/>
+            <img class="vector-icon21" alt="" src="{% static 'vector-13.png' %}"/>
           </div>
-          <div class="date-picker-node">
-            <img class="radio-button-group" alt="" src="{% static 'vector-1.png' %}"/>
-            <img class="progress-bar-node" alt="" src="{% static 'vector-15.png' %}"/>
-            <img class="radio-button-group1" alt="" src="{% static 'vector-16.png' %}"/>
+          <div class="data-aggregator">
+            <img class="branching-logic-icon" alt="" src="{% static 'vector-1.png' %}"/>
+
+            <img class="input-processor-icon" alt="" src="{% static 'vector-15.png' %}"/>
+
+            <img class="branching-logic-icon1" alt="" src="{% static 'vector-16.png' %}"/>
           </div>
-          <img class="check-box-nodes" alt="" src="{% static 'vector-17.png' %}"/>
+          <img class="output-generator-icon" alt="" src="{% static 'vector-17.png' %}"/>
+
+          <div class="vk-1-group">
+            <img class="vk-1-icon1" alt="" src="{% static 'vkcom.png' %}"/>
+          </div>
           <img class="ok-1-icon1" alt="" src="{% static 'ok-1.png' %}"/>
-          <img class="vk-1-icon1" alt="" src="{% static 'vkcom.png' %}"/>
           <img class="telegram-1-icon1" alt="" src="{% static 'telegramcom.png' %}"/>
+
           <img class="youtube-1-icon1" alt="" src="{% static 'youtubecom.png' %}"/>
         </div>
       </div>
+    </div>
   </body>
 </html>
