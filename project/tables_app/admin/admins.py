@@ -9,6 +9,7 @@ from tables_app.models.institute import Institute
 from tables_app.models.support import Support
 from tables_app.models.student import Student
 from tables_app.models.vacation import Vacation
+from tables_app.models.reply import Reply
 
 admin.site.register(User)
 admin.site.register(City)
@@ -18,3 +19,4 @@ admin.site.register(Institute)
 admin.site.register(Support)
 admin.site.register(Student)
 admin.site.register(Vacation)
+admin.site.register(Reply)

@@ -119,16 +119,20 @@ class EmployerListView(View):
         if request.GET.get('search'):
             employers = employers.filter(organization__icontains=request.GET['search'])
         return render(request, 'employerlist.html', context={
-            'employers':employers
+            'employers': employers
         })
 
 
 class StudentProfileView(View):
-    def get(self, request):
+    def get(self, request, user_id):
+        user = User.objects.filter(id=user_id)
+        if not user.exists():
+            redirect("home")
         favourite_vacations = Favourite.objects.filter(user=request.user).values_list('vacation__id', flat=True)
         vacations = Vacation.objects.filter(id__in=favourite_vacations)
         return render(request, 'studprofile.html', context={
-            "vacations": vacations
+            "vacations": vacations,
+            "user": user.first()
         })
 
 
@@ -138,8 +142,17 @@ def logout_user(request):
 
 
 class EmployerProfileView(View):
-    def get(self, request):
-        return render(request, 'employerprofile.html')
+    def get(self, request, employer_id):
+        user = User.objects.filter(id=employer_id)
+        if not user.exists():
+            return redirect("home")
+        vacations = Vacation.objects.filter(employer=user.first())
+        reply_list = Reply.objects.filter(vacation__employer=user.first())
+        return render(request, 'employerprofile.html', context={
+            "reply_list": reply_list,
+            "vacations": vacations,
+            "user": user.first()
+        })
 
 
 class AboutVacancyView(View):
@@ -204,3 +217,26 @@ class VacationReplyView(View):
                 vacation=vacation
             )
         return redirect('aboutvacancy', vacation.id)
+
+
+class ProfileUpdateView(View):
+
+    def post(self, request, profile_id):
+        user = User.objects.get(id=profile_id)
+        if user == request.user:
+            if request.FILES.get("image"):
+                user.image = request.FILES["image"]
+            if request.FILES.get("resume"):
+                user.student.resume = request.FILES["resume"]
+            if request.FILES.get("letter"):
+                user.student.letter = request.FILES["letter"]
+            if request.POST.get("telegram"):
+                tg = request.POST["telegram"].split("@")[-1]
+                if tg:
+                    user.student.telegram = tg
+            user.save()
+        if user.student:
+            user.student.save()
+            return redirect("studprofile", user.id)
+        else:
+            return redirect("employerprofile", user.id)

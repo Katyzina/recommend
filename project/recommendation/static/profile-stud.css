@@ -1861,3 +1861,12 @@ margin: 3.775rem 19rem 0rem 0rem;
   width: 5rem;
   height: 5rem;
 }
+
+.reset_form{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}

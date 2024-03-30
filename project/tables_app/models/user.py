@@ -15,6 +15,8 @@ class User(AbstractUser):
                                 null=True, blank=True, verbose_name="Студент")
     employer = models.ForeignKey("Employer", on_delete=models.SET_NULL,
                                  null=True, blank=True, verbose_name="Работодатель")
+    city = models.ForeignKey("City", on_delete=models.SET_NULL,
+                             null=True, blank=True, verbose_name="Город")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} {self.phone_number}"

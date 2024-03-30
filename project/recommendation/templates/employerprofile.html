@@ -6,532 +6,339 @@
     <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Личный кабинет работодателя</title>
-  <link rel="stylesheet" href="{% static 'gl.css' %}">
+    <link rel="stylesheet" href="{% static 'gl.css' %}">
     <link rel="stylesheet" href="{% static 'hh.css' %}">
 
 </head>
 <body>
+<form action="{% url 'employer_update' user.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
     <div class="profile-stud">
-      <div class="condition-checker">
-        <header class="output-splitter">
-          <div class="output-splitter-child"></div>
-          <img class="value-processor-icon" alt="" src="{% static 'loop-node.png' %}"/>
-          <div class="vector-parent">
-            <img class="vector-icon" alt="" src="{% static 'vector-1.png' %}"/>
-            <img class="vector-icon1" alt="" src="{% static 'loop-node.png' %}"/>
-            <img class="vector-icon2" alt="" src="{% static 'vector-1.png' %}"/>
-          </div>
-          <div class="frame-parent">
-            <div class="frame-group">
-              <div class="vector-group">
-                <img class="vector-icon3" alt="" src="{% static 'vector-4.png' %}"/>
-                <img class="vector-icon4" alt="" src="{% static 'vector-4.png' %}"/>
-              </div>
-              <div class="frame-wrapper">
-                <div class="vector-container">
-                  <img class="vector-icon5" alt="" src="{% static 'vector-6.png' %}"/>
-                  <img class="vector-icon6" alt="" src="{% static 'vector-6.png' %}"/>
+        <div class="condition-checker">
+            <header class="output-splitter">
+                <div class="output-splitter-child"></div>
+                <img class="value-processor-icon" alt="" src="{% static 'loop-node.png' %}"/>
+                <div class="vector-parent">
+                    <img class="vector-icon" alt="" src="{% static 'vector-1.png' %}"/>
+                    <img class="vector-icon1" alt="" src="{% static 'loop-node.png' %}"/>
+                    <img class="vector-icon2" alt="" src="{% static 'vector-1.png' %}"/>
                 </div>
-              </div>
-            </div>
-            <div class="frame-container">
-              <div class="frame-div">
-                <img class="vector-icon7" alt="" src="{% static 'vector-8.png' %}"/>
+                <div class="frame-parent">
+                    <div class="frame-group">
+                        <div class="vector-group">
+                            <img class="vector-icon3" alt="" src="{% static 'vector-4.png' %}"/>
+                            <img class="vector-icon4" alt="" src="{% static 'vector-4.png' %}"/>
+                        </div>
+                        <div class="frame-wrapper">
+                            <div class="vector-container">
+                                <img class="vector-icon5" alt="" src="{% static 'vector-6.png' %}"/>
+                                <img class="vector-icon6" alt="" src="{% static 'vector-6.png' %}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frame-container">
+                        <div class="frame-div">
+                            <img class="vector-icon7" alt="" src="{% static 'vector-8.png' %}"/>
 
-                <div class="div">ПОИСК ВАКАНСИЙ</div>
-              </div>
-            </div>
-          </div>
-          <nav class="output-splitter-inner">
-            <nav class="parent">
-              <div class="div1"><a href="{% url 'home' %}">Главная</a></div>
-              <div class="div2"><a href="{% url 'employerlist' %}">Работодатели</a></div>
-              <div class="div3"><a href="{% url 'support' %}">Поддержка</a></div>
-            </nav>
-          </nav>
-          <div class="output-splitter-inner1">
-            <div class="frame-parent1">
-              <div class="frame-wrapper1">
-                <div class="group">
-                  {% if request.user.is_authenticated %}
-                  <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
-                  {% if request.user.employer %}
-                  <div class="div4"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
-                  {% endif %}
-                  {% else %}
-                  <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
-                  {% endif %}
+                            <div class="div">ПОИСК ВАКАНСИЙ</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              </div><div class="frame-child"></div>
-            </div>
-          </div>
-        </header>
-      </div>
-      <img class="profile-stud-child" loading="lazy" alt="" src="{% static 'line-7.png' %}"/>
-      </div>
-      <main class="profile-stud-inner">
+                <nav class="output-splitter-inner">
+                    <nav class="parent">
+                        <div class="div1"><a href="{% url 'home' %}">Главная</a></div>
+                        <div class="div2"><a href="{% url 'employerlist' %}">Работодатели</a></div>
+                        <div class="div3"><a href="{% url 'support' %}">Поддержка</a></div>
+                    </nav>
+                </nav>
+                <div class="output-splitter-inner1">
+                    <div class="frame-parent1">
+                        <div class="frame-wrapper1">
+                            <div class="group">
+                                {% if request.user.is_authenticated %}
+                                <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
+                                {% if request.user.employer %}
+                                <div class="div4"><a href="{% url 'employerprofile' request.user.employer.id %}">Работодатель</a></div>
+                                {% endif %}
+                                {% else %}
+                                <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frame-child">
+                        {% if request.user.image %}
+                        <img src="{{request.user.image.url}}" class="image_vacation" alt="">
+                        {% endif %}
+                    </div>
+                </div>
+
+            </header>
+        </div>
+        <img class="profile-stud-child" loading="lazy" alt="" src="{% static 'line-7.png' %}"/>
+    </div>
+    <main class="profile-stud-inner">
         <section class="frame-section">
-          <div class="frame-parent2">
-            <div class="frame-wrapper2">
-              <div class="frame-parent3">
-                <div class="frame-parent4">
-                  <div class="ellipse-wrapper">
-                    <img class="frame-inner" loading="lazy" alt="" src="{% static 'ellipse-2@2x.png' %}"/>
-                  </div>
-                  <div class="load-pic-wrapper">
-                    <button class="load-pic">
-                      <div class="load-pic-child"></div>
-                      <div class="div19">Загрузить фото</div>
-                    </button>
-                  </div>
-                  <div class="container">
-                    <h2 class="h2">Организация:</h2>
-                    <div class="wrapper">
-                      <h2 class="h21">Должность:</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="frame-parent5">
-                  <div class="frame-wrapper3">
-                    <div class="parent1">
-                      <h1 class="h1">Фамилия Имя Отчество</h1>
-                      <div class="frame-wrapper4">
-                        <div class="frame-parent6">
-                          <div class="data-processor-wrapper">
-                            <div class="data-processor">
-                              <h1 class="h11">Работодатель</h1>
-                              <h1 class="pochtamailru2">pochta@mail.ru</h1>
+            <div class="frame-parent2">
+                <div class="frame-wrapper2">
+                    <div class="frame-parent3">
+                        <div class="frame-parent4">
+                            <div class="ellipse-wrapper">
+                                {% if user.image %}
+                                <img class="frame-inner" src="{{ user.image.url }}"/>
+                                {% else %}
+                                <img class="frame-inner" alt="" src="{% static 'ellipse-2@2x.png' %}"/>
+                                {% endif %}
                             </div>
-                          </div>
-                          <div class="output-aggregator">
-                            <h1 class="h12">г. Москва</h1>
-                            <div class="error-handler">+7(777)777-77-77</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="log-manager">
-                    <h2 class="h22">Сбер</h2>
-                    <div class="data-comparator">
-                      <h2 class="hr">HR</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="load-pic1">
-              <div class="load-pic-item"></div>
-              <div class="div20">Сохранить</div>
-            </button>
-          </div>
-          <h2 class="h23">Проекты:</h2>
-          <div class="frame-parent7">
-            <div class="frame-parent8">
-              <div class="rectangle-group">
-                <div class="rectangle-div"></div>
-                <div class="rectangle-container">
-                  <div class="frame-child1"></div>
-                  <div class="frame-wrapper5">
-                    <div class="ellipse-parent">
-                      <div class="ellipse-div"></div>
-                      <div class="frame-wrapper6">
-                        <div class="parent2">
-                          <b class="b">Сбер</b>
-                          <div class="div21">г. Москва</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <img class="image-2-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
-                </div>
-                <div class="frame-wrapper7">
-                  <div class="parent3">
-                    <div class="div22">Системный администратор</div>
-                    <div class="lrem-ipsum-dopyprade-container">
-                      <p class="lrem-ipsum-dopyprade">
-                        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa
-                        duck, de ogen en gönera. Magigt misade, primasofi, dina.
-                      </p>
-                      <p class="gsam-tes-ikar">
-                        Gösam tes ikar. Finade hänar än geojukrorar myns, i
-                        krosås ifall kase. Senade nise vide onar.
-                      </p>
-                      <p class="medellogi-nyskade-laligen">
-                        Medellogi nyskade laligen. Onyda dolyfod. Monofongar
-                        begt ärade i epimikal och zombiebrand.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="frame-wrapper8">
-                  <div class="parent4">
-                    <button class="button">
-                      <div class="child"></div>
-                      <div class="item"></div>
-                      <div class="div23">Подробнее</div>
-                    </button>
-                    <div class="div24">
-                      <div class="inner"></div>
-                      <div class="child1"></div>
-                      <div class="div25">
-                        <div class="div26">Редактировать</div>
-                        <div class="child2"></div>
-                        <div class="child3"></div>
-                        <div class="div27">Редактировать</div>
-                        <div class="exclude-icon">Редактировать</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="rectangle-parent1">
-                <div class="frame-child2"></div>
-                <div class="rectangle-parent2">
-                  <div class="frame-child3"></div>
-                  <div class="frame-wrapper9">
-                    <div class="ellipse-group">
-                      <div class="frame-child4"></div>
-                      <div class="frame-wrapper10">
-                        <div class="parent5">
-                          <b class="b1">Сбер</b>
-                          <div class="div28">г. Москва</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <img class="image-3-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
-                </div>
-                <div class="frame-wrapper11">
-                  <div class="parent6">
-                    <div class="div29">Системный администратор</div>
-                    <div class="lrem-ipsum-dopyprade-container1">
-                      <p class="lrem-ipsum-dopyprade1">
-                        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa
-                        duck, de ogen en gönera. Magigt misade, primasofi, dina.
-                      </p>
-                      <p class="gsam-tes-ikar1">
-                        Gösam tes ikar. Finade hänar än geojukrorar myns, i
-                        krosås ifall kase. Senade nise vide onar.
-                      </p>
-                      <p class="medellogi-nyskade-laligen1">
-                        Medellogi nyskade laligen. Onyda dolyfod. Monofongar
-                        begt ärade i epimikal och zombiebrand.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="frame-wrapper12">
-                  <div class="parent7">
-                    <button class="button1">
-                      <div class="child4"></div>
-                      <div class="child5"></div>
-                      <div class="div30">Подробнее</div>
-                    </button>
-                    <div class="div31">
-                      <div class="child6"></div>
-                      <div class="child7"></div>
-                      <div class="div32">
-                        <div class="div33">Редактировать</div>
-                        <div class="child8"></div>
-                        <div class="child9"></div>
-                        <div class="div34">Редактировать</div>
-                        <div class="exclude-icon1">Редактировать</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="group-div">
-                <div class="frame-child5"></div>
-                <div class="rectangle-parent3">
-                  <div class="frame-child6"></div>
-                  <div class="frame-wrapper13">
-                    <div class="ellipse-container">
-                      <div class="frame-child7"></div>
-                      <div class="frame-wrapper14">
-                        <div class="parent8">
-                          <b class="b2">Сбер</b>
-                          <div class="div35">г. Москва</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <img class="image-4-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
-                </div>
-                <div class="frame-wrapper15">
-                  <div class="parent9">
-                    <div class="div36">Системный администратор</div>
-                    <div class="lrem-ipsum-dopyprade-container2">
-                      <p class="lrem-ipsum-dopyprade2">
-                        Lörem ipsum dopypörade häck. Heterokrati psykomani kysa
-                        duck, de ogen en gönera. Magigt misade, primasofi, dina.
-                      </p>
-                      <p class="gsam-tes-ikar2">
-                        Gösam tes ikar. Finade hänar än geojukrorar myns, i
-                        krosås ifall kase. Senade nise vide onar.
-                      </p>
-                      <p class="medellogi-nyskade-laligen2">
-                        Medellogi nyskade laligen. Onyda dolyfod. Monofongar
-                        begt ärade i epimikal och zombiebrand.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="frame-wrapper16">
-                  <div class="parent10">
-                    <button class="button2">
-                      <div class="child10"></div>
-                      <div class="child11"></div>
-                      <div class="div37">Подробнее</div>
-                    </button>
-                    <div class="div38">
-                      <div class="child12"></div>
-                      <div class="child13"></div>
-                      <div class="div39">
-                        <div class="div40">Редактировать</div>
-                        <div class="child13"></div>
-                        <div class="child14"></div>
-                        <div class="div41">Редактировать</div>
-                        <div class="exclude-icon2">Редактировать</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="frame-wrapper17">
-              <div class="frame-parent9">
-                <div class="load-pic-container">
-                  <button class="load-pic2">
-                    <div class="div42"><a href="{% url 'createvacancy' %}">Создать проект</a></div>
-                  </button>
-                </div>
-                <div class="frame">
-                  <h2 class="h24">Отклики:</h2>
-                </div>
-                <div class="frame-parent10">
-                  <div class="rectangle-parent4">
-                    <div class="frame-child8"></div>
-                    <div class="frame-parent11">
-                      <div class="frame-parent12">
-                        <div class="rectangle-parent5">
-                          <div class="frame-child9"></div>
-                          <div class="frame-wrapper18">
-                            <div class="ellipse-parent1">
-                              <div class="frame-child10"></div>
-                              <div class="frame-wrapper19">
-                                <div class="telegram-parent">
-                                  <div class="telegram">Telegram:</div>
-                                  <b class="katyzina">@katyzina</b>
+                            <div class="load-pic-wrapper">
+                                <button class="load-pic" type="button">
+                                    <div class="load-pic-child"></div>
+                                    <input type="file" style="display:none;" name="image" id="imageInput">
+                                    <div onclick="document.getElementById('imageInput').click();" class="div19">Загрузить фото</div>
+                                </button>
+                            </div>
+                            <div class="container">
+                                <h2 class="h2">Организация:</h2>
+                                <div class="wrapper">
+                                    <h2 class="h21">Должность:</h2>
                                 </div>
-                              </div>
                             </div>
-                          </div>
-                          <img class="image-5-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
                         </div>
-                        <div class="sequence-manager">
-                          <div class="div43">Институт компьютерных наук</div>
-                        </div>
-                      </div>
-                      <div class="container1">
-                        <div class="div44">
-                          <p class="p2">
-                            Направление: Информационные системы и технологии
-                          </p>
-                          <p class="blank-line">&nbsp;</p>
-                          <p class="p3">Группа: БИСТ-20-2</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="comparator">
-                      <button class="button3">
-                        <div class="child16"></div>
-                        <div class="child17"></div>
-                        <div class="div45">Подробнее</div>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="rectangle-parent6">
-                    <div class="frame-child11"></div>
-                    <div class="frame-parent13">
-                      <div class="frame-parent14">
-                        <div class="rectangle-parent7">
-                          <div class="frame-child12"></div>
-                          <div class="ellipse-frame">
-                            <div class="frame-child13"></div>
-                          </div>
-                          <div class="number-cruncher-parent">
-                            <div class="number-cruncher">
-                              <div class="link-collector">
-                                <div class="telegram1">Telegram:</div>
-                              </div>
-                              <img class="image-7-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
-                            </div>
-                            <b class="nekatyzina">@nekatyzina</b>
-                          </div>
-                        </div>
-                        <div class="wrapper1">
-                          <div class="div46">Горный институт</div>
-                        </div>
-                      </div>
-                      <div class="wrapper2">
-                        <div class="div47">
-                          <p class="p4">Направление: Горное дело</p>
-                          <p class="blank-line1">&nbsp;</p>
-                          <p class="blank-line2">&nbsp;</p>
-                          <p class="p5">Группа: ГИ-20-1</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="wrapper3">
-                      <button class="button4">
-                        <div class="child18"></div>
-                        <div class="child19"></div>
-                        <div class="div48">Подробнее</div>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="rectangle-parent8">
-                    <div class="frame-child14"></div>
-                    <div class="frame-parent15">
-                      <div class="frame-parent16">
-                        <div class="rectangle-parent9">
-                          <div class="frame-child15"></div>
-                          <div class="frame-wrapper20">
-                            <div class="ellipse-parent2">
-                              <div class="frame-child16"></div>
-                              <div class="frame-wrapper21">
-                                <div class="telegram-group">
-                                  <div class="telegram2">Telegram:</div>
-                                  <b class="nastya">@nastya</b>
+                        <div class="frame-parent5">
+                            <div class="frame-wrapper3">
+                                <div class="parent1">
+                                    <h1 class="h1">{{ user.last_name}} {{ user.first_name}} {{ user.middle_name}}</h1>
+                                    <div class="frame-wrapper4">
+                                        <div class="frame-parent6">
+                                            <div class="data-processor-wrapper">
+                                                <div class="data-processor">
+                                                    <h1 class="h11">Работодатель</h1>
+                                                    <h1 class="pochtamailru2">{{ user.email}}</h1>
+                                                </div>
+                                            </div>
+                                            <div class="output-aggregator">
+                                                <h1 class="h12">г. {{ user.city.name}}</h1>
+                                                <div class="error-handler">{{ user.phone_number}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-                          </div>
-                          <img class="image-6-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                            <div class="log-manager">
+                                <h2 class="h22">{{ user.employer.organization }}</h2>
+                                <div class="data-comparator">
+                                    <h2 class="hr">HR</h2>
+                                </div>
+                            </div>
                         </div>
-                        <div class="wrapper4">
-                          <div class="div49">Институт наноматериалов</div>
-                        </div>
-                      </div>
-                      <div class="wrapper5">
-                        <div class="div50">
-                          <p class="p6">Направление: Химическая технология</p>
-                          <p class="blank-line3">&nbsp;</p>
-                          <p class="p7">Группа: ИНМ-19-2</p>
-                        </div>
-                      </div>
                     </div>
-                    <div class="wrapper6">
-                      <button class="button5">
-                        <div class="child20"></div>
-                        <div class="child21"></div>
-                        <div class="div51">Подробнее</div>
-                      </button>
-                    </div>
-                  </div>
                 </div>
-              </div>
+                <button class="load-pic1" type="submit">
+                    <div class="load-pic-item"></div>
+                    <div class="div20">Сохранить</div>
+                </button>
             </div>
-          </div>
+            <h2 class="h23">Проекты:</h2>
+            <div class="frame-parent7">
+                <div class="frame-parent8">
+                    {% for vacation in vacations %}
+                    <div class="rectangle-group">
+                        <div class="rectangle-div"></div>
+                        <div class="rectangle-container">
+                            <div class="frame-child1"></div>
+                            <div class="frame-wrapper5">
+                                <div class="ellipse-parent">
+                                    <div class="ellipse-div"></div>
+                                    <div class="frame-wrapper6">
+                                        <div class="parent2">
+                                            <b class="b">{{ vacation.employer.employer.organization}}</b>
+                                            <div class="div21">г. {{vacation.city.name}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="image-2-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                        </div>
+                        <div class="frame-wrapper7">
+                            <div class="parent3">
+                                <div class="div22">{{vacation.position}}</div>
+                                <div class="lrem-ipsum-dopyprade-container">
+                                    <p class="lrem-ipsum-dopyprade">
+                                        {{vacation.description}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-wrapper8">
+                            <div class="parent4">
+                                <button class="button">
+                                    <div class="div23">Подробнее</div>
+                                </button>
+                                <div class="div24">
+                                    <div class="div25">
+                                        <div class="exclude-icon">Редактировать</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="frame-wrapper17">
+                    <div class="frame-parent9">
+                        <div class="load-pic-container">
+                            <button class="load-pic2">
+                                <div class="div42"><a href="{% url 'createvacancy' %}">Создать проект</a></div>
+                            </button>
+                        </div>
+                        <div class="frame">
+                            <h2 class="h24">Отклики:</h2>
+                        </div>
+                        <div class="frame-parent10">
+                            {% for reply in reply_list %}
+                            <div class="rectangle-parent4">
+                                <div class="frame-child8"></div>
+                                <div class="frame-parent11">
+                                    <div class="frame-parent12">
+                                        <div class="rectangle-parent5">
+                                            <div class="frame-child9"></div>
+                                            <div class="frame-wrapper18">
+                                                <div class="ellipse-parent1">
+                                                    <div class="frame-child10"></div>
+                                                    <div class="frame-wrapper19">
+                                                        <div class="telegram-parent">
+                                                            <div class="telegram">Telegram:</div>
+                                                            <a href="{% url 'studprofile' reply.student.id %}"><b class="katyzina">@{{reply.student.student.telegram}}</b></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img class="image-5-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                                        </div>
+                                        <div class="sequence-manager">
+                                            <div class="div43">{{reply.vacation.institute.full_name}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="container1">
+                                        <div class="div44">
+                                            <p class="p2">
+                                                Направление: {{reply.student.student.faculty}}
+                                            </p>
+                                            <p class="blank-line">&nbsp;</p>
+                                            <p class="p3">Группа: {{reply.student.student.study_group}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparator">
+                                    <a href="{% url 'studprofile' reply.student.id %}">
+                                        <button class="button3" type="button">
+                                        <div class="div45">Подробнее</div>
+                                    </button>
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-      </main>
-      <div class="input-processor">
+    </main>
+    <div class="input-processor">
         <a href="{% url 'logout' %}"><p class="div52">Выйти ></p></a>
-      </div>
-      <div class="div53">
+    </div>
+    <div class="div53">
         <div class="decision-maker">
-          <div class="connector">
-            <div class="div54">ПОИСК ВАКАНСИЙ</div>
-          </div>
-          <div class="logic-operator-parent">
-            <div class="logic-operator">
-              <div class="signal-processor">
-                <div class="div55">Техническая поддержка сайта:</div>
-                <div class="property-handler">
-                  <div class="div56">Информация о разработке</div>
-                  <div class="pochtamailru3">pochta@mail.ru</div>
-                </div>
-              </div>
+            <div class="connector">
+                <div class="div54">ПОИСК ВАКАНСИЙ</div>
             </div>
-            <div class="logic-operator1">
-              <div class="parent11">
-                <div class="div57">Контакты для связи:</div>
-                <div class="parent12">
-                  <div class="div58">+ 7 000 000-00-00</div>
-                  <div class="pochtamailru4">pochta@mail.ru</div>
+            <div class="logic-operator-parent">
+                <div class="logic-operator">
+                    <div class="signal-processor">
+                        <div class="div55">Техническая поддержка сайта:</div>
+                        <div class="property-handler">
+                            <div class="div56">Информация о разработке</div>
+                            <div class="pochtamailru3">pochta@mail.ru</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="array-processor-wrapper">
-              <div class="array-processor">
-                <div class="div59">Адрес:</div>
-                <div class="function-library">
-                  <div class="div60">ул. Крымский Вал, 3, Москва</div>
-                  <div class="div61">
-                    <p class="p8">пн-пт: 9.00 - 20.00</p>
-                    <p class="p9">сб-вс: 10.00 - 18.00</p>
-                  </div>
+                <div class="logic-operator1">
+                    <div class="parent11">
+                        <div class="div57">Контакты для связи:</div>
+                        <div class="parent12">
+                            <div class="div58">+ 7 000 000-00-00</div>
+                            <div class="pochtamailru4">pochta@mail.ru</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="array-processor-wrapper">
+                    <div class="array-processor">
+                        <div class="div59">Адрес:</div>
+                        <div class="function-library">
+                            <div class="div60">ул. Крымский Вал, 3, Москва</div>
+                            <div class="div61">
+                                <p class="p8">пн-пт: 9.00 - 20.00</p>
+                                <p class="p9">сб-вс: 10.00 - 18.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="login1">
+                    <div class="login-item"></div>
+                    <div class="div62"><a href="{% url 'support' %}">Поддержка</a></div>
+                </button>
             </div>
-            <button class="login1">
-              <div class="login-item"></div>
-             <div class="div62"><a href="{% url 'support' %}">Поддержка</a></div>
-            </button>
-          </div>
         </div>
         <div class="inner1">
-          <div class="frame-parent17">
-            <div class="frame-parent18">
-              <div class="wrapper7">
-                <p class="div63">
-                  <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
-                </p>
-              </div>
-              <p class="div64">
-                <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
-              </p>
+            <div class="frame-parent17">
+                <div class="frame-parent18">
+                    <div class="wrapper7">
+                        <p class="div63">
+                            <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
+                        </p>
+                    </div>
+                    <p class="div64">
+                        <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
+                    </p>
+                </div>
+                <div class="wrapper8">
+                    <div class="div65">
+                        @2024 Университет науки и технологий МИСИС
+                    </div>
+                </div>
             </div>
-            <div class="wrapper8">
-              <div class="div65">
-                @2024 Университет науки и технологий МИСИС
-              </div>
-            </div>
-          </div>
         </div>
         <div class="rectangle-parent10">
-          <div class="frame-child17"></div>
-          <img class="vector-icon17" alt="" src="{% static 'loop-node.png' %}"/>
+            <div class="frame-child17"></div>
+            <img class="vector-icon17" alt="" src="{% static 'loop-node.png' %}"/>
 
-          <div class="vector-parent4">
-            <img class="vector-icon18" alt="" src="{% static 'vector-4.png' %}"/>
-            <img class="vector-icon19" alt="" src="{% static 'vector-10.png' %}"/>
-          </div>
-          <div class="vector-parent5">
-            <img class="vector-icon20" alt="" src="{% static 'vector-6.png' %}"/>
-            <img class="vector-icon21" alt="" src="{% static 'vector-13.png' %}"/>
-          </div>
-          <div class="data-aggregator">
-            <img class="branching-logic-icon" alt="" src="{% static 'vector-1.png' %}"/>
+            <div class="vector-parent4">
+                <img class="vector-icon18" alt="" src="{% static 'vector-4.png' %}"/>
+                <img class="vector-icon19" alt="" src="{% static 'vector-10.png' %}"/>
+            </div>
+            <div class="vector-parent5">
+                <img class="vector-icon20" alt="" src="{% static 'vector-6.png' %}"/>
+                <img class="vector-icon21" alt="" src="{% static 'vector-13.png' %}"/>
+            </div>
+            <div class="data-aggregator">
+                <img class="branching-logic-icon" alt="" src="{% static 'vector-1.png' %}"/>
 
-            <img class="input-processor-icon" alt="" src="{% static 'vector-15.png' %}"/>
+                <img class="input-processor-icon" alt="" src="{% static 'vector-15.png' %}"/>
 
-            <img class="branching-logic-icon1" alt="" src="{% static 'vector-16.png' %}"/>
-          </div>
-          <img class="output-generator-icon" alt="" src="{% static 'vector-17.png' %}"/>
+                <img class="branching-logic-icon1" alt="" src="{% static 'vector-16.png' %}"/>
+            </div>
+            <img class="output-generator-icon" alt="" src="{% static 'vector-17.png' %}"/>
 
-          <div class="vk-1-group">
-            <img class="vk-1-icon1" alt="" src="{% static 'vkcom.png' %}"/>
-          </div>
-          <img class="ok-1-icon1" alt="" src="{% static 'ok-1.png' %}"/>
-          <img class="telegram-1-icon1" alt="" src="{% static 'telegramcom.png' %}"/>
+            <div class="vk-1-group">
+                <img class="vk-1-icon1" alt="" src="{% static 'vkcom.png' %}"/>
+            </div>
+            <img class="ok-1-icon1" alt="" src="{% static 'ok-1.png' %}"/>
+            <img class="telegram-1-icon1" alt="" src="{% static 'telegramcom.png' %}"/>
 
-          <img class="youtube-1-icon1" alt="" src="{% static 'youtubecom.png' %}"/>
+            <img class="youtube-1-icon1" alt="" src="{% static 'youtubecom.png' %}"/>
         </div>
-      </div>
     </div>
-  </body>
+    </div>
+</form>
+</body>
 </html>

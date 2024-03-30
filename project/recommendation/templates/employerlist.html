@@ -5,125 +5,128 @@
     <link rel="icon" href="{% static 'auto-group-19fc.png' %}" type="image/png">
     <meta charset="UTF-8">
     <title>Работодатели</title>
-  <link rel="stylesheet" href="{% static 'main-hr.css' %}"> <!-- Подключение файла со стилями -->
+    <link rel="stylesheet" href="{% static 'main-hr.css' %}"> <!-- Подключение файла со стилями -->
     <link rel="stylesheet" href="{% static 'employerlist.css' %}"> <!-- Подключение файла со стилями -->
 </head>
 <body>
 <div class="users-JAi">
-  <div class="frame-2-QDk">
-    <div class="misislogoblockdeskfullinvrusrgb-01-1-gSA">
-      <img class="auto-group-19fc-C9c" src="{% static 'auto-group-19fc.png' %}"/>
-      <div class="auto-group-54na-hcA">
-        <img class="vector-R2N" src="{% static 'vector-6bY.png' %}"/>
-        <p class="item--wmQ">ПОИСК ВАКАНСИЙ</p>
-      </div>
-    </div>
-    <div class="frame-12-c6r">
-      <div class="item--Wi2"><a href="{% url 'home' %}">Главная</a></div>
-      <p class="item--cFG">Работодатели</p>
-      <div class="item--Jdt"><a href="{% url 'support' %}">Поддержка</a></div>
-    </div>
-
-    <div class="profile-un6">
-      <div class="auto-group-5fmx-qve">
-        {% if request.user.is_authenticated %}
-        <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
-        {% if request.user.employer %}
-        <div class="item--5ot"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
-          {% else %}
-        <div class="item--5om"><a href="{% url 'studprofile' %}">Студент</a></div>
-          {% endif %}
-        {% else %}
-        <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
-        {% endif %}
-      </div>
-      <div class="ellipse-1-zBG">
-      </div>
-    </div>
-  </div>
-  <div class="auto-group-xyre-foC">
-    <div class="auto-group-yycs-zKg">
-      <p class="item--hUz">Список работодателей</p>
-      <div class="auto-group-agce-o2E">
-         <form action="{% url 'search_employer' %}">
-                <div class="search-L2A">
-                    <input type="text" placeholder="Введите запрос..." name="search">
-                </div>
-                <div class="filter-9EW">
-                    <button type="submit">
-                        <img class="tunefill0wght400grad0opsz24-1-fin" src="{% static '44.jpg' %}"/>
-                    </button>
-                </div>
-         </form>
-      </div>
-    </div>
-    <div class="group-9-ewx">
-      <div class="frame-14-PuY">
-        {% for employer in employers %}
-        <div class="group-2-8ML">
-          <div class="ellipse-2-f6N">
-          </div>
-          <div class="auto-group-3vvj-az2">
-            <a href=""><p class="item--iqL">{{employer.organization}}</p></a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <div class="item--vmU">
-    <div class="auto-group-dwqg-fDG">
-      <div class="auto-group-fhs4-nYn">
-        <div class="misislogoblockdeskfullinvrusrgb-01-1-XFU">
-          <img class="vector-De6" src="{% static 'vector-Z34.png' %}"/>
-          <img class="vector-MEW" src="{% static 'vector-b2n.png' %}"/>
-          <img class="vector-Upv" src="{% static 'vector-yw4.png' %}"/>
-          <img class="vector-REN" src="{% static 'vector-rFg.png' %}"/>
-          <div class="group-10-ZbU">
-            <img class="auto-group-ve3y-77C" src="{% static 'auto-group-ve3y.png' %}"/>
-            <div class="auto-group-dagn-SfG">
-              <img class="vector-ArA" src="{% static 'vector-VEv.png' %}"/>
-              <p class="item--Wv2">ПОИСК ВАКАНСИЙ</p>
+    <div class="frame-2-QDk">
+        <div class="misislogoblockdeskfullinvrusrgb-01-1-gSA">
+            <img class="auto-group-19fc-C9c" src="{% static 'auto-group-19fc.png' %}"/>
+            <div class="auto-group-54na-hcA">
+                <img class="vector-R2N" src="{% static 'vector-6bY.png' %}"/>
+                <p class="item--wmQ">ПОИСК ВАКАНСИЙ</p>
             </div>
-          </div>
         </div>
-        <div class="auto-group-5avr-cCN">
-          <p class="item--YLv">Техническая поддержка сайта:</p>
-          <p class="item--EUe">
-            <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
-          </p>
+        <div class="frame-12-c6r">
+            <div class="item--Wi2"><a href="{% url 'home' %}">Главная</a></div>
+            <p class="item--cFG">Работодатели</p>
+            <div class="item--Jdt"><a href="{% url 'support' %}">Поддержка</a></div>
         </div>
-        <div class="auto-group-q8sa-7oL">
-          <p class="item--rW2">Контакты для связи:</p>
-          <p class="item-7-000-000-00-00-9k2">+ 7 499 649-44-80</p>
-        </div>
-        <div class="login-svv"><a href="{% url 'support' %}">Поддержка</a></div>
-      </div>
-      <div class="auto-group-4ebx-9tS">
-        <p class="pochtamailru-5GJ">katyzinan@gmail.com</p>
-        <p class="pochtamailru-oCJ">vopros@misis.ru</p>
-      </div>
-      <div class="auto-group-1m1g-LT8">
-        <img class="vk-1-xUW" src="{% static 'vk-1-nPp.png' %}"/>
-        <img class="ok-1-u8r" src="{% static 'ok-1.png' %}"/>
-        <img class="telegram-1-3F4" src="{% static 'telegram-1-FNW.png' %}"/>
-        <img class="youtube-1-PJv" src="{% static 'youtube-1-Wxn.png' %}"/>
-      </div>
-    </div>
 
-    <div class="auto-group-hhxr-Mjk">
-      <p class="item--Uza">
-        <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
-      </p>
-      <p class="item--6m4">
-        <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
-      </p>
-      <p class="item-2024--ULN">@2024 Университет науки и технологий МИСИС</p>
-      <div class="rectangle-9-ivr">
-
-      </div>
+        <div class="profile-un6">
+            <div class="auto-group-5fmx-qve">
+                {% if request.user.is_authenticated %}
+                <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
+                {% if request.user.employer %}
+                <div class="item--5ot"><a href="{% url 'employerprofile'  request.user.id %}">Работодатель</a></div>
+                {% else %}
+                <div class="item--5om"><a href="{% url 'studprofile' request.user.id %}">Студент</a></div>
+                {% endif %}
+                {% else %}
+                <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
+                {% endif %}
+            </div>
+            <div class="ellipse-1-zBG">
+                {% if request.user.image %}
+                <img src="{{request.user.image.url}}" class="image_vacation" alt="">
+                {% endif %}
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="auto-group-xyre-foC">
+        <div class="auto-group-yycs-zKg">
+            <p class="item--hUz">Список работодателей</p>
+            <div class="auto-group-agce-o2E">
+                <form action="{% url 'search_employer' %}">
+                    <div class="search-L2A">
+                        <input type="text" placeholder="Введите запрос..." name="search">
+                    </div>
+                    <div class="filter-9EW">
+                        <button type="submit">
+                            <img class="tunefill0wght400grad0opsz24-1-fin" src="{% static '44.jpg' %}"/>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="group-9-ewx">
+            <div class="frame-14-PuY">
+                {% for employer in employers %}
+                <div class="group-2-8ML">
+                    <div class="ellipse-2-f6N">
+                    </div>
+                    <div class="auto-group-3vvj-az2">
+                        <a href=""><p class="item--iqL">{{employer.organization}}</p></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="item--vmU">
+        <div class="auto-group-dwqg-fDG">
+            <div class="auto-group-fhs4-nYn">
+                <div class="misislogoblockdeskfullinvrusrgb-01-1-XFU">
+                    <img class="vector-De6" src="{% static 'vector-Z34.png' %}"/>
+                    <img class="vector-MEW" src="{% static 'vector-b2n.png' %}"/>
+                    <img class="vector-Upv" src="{% static 'vector-yw4.png' %}"/>
+                    <img class="vector-REN" src="{% static 'vector-rFg.png' %}"/>
+                    <div class="group-10-ZbU">
+                        <img class="auto-group-ve3y-77C" src="{% static 'auto-group-ve3y.png' %}"/>
+                        <div class="auto-group-dagn-SfG">
+                            <img class="vector-ArA" src="{% static 'vector-VEv.png' %}"/>
+                            <p class="item--Wv2">ПОИСК ВАКАНСИЙ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="auto-group-5avr-cCN">
+                    <p class="item--YLv">Техническая поддержка сайта:</p>
+                    <p class="item--EUe">
+                        <a href="{% static 'Info_vkr.pdf' %}" target="_blank">Информация о разработке</a>
+                    </p>
+                </div>
+                <div class="auto-group-q8sa-7oL">
+                    <p class="item--rW2">Контакты для связи:</p>
+                    <p class="item-7-000-000-00-00-9k2">+ 7 499 649-44-80</p>
+                </div>
+                <div class="login-svv"><a href="{% url 'support' %}">Поддержка</a></div>
+            </div>
+            <div class="auto-group-4ebx-9tS">
+                <p class="pochtamailru-5GJ">katyzinan@gmail.com</p>
+                <p class="pochtamailru-oCJ">vopros@misis.ru</p>
+            </div>
+            <div class="auto-group-1m1g-LT8">
+                <img class="vk-1-xUW" src="{% static 'vk-1-nPp.png' %}"/>
+                <img class="ok-1-u8r" src="{% static 'ok-1.png' %}"/>
+                <img class="telegram-1-3F4" src="{% static 'telegram-1-FNW.png' %}"/>
+                <img class="youtube-1-PJv" src="{% static 'youtube-1-Wxn.png' %}"/>
+            </div>
+        </div>
+
+        <div class="auto-group-hhxr-Mjk">
+            <p class="item--Uza">
+                <a href="https://misis.ru/university/sved/" target="_blank">Сведения об образовательной организации</a>
+            </p>
+            <p class="item--6m4">
+                <a href="https://lk.misis.ru/268_04_19.pdf" target="_blank">Положение об обработке и защите персональных данных</a>
+            </p>
+            <p class="item-2024--ULN">@2024 Университет науки и технологий МИСИС</p>
+            <div class="rectangle-9-ivr">
+
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

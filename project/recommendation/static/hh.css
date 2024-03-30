@@ -3055,3 +3055,16 @@ left: 3rem;
     box-sizing: border-box;
   }
 }
+
+.ellipse-1-t7p {
+  width: 5.0042rem;
+  height: 5.0042rem;
+  background-color: #d9d9d9;
+  border-radius: 2.5021rem;
+  flex-shrink: 0;
+}
+
+.image_vacation{
+  width: 5rem;
+  height: 5rem;
+}

@@ -52,15 +52,18 @@
                             {% if request.user.is_authenticated %}
                             <p class="div63"> {{request.user.first_name}} {{request.user.last_name}}</p>
                             {% if request.user.employer %}
-                            <div class="div6z"><a href="{% url 'employerprofile' %}">Работодатель</a></div>
+                            <div class="div6z"><a href="{% url 'employerprofile'  request.user.id %}">Работодатель</a></div>
                             {% else %}
-                            <div class="div64"><a href="{% url 'studprofile' %}">Студент</a></div>
+                            <div class="div64"><a href="{% url 'studprofile' request.user.id %}">Студент</a></div>
                             {% endif %}
                             {% else %}
                         <a href="{% url 'login' %}"><p class="div6zz">Войти</p></a>
                             {% endif %}
                         </div>
                         <div class="selector">
+                            {% if request.user.image %}
+                            <img src="{{request.user.image.url}}" class="image_vacation" alt="">
+                            {% endif %}
                         </div>
                     </div>
                 </div>
