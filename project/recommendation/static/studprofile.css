@@ -202,9 +202,11 @@ margin: -2rem 0.1rem -3rem 0rem;
   margin: 1.9rem 2rem 0rem 0rem;
   width: 20.7rem;
   height: 20.1rem;
-  object-fit: contain;
   vertical-align: top;
   flex-shrink: 0;
+  position: relative;
+    border-radius: 50%;
+    object-fit: cover;
 }
 .profile-stud-h26 .auto-group-75wu-kQv .auto-group-yvta-U62 .auto-group-z6sx-sdx {
   margin: 3.6rem 5.3rem 2rem 0rem;
@@ -1504,7 +1506,9 @@ margin: -2rem 0.1rem -3rem 0rem;
   background: linear-gradient(180deg, rgba(217, 217, 217, 0.400000006) -0%, rgba(20, 49, 148, 0.400000006) 100%);
 }
 
-.image_vacation{
-    width: 10rem;
-  height: 10rem;
-}
+.image_vacation1 {
+  width: 5rem;
+  height: 5rem;
+ border-radius: 2.5006rem;
+  flex-shrink: 0;
+ }

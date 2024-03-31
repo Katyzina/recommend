@@ -41,11 +41,11 @@
                     <a href="{% url 'login' %}"><p class="item--5ot">Войти</p></a>
                     {% endif %}
                 </div>
-                <div class="ellipse-1-t7p">
+
                     {% if request.user.image %}
-                    <img src="{{request.user.image.url}}" class="image_vacation" alt="">
+                    <img src="{{request.user.image.url}}" class="image_vacation1" style=" width: 5rem; border-radius: 2.5006rem;  flex-shrink: 0; height: 5rem; " alt="" >
                     {% endif %}
-                </div>
+
             </div>
         </div>
         <div class="auto-group-75wu-kQv">
@@ -63,7 +63,7 @@
                             <p class="pochtamailru-aii">{{ user.email}}</p>
                         </div>
                         <div class="auto-group-d95y-iK8">
-                            <p class="item--fEN">г. {{ user.city.name}}</p>
+                            <p class="item--fEN">г. {{ user.student.town}}</p>
                             <p class="item-7777777-77-77-aML">{{ user.phone_number}}</p>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                 <div class="auto-group-tssa-uwL">
                     <div class="auto-group-yuml-TT4">
                         <p class="item--xuc">Университет:</p>
-                        <p class="item--fp2">{{ user.student.university}}</p>
+                        <p class="item--fp2">{{ user.phone_number}}</p>
                     </div>
                     <div class="auto-group-acis-ndk">
                         <p class="item--jYz">Институт:</p>
@@ -97,14 +97,14 @@
             <div class="auto-group-ajwa-rox">
                 <div class="auto-group-rnw8-Ape">
                     <p class="item--W7p">Резюме:</p>
-                    <a href="{{ user.student.resume.url}}"><p class="resumepdf-cge">{{ user.student.resume.name|name_of_resume}}</p></a>
+
                 </div>
                 <input type="file" class="load-pic-jWN" name="resume" style="display:none;" id="resumeInput">
                 <div onclick="document.getElementById('resumeInput').click();" class="load-pic-jWN">Загрузить</div>
             </div>
             <div class="auto-group-ltun-SFg">
                 <p class="item--m34">Сопроводительное письмо:</p>
-                <a href="{{ user.student.letter.url}}"><p class="letterpdf-Sez">{{ user.student.letter.name|name_of_resume}}</p></a>
+
                 <input type="file" class="load-pic-jWN" name="letter" style="display:none;" id="letterInput">
                 <div onclick="document.getElementById('letterInput').click();" class="load-pic-AL6">Загрузить</div>
             </div>

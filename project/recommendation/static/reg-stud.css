@@ -16,7 +16,7 @@ body {
   width: 120rem;
 }.reg-stud-zWr {
   width: 100%;
-  height: 111.5rem;
+  height: 135.5rem;
   position: relative;
   overflow: hidden;
   background-size: 100% 100%;
@@ -27,10 +27,10 @@ body {
 }
 .reg-stud-zWr .rectangle-9-vQW {
   width: 120rem;
-  height: 27.375rem;
+  height: 45rem;
   position: absolute;
   left: 0;
-  top: 89rem;
+  top: 92rem;
   background: linear-gradient(180deg, rgba(217, 217, 217, 0) -0%, #143194 100%);
 }
 .reg-stud-zWr .rectangle-11-1Rx {
@@ -54,7 +54,7 @@ body {
   box-sizing: border-box;
   padding: 3.146rem 3.125rem 3.125rem 3.125rem;
   width: 43.75rem;
-  height: 94.5625rem;
+  height: 120.5625rem;
   position: absolute;
   left: 38.125rem;
   top: 14.375rem;
@@ -254,6 +254,11 @@ content: '';
   color: #11111;
   text-align: left;
 }
+
+
+
+
+
 .reg-stud-zWr .group-8-Bjk .frame-13-cVc .email-bAW {
   margin-left: 0rem;
   box-sizing: border-box;

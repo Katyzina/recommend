@@ -227,13 +227,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.users-JAi .frame-2-QDk .profile-un6 .ellipse-1-zBG {
-  width: 5.0013rem;
-  height: 5.0013rem;
-  background-color: #d9d9d9;
-  border-radius: 2.5006rem;
-  flex-shrink: 0;
-}
+
 .users-JAi .auto-group-xyre-foC {
   box-sizing: border-box;
   padding: 2.501rem 3.688rem 8.44rem 3.688rem;
@@ -1402,3 +1396,10 @@ top: 3rem;
   top: 0;
   background: linear-gradient(180deg, rgba(217, 217, 217, 0.400000006) -0%, rgba(20, 49, 148, 0.400000006) 100%);
 }
+
+.image_vacaation{
+  width: 5rem;
+  height: 5rem;
+ border-radius: 2.5006rem;
+  flex-shrink: 0;
+ }

@@ -1490,6 +1490,7 @@ margin: 4rem 0.1rem 1rem 0rem;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-7xs);
+
 }
 .frame-wrapper14 {
   flex: 1;
@@ -1727,6 +1728,7 @@ margin: 4rem 0.1rem 1rem 0rem;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: var(--gap-lg-5);
+    width: 22rem;
 }
 .load-pic-inner {
   height: 3.313rem;
@@ -2398,6 +2400,7 @@ margin: 4rem 0.1rem 1rem 0rem;
   gap: var(--gap-lg-5);
   font-size: var(--font-size-mini);
   color: var(--color-white);
+  width: 25rem;
 }
 .frame-parent9 {
   flex: 1;
@@ -3056,15 +3059,11 @@ left: 3rem;
   }
 }
 
-.ellipse-1-t7p {
-  width: 5.0042rem;
-  height: 5.0042rem;
-  background-color: #d9d9d9;
-  border-radius: 2.5021rem;
-  flex-shrink: 0;
-}
+
 
 .image_vacation{
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2.5021rem;
+  flex-shrink: 0;
 }
