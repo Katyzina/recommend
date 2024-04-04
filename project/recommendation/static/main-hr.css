@@ -1448,13 +1448,26 @@ margin: 3.775rem 19rem 0rem 0rem;
     justify-content: space-between;
 }
 .image_vacation{
+    width: 10rem;
+  height: 10rem;
+  border-radius: 4rem;
+  flex-shrink: 0;
+}
+.image_vacatioon{
     width: 8rem;
   height: 8rem;
   border-radius: 4rem;
   flex-shrink: 0;
 }
-
 .border{
     border: 2px solid white;
     border-radius: 9px;
+}
+
+.ellipse-1-SH4 {
+  width: 7rem;
+  height: 7rem;
+  background-color: #d9d9d9;
+  border-radius: 4rem;
+  flex-shrink: 0;
 }

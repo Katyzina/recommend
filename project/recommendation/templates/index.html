@@ -29,6 +29,7 @@
             <div class="item--hmQ"><a href="{% url 'employerlist' %}">Работодатели</a></div>
             <div class="item--aaJ"><a href="{% url 'support' %}">Поддержка</a></div>
         </div>
+
         <div class="profile-9G2">
             <div class="auto-group-ydhy-NPg">
                 {% if request.user.is_authenticated %}
@@ -44,7 +45,7 @@
             </div>
             <div class="ellipse-1-SH4">
                 {% if request.user.image %}
-                <img src="{{request.user.image.url}}" class="image_vacation" alt="">
+                <img src="{{request.user.image.url}}" class="image_vacatioon" alt="">
                 {% endif %}
             </div>
         </div>

@@ -1403,3 +1403,17 @@ top: 3rem;
  border-radius: 2.5006rem;
   flex-shrink: 0;
  }
+ .image_vacation{
+    width: 8rem;
+  height: 8rem;
+  border-radius: 4rem;
+  flex-shrink: 0;
+}
+
+.ellipse-1-zBG {
+  width: 5rem;
+  height: 5rem;
+  background-color: #d9d9d9;
+  border-radius: 4rem;
+  flex-shrink: 0;
+}

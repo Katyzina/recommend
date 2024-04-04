@@ -1859,7 +1859,8 @@ margin: 3.775rem 19rem 0rem 0rem;
   white-space: nowrap;
   flex-shrink: 0;
 }
-.image_vacation1 {
+.image_vacaation {
+    margin: -1rem 7rem 6rem 0rem;
   width: 5rem;
   height: 5rem;
 }
@@ -1871,4 +1872,11 @@ margin: 3.775rem 19rem 0rem 0rem;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+}
+.ellipse-1-zBG {
+  width: 5rem;
+  height: 5rem;
+  background-color: #d9d9d9;
+  border-radius: 4rem;
+  flex-shrink: 0;
 }

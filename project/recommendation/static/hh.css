@@ -807,7 +807,7 @@ position: relative;
   align-items: flex-start;
 }
 .log-manager {
-  width: 6.875rem;
+  width: 10.875rem;
   display: flex;
   justify-content: flex-start;
   font-size: var(--font-size-5xl);
@@ -886,7 +886,7 @@ margin: 4rem 0.1rem 1rem 0rem;
 .h23 {
   margin: 0;
   position: absolute;
-  top: 23.813rem;
+  top: 26.813rem;
   left: 35rem;
   font-size: inherit;
   font-weight: 500;
@@ -2425,7 +2425,7 @@ margin: 4rem 0.1rem 1rem 0rem;
 }
 .frame-parent7 {
   position: absolute;
-  top: 26.875rem;
+  top: 30.875rem;
   left: 0.563rem;
   width: 100%;
   flex-direction: column;
