@@ -1,10 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
-from django.db import models
+from django.db import models, transaction
 from django.db.models import Value, F, Q, Subquery, Case, When, BooleanField, Exists, OuterRef
 from django.shortcuts import render, redirect
 from django.views import View
 
-from tables_app.models import Institute, Vacation, Student, User, Employer, Favourite, Reply
+from tables_app.models import Institute, Vacation, Student, User, Employer, Favourite, Reply, City
 
 
 class HomePageView(View):
@@ -55,23 +55,28 @@ class UserLoginView(View):
 
 class EmployerRegisterView(View):
     def get(self, request):
-        return render(request, 'hrlog.html')
+        cities = City.objects.all()
+        return render(request, 'hrlog.html', context={
+            'cities': cities
+        })
 
     def post(self, request):
         try:
-            employer_info = Employer.objects.create(
-                organization=request.POST['organization'],
-            )
-            User.objects.create_user(
-                username=request.POST['email'],
-                password=request.POST['password'],
-                first_name=request.POST['first_name'],
-                last_name=request.POST['last_name'],
-                middle_name=request.POST['middle_name'],
-                phone_number=request.POST['phone_number'],
-                email=request.POST['email'],
-                employer=employer_info,
-            )
+            with transaction.atomic():
+                employer_info = Employer.objects.create(
+                    organization=request.POST['organization'],
+                )
+                User.objects.create_user(
+                    username=request.POST['email'],
+                    password=request.POST['password'],
+                    first_name=request.POST['first_name'],
+                    last_name=request.POST['last_name'],
+                    middle_name=request.POST['middle_name'],
+                    phone_number=request.POST['phone_number'],
+                    email=request.POST['email'],
+                    employer=employer_info,
+                    city_id=request.POST['city']
+                )
         except Exception as error:
             return redirect('regstud')
         else:
@@ -81,26 +86,32 @@ class EmployerRegisterView(View):
 class StudentRegisterView(View):
     def get(self, request):
         institutes = Institute.objects.all()
+        cities = City.objects.all()
         return render(request, 'regstud.html', context={
-            'institutes': institutes
+            'institutes': institutes,
+            'cities': cities
         })
 
     def post(self, request):
         try:
-            student_info = Student.objects.create(
-                institute_id=request.POST['institute'],
-                study_group=request.POST['study_group']
-            )
-            User.objects.create_user(
-                username=request.POST['email'],
-                password=request.POST['password'],
-                first_name=request.POST['first_name'],
-                last_name=request.POST['last_name'],
-                middle_name=request.POST['middle_name'],
-                phone_number=request.POST['phone_number'],
-                email=request.POST['email'],
-                student=student_info,
-            )
+            with transaction.atomic():
+                student_info = Student.objects.create(
+                    institute_id=request.POST['institute'],
+                    study_group=request.POST['study_group'],
+                    university=request.POST['university'],
+                    faculty=request.POST['faculty']
+                )
+                User.objects.create_user(
+                    username=request.POST['email'],
+                    password=request.POST['password'],
+                    first_name=request.POST['first_name'],
+                    last_name=request.POST['last_name'],
+                    middle_name=request.POST['middle_name'],
+                    phone_number=request.POST['phone_number'],
+                    email=request.POST['email'],
+                    student=student_info,
+                    city_id=request.POST['city']
+                )
         except Exception as error:
             return redirect('regstud')
         else:
@@ -121,6 +132,12 @@ class EmployerListView(View):
         return render(request, 'employerlist.html', context={
             'employers': employers
         })
+
+class ReplyDeleteView(View):
+
+    def get(self, request, id):
+        Reply.objects.filter(id=id).delete()
+        return redirect("employerprofile", request.user.id)
 
 
 class StudentProfileView(View):
@@ -176,9 +193,81 @@ class AboutVacancyView(View):
         })
 
 
+class VacationCreateView(View):
+
+    def post(self, request):
+        busyness = None
+        if request.POST['busyness'] == "Полная занятось":
+            busyness = "FULL"
+        if request.POST['busyness'] == "Гибкий график":
+            busyness = "FLEXIBLE"
+        if request.POST['busyness'] == "Сменный график":
+            busyness = "SHIFT_WORK"
+        Vacation.objects.create(
+            position=request.POST['position'],
+            description=request.POST['description'].strip(),
+            image=request.FILES['image'],
+            city_id=request.POST['city'],
+            institute_id=request.POST['institute'],
+            employer=request.user,
+            busyness=busyness,
+            address=request.POST['address']
+        )
+        return redirect("employerprofile", request.user.id)
+
+
+class VacationUpdateView(View):
+
+    def get(self, request, vacation_id):
+        vacation = Vacation.objects.get(id=vacation_id)
+        cities = City.objects.all()
+        institutes = Institute.objects.all()
+        busyness = [Vacation.BUSYNESS_CHOICE[0][-1], Vacation.BUSYNESS_CHOICE[1][-1], Vacation.BUSYNESS_CHOICE[2][-1]]
+        return render(request, 'createvacancy.html', context={
+            "vacation": vacation,
+            "cities": cities,
+            "institutes": institutes,
+            "busyness": busyness
+        })
+
+    def post(self, request,vacation_id):
+        vacation = Vacation.objects.get(id=vacation_id)
+        vacation.position = request.POST['position']
+        vacation.description = request.POST['description'].strip()
+        vacation.city_id = request.POST['city']
+        if request.FILES.get('image'):
+            vacation.image = request.FILES['image']
+        vacation.institute_id = request.POST['institute']
+        busyness = None
+        if request.POST['busyness'] == "Полная занятось":
+            busyness = "FULL"
+        if request.POST['busyness'] == "Гибкий график":
+            busyness = "FLEXIBLE"
+        if request.POST['busyness'] == "Сменный график":
+            busyness = "SHIFT_WORK"
+        vacation.busyness = busyness
+        vacation.address = request.POST['address']
+        vacation.save()
+        return redirect("employerprofile", request.user.id)
+
+
+class VacationDeleteView(View):
+
+    def get(self, request, vacation_id):
+        Vacation.objects.filter(id=vacation_id).delete()
+        return redirect("employerprofile", request.user.id)
+
+
 class CreateVacancyView(View):
     def get(self, request):
-        return render(request, 'createvacancy.html')
+        cities = City.objects.all()
+        institutes = Institute.objects.all()
+        busyness = [Vacation.BUSYNESS_CHOICE[0][-1], Vacation.BUSYNESS_CHOICE[1][-1], Vacation.BUSYNESS_CHOICE[2][-1]]
+        return render(request, 'createvacancy.html', context={
+            "cities": cities,
+            "institutes": institutes,
+            "busyness": busyness
+        })
 
 
 class VacationFavouriteCreateView(View):

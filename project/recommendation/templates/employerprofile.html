@@ -58,7 +58,7 @@
                                 {% if request.user.is_authenticated %}
                                 <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
                                 {% if request.user.employer %}
-                                <div class="div4"><a href="{% url 'employerprofile' request.user.employer.id %}">Работодатель</a></div>
+                                <div class="div4"><a href="{% url 'employerprofile' request.user.id %}">Работодатель</a></div>
                                 {% endif %}
                                 {% else %}
                                 <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
@@ -148,7 +148,7 @@
                             <div class="frame-child1"></div>
                             <div class="frame-wrapper5">
                                 <div class="ellipse-parent">
-                                    <div class="ellipse-div"></div>
+                                    <div class="ellipse-div"><img style="height:80px;weight:80px;border-radius:50px;" src="{{ vacation.image.url }}" alt=""></div>
                                     <div class="frame-wrapper6">
                                         <div class="parent2">
                                             <b class="b">{{ vacation.employer.employer.organization}}</b>
@@ -157,7 +157,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img class="image-2-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                            <a href="{% url 'delete_vacation' vacation.id %}"><img class="image-2-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/></a>
                         </div>
                         <div class="frame-wrapper7">
                             <div class="parent3">
@@ -172,11 +172,13 @@
                         <div class="frame-wrapper8">
                             <div class="parent4">
                                 <button class="button">
-                                    <div class="div23">Подробнее</div>
+                                    <div class="div23"><a href="{% url 'aboutvacancy' vacation.id %}">Подробнее</a></div>
                                 </button>
                                 <div class="div24">
                                     <div class="div25">
-                                        <div class="exclude-icon">Редактировать</div>
+                                        <a href="{% url 'update_vacation' vacation.id %}">
+                                            <div class="exclude-icon">Редактировать</div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +206,11 @@
                                             <div class="frame-child9"></div>
                                             <div class="frame-wrapper18">
                                                 <div class="ellipse-parent1">
+                                                    {% if reply.student.image %}
+                                                    <div class="frame-child10"><img src="{{reply.student.image.url}}" alt="" style="height:80px;width:80px;border-radius:100px;"></div>
+                                                    {%else%}
                                                     <div class="frame-child10"></div>
+                                                    {%endif%}
                                                     <div class="frame-wrapper19">
                                                         <div class="telegram-parent">
                                                             <div class="telegram">Telegram:</div>
@@ -213,7 +219,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="image-5-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/>
+                                            <a href="{% url 'delete_replyes' reply.id %}"><img class="image-5-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/></a>
                                         </div>
                                         <div class="sequence-manager">
                                             <div class="div43">{{reply.vacation.institute.full_name}}</div>
@@ -232,8 +238,8 @@
                                 <div class="comparator">
                                     <a href="{% url 'studprofile' reply.student.id %}">
                                         <button class="button3" type="button">
-                                        <div class="div45">Подробнее</div>
-                                    </button>
+                                            <div class="div45">Подробнее</div>
+                                        </button>
                                     </a>
                                 </div>
                             </div>

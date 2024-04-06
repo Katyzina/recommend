@@ -10,7 +10,6 @@ class Student(models.Model):
     # связь с институтом
     institute = models.ForeignKey("Institute", on_delete=models.SET_NULL, null=True, verbose_name="Институт")
     telegram = models.CharField(max_length=50, verbose_name="Телеграмм")
-    town = models.CharField(max_length=50, verbose_name="Город")
 
     def __str__(self):
         return f"{self.university} {self.faculty} {self.study_group}"
