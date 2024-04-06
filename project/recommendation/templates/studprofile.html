@@ -99,14 +99,14 @@
             <div class="auto-group-ajwa-rox">
                 <div class="auto-group-rnw8-Ape">
                     <p class="item--W7p">Резюме:</p>
-
+                    <a href="{{ user.student.resume.url}}"><p class="resumepdf-cge">{{ user.student.resume.name|name_of_resume}}</p></a>
                 </div>
                 <input type="file" class="load-pic-jWN" name="resume" style="display:none;" id="resumeInput">
                 <div onclick="document.getElementById('resumeInput').click();" class="load-pic-jWN">Загрузить</div>
             </div>
             <div class="auto-group-ltun-SFg">
                 <p class="item--m34">Сопроводительное письмо:</p>
-
+                <a href="{{ user.student.letter.url}}"><p class="letterpdf-Sez">{{ user.student.letter.name|name_of_resume}}</p></a>
                 <input type="file" class="load-pic-jWN" name="letter" style="display:none;" id="letterInput">
                 <div onclick="document.getElementById('letterInput').click();" class="load-pic-AL6">Загрузить</div>
             </div>
