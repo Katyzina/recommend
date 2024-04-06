@@ -28,6 +28,8 @@
                 <div class="item--2fx"><a href="{% url 'employerlist' %}">Работодатели</a></div>
                 <div class="item--8yt"><a href="{% url 'support' %}">Поддержка</a></div>
             </div>
+            <div class="ellipse-1-t7p">
+            </div>
             <div class="profile-GCv">
                 <div class="auto-group-jvis-y7L">
                     {% if request.user.is_authenticated %}
@@ -41,9 +43,9 @@
                     <a href="{% url 'login' %}"><p class="item--5ot">Войти</p></a>
                     {% endif %}
                 </div>
-                <div class="ellipse-1-t7p">
+                <div class="ellipse-1-zBG" style="width: 5rem;height: 5rem; background-color: #d9d9d9;border-radius: 4rem; flex-shrink: 0;">>
                     {% if request.user.image %}
-                    <img src="{{request.user.image.url}}" class="image_vacation" alt="">
+                    <img src="{{request.user.image.url}}" class="image_vacation1" style=" width: 5rem; border-radius: 2.5006rem;  flex-shrink: 0; height: 5rem; margin: -1rem 7rem 6rem 0rem; " alt="" >
                     {% endif %}
                 </div>
             </div>
@@ -63,7 +65,7 @@
                             <p class="pochtamailru-aii">{{ user.email}}</p>
                         </div>
                         <div class="auto-group-d95y-iK8">
-                            <p class="item--fEN">г. {{ user.city.name}}</p>
+                            <p class="item--fEN">г. {{ user.city}}</p>
                             <p class="item-7777777-77-77-aML">{{ user.phone_number}}</p>
                         </div>
                     </div>

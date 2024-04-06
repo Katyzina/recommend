@@ -807,7 +807,7 @@ position: relative;
   align-items: flex-start;
 }
 .log-manager {
-  width: 6.875rem;
+  width: 10.875rem;
   display: flex;
   justify-content: flex-start;
   font-size: var(--font-size-5xl);
@@ -886,7 +886,7 @@ margin: 4rem 0.1rem 1rem 0rem;
 .h23 {
   margin: 0;
   position: absolute;
-  top: 23.813rem;
+  top: 26.813rem;
   left: 35rem;
   font-size: inherit;
   font-weight: 500;
@@ -1490,6 +1490,7 @@ margin: 4rem 0.1rem 1rem 0rem;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-7xs);
+
 }
 .frame-wrapper14 {
   flex: 1;
@@ -1727,6 +1728,7 @@ margin: 4rem 0.1rem 1rem 0rem;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: var(--gap-lg-5);
+    width: 22rem;
 }
 .load-pic-inner {
   height: 3.313rem;
@@ -2398,6 +2400,7 @@ margin: 4rem 0.1rem 1rem 0rem;
   gap: var(--gap-lg-5);
   font-size: var(--font-size-mini);
   color: var(--color-white);
+  width: 25rem;
 }
 .frame-parent9 {
   flex: 1;
@@ -2422,7 +2425,7 @@ margin: 4rem 0.1rem 1rem 0rem;
 }
 .frame-parent7 {
   position: absolute;
-  top: 26.875rem;
+  top: 30.875rem;
   left: 0.563rem;
   width: 100%;
   flex-direction: column;
@@ -3056,15 +3059,11 @@ left: 3rem;
   }
 }
 
-.ellipse-1-t7p {
-  width: 5.0042rem;
-  height: 5.0042rem;
-  background-color: #d9d9d9;
-  border-radius: 2.5021rem;
-  flex-shrink: 0;
-}
+
 
 .image_vacation{
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2.5021rem;
+  flex-shrink: 0;
 }
