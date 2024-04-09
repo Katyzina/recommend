@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Поддержка</title>
     <link rel="stylesheet" href="{% static 'support.css' %}"> <!-- Подключение файла со стилями -->
+    <link rel="stylesheet" href="{% static 'about-vacancy.css' %}">
 </head>
 <body>
 <div class="support-zEA">
@@ -45,15 +46,14 @@
         </div>
     </div>
     <div class="auto-group-2p34-Afg">
-        <div class="auto-group-zjwq-gtv">
-            <p class="item--Ddx">Поддержка</p>
-        </div>
+    <div class="auto-group-zjwq-gtv">
+        <p class="item--Ddx">Поддержка</p>
+    </div>
+        <form action="">
         <div class="auto-group-wjg2-TRp">
             <p class="item--Bsc">Ваше имя:</p>
             <div class="search-gZU">
-                <form action="">
                     <input type="text" placeholder="Введите...">
-                </form>
             </div>
             <div class="line-3-jne">
             </div>
@@ -67,9 +67,7 @@
         <div class="auto-group-nxbt-nAa">
             <p class="email--7ie">Email:</p>
             <div class="search-1JE">
-                <form action="">
                     <input type="text" placeholder="Введите...">
-                </form>
             </div>
             <p class="item-9-00-20-00-10-00-18-00-SPY">
                 пн-пт: 9:00 - 20:00
@@ -89,8 +87,9 @@
                     <textarea class="search-Lmk" placeholder="Введите..."></textarea>
                 </div>
                 <div class="frame-21-BnN">
-                    <p class="logopng-vjx">Logo.png</p>
-                    <div class="load-pic-KQi">Загрузить</div>
+                    <label for="file-upload" class="logopng-vjx custom-file-upload">Support.png</label>
+                    <input id="file-upload" type="file" style="display:none;" onchange="handleFileUpload(event)">
+                    <button type="button" class="load-pic-KQi" onclick="document.getElementById('file-upload').click();">Загрузить</button>
                 </div>
             </div>
             <div class="auto-group-biva-v9c">
@@ -101,11 +100,11 @@
                 </div>
             </div>
         </div>
-        <div class="auto-group-xixw-yXC">
-            <div class="login-662">Отмена</div>
-            <div class="login-hLi">Отправить</div>
-
-        </div>
+         <div class="auto-group-xixw-yXC">
+             <button type="reset" class="login-662">Отмена</button>
+             <button type="reset" class="login-hLi">Отправить</button>
+         </div>
+        </form>
         <p class="item-2024--2GW">@2024 Политика конфиденциальности</p>
     </div>
     <div class="item--Vft">

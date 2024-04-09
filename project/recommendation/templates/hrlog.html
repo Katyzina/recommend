@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'reg-stud.css' %}"> <!-- Подключение файла со стилями -->
 </head>
 <body>
-<div class="reg-hr-Xb4 reg-stud-zWr">
+<div class="reg-hr-Xb4 ">
     <div class="rectangle-9-eQn">
     </div>
     <div class="rectangle-11-854">
@@ -17,7 +17,7 @@
     <a href="{% url 'home' %}">
         <img class="misislogoblockdeskfullinvrusrgb-01-2-2RL" src="{% static 'misislogoblockdeskfullinvrusrgb-01-2-PYA.png' %}" alt="Logo"/>
     </a>
-    <div class="group-8-K9Y group-8-Bjk">
+    <div class="group-8-K9Y group-8-Bjkk">
         <p class="item--Kok">Регистрация</p>
         <div class="chose-B5G">
             <a href="{% url 'regstud' %}"><p class="item--He6">Студент</p></a>
@@ -46,9 +46,9 @@
                                 <input type="text" placeholder="Введите..." name="middle_name">
                             </div>
                         </div>
-                        <div class="institut-Mqp">
-                            <p class="item--VSE">Город</p>
-                            <div class="auto-group-jyt8-Lhk">
+                        <div class="institut-Mqpp">
+                            <p class="item--VSEE">Город</p>
+                            <div class="auto-group-jyt8-Lhkk">
                                 <select name="city">
                                     {% for city in cities %}
                                     <option selected value="{{city.id}}">{{city}}</option>

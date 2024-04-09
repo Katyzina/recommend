@@ -148,7 +148,7 @@
                             <div class="frame-child1"></div>
                             <div class="frame-wrapper5">
                                 <div class="ellipse-parent">
-                                    <div class="ellipse-div"><img style="height:80px;weight:80px;border-radius:50px;" src="{{ vacation.image.url }}" alt=""></div>
+                                    <div class="ellipse-div"><img style="height:4rem;width:4rem;border-radius:50px;" src="{{ vacation.image.url }}" alt=""></div>
                                     <div class="frame-wrapper6">
                                         <div class="parent2">
                                             <b class="b">{{ vacation.employer.employer.organization}}</b>
@@ -194,11 +194,11 @@
                             </button>
                         </div>
                         <div class="frame">
+                            {% if reply_list %}
                             <h2 class="h24">Отклики:</h2>
-                        </div>
-                        <div class="frame-parent10">
-                            {% for reply in reply_list %}
-                            <div class="rectangle-parent4">
+                            <div class="frame-parent10">
+                                {% for reply in reply_list %}
+                                <div class="rectangle-parent4">
                                 <div class="frame-child8"></div>
                                 <div class="frame-parent11">
                                     <div class="frame-parent12">
@@ -244,10 +244,12 @@
                                 </div>
                             </div>
                             {% endfor %}
+                           </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {% endif %}
         </section>
     </main>
     <div class="input-processor">

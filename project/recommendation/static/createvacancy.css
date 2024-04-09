@@ -221,7 +221,11 @@ margin: 6rem 0.1rem 1rem 0rem;
   border-radius: 4rem;
   flex-shrink: 0;
 }
-
+.image {
+width: 3rem;
+    height: 3rem;
+    border-radius: 4rem;
+}
 .div5 {
   position: relative;
   z-index: 1;
@@ -2327,7 +2331,7 @@ margin: -5rem -16.9rem 1rem 60rem;
   font-family: var(--font-montserrat);
 }
 .branch-link-nodes {
-height: 48rem;
+height: 40rem;
   padding: 0 var(--padding-12xl) 0 1.813rem;
   box-sizing: border-box;
 }

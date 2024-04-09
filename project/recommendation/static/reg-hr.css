@@ -50,6 +50,52 @@ body {
   object-fit: contain;
   vertical-align: top;
 }
+.group-8-Bjkk {
+box-sizing: border-box;
+  padding: 3.146rem 3.125rem 3.125rem 3.125rem;
+  width: 43.75rem;
+  height: 90.5625rem;
+  position: absolute;
+  left: 38.125rem;
+  top: 14.375rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.3125rem #143194;
+  box-shadow: 0.1875rem 0.1875rem 0.4438rem rgba(0, 0, 0, 0.25);
+  background-color: #eaeaea;
+  border-radius: 2.8125rem;
+}
+.institut-Mqpp{
+margin-left: 0rem;
+  box-sizing: border-box;
+  padding: 0rem 0rem 0rem 0rem;
+  width: calc(100% - 0rem);
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.25rem;
+  flex-shrink: 0;
+}
+.item--VSEE{
+margin: 0.5rem 0rem 0.5rem 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #0a1e64;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.auto-group-jyt8-Lhkk{
+ margin: 0rem 0.5rem 0.2rem 0rem;
+  max-width: 500px;
+  position: relative;
+  background: #f7f7f7;
+  border-radius: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
 .reg-hr-Xb4 .group-8-K9Y {
   box-sizing: border-box;
   padding: 3.682rem 3.125rem 3.682rem 3.125rem;

@@ -62,7 +62,7 @@
                         </div>
                         <div class="selector">
                             {% if request.user.image %}
-                            <img src="{{request.user.image.url}}" class="image_vacation" alt="">
+                            <img src="{{request.user.image.url}}" class="img" alt="">
                             {% endif %}
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="hub">
                         <div class="port">
-                            <img class="proxy-icon" loading="lazy" alt="" src="{{ vacation.employer.image.url }}"/>
+                            <img class="proxy-icon" loading="lazy" alt="" src="{{ vacation.image.url }}"/>
 
                             <div class="forwarder">
                                 <div class="monitor">

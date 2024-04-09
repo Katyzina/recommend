@@ -72,7 +72,11 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <div class="ellipse-1-tCN"></div>
+                        <div class="ellipse-1-tCN">
+                             {% if request.user.image %}
+                            <img src="{{request.user.image.url}}" class="image" alt="">
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
