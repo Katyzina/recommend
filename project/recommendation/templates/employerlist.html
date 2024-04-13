@@ -66,7 +66,7 @@
                     <div class="ellipse-2-f6N">
                     </div>
                     <div class="auto-group-3vvj-az2">
-                        <a href=""><p class="item--iqL">{{employer.organization}}</p></a>
+                        <a href="{% url 'employerprofile' employer.user_set.first.id %}"><p class="item--iqL">{{employer.organization}}</p></a>
                     </div>
                 </div>
                 {% endfor %}

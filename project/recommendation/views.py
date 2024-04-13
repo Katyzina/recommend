@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
-from django.db import models, transaction
-from django.db.models import Value, F, Q, Subquery, Case, When, BooleanField, Exists, OuterRef
+from django.db import transaction
+from django.db.models import Q, Exists, OuterRef, Case, When, Value, BooleanField
 from django.shortcuts import render, redirect
 from django.views import View
 
@@ -11,14 +11,42 @@ class HomePageView(View):
 
     def get(self, request, *args, **kwargs):
         institutes = Institute.objects.all()
-        vacations = Vacation.objects.annotate(
-            is_favourite=Exists(
-                Favourite.objects.filter(
-                    vacation_id=OuterRef('id'),
-                    user=request.user if request.user.is_authenticated else None
-                )
+        if request.user.is_authenticated and request.user.student:
+            similar_user = User.objects.filter(
+                Q(city=request.user.city) |
+                Q(student__institute=request.user.student.institute) |
+                Q(student__university=request.user.student.university)
+            ).exclude(
+                Q(id=request.user.id) |
+                Q(employer__isnull=False)
             )
-        ).all()
+            recommend_vacations_pk = []
+            for user in similar_user:
+                favorite_vacations_pk = user.favourite_set.all().values_list("vacation__pk", flat=True)
+                recommend_vacations_pk += favorite_vacations_pk
+            recommend_vacations_pk = list(set(recommend_vacations_pk))
+            vacations = Vacation.objects.annotate(
+                is_favourite=Exists(
+                    Favourite.objects.filter(
+                        vacation_id=OuterRef('id'),
+                        user=request.user if request.user.is_authenticated else None
+                    )
+                ),
+                is_recommend=Case(
+                    When(id__in=recommend_vacations_pk, then=Value(True)),
+                    default=Value(False),
+                    output_field=BooleanField()
+                )
+            ).all().order_by('-is_recommend', '-id')
+        else:
+            vacations = Vacation.objects.annotate(
+                is_favourite=Exists(
+                    Favourite.objects.filter(
+                        vacation_id=OuterRef('id'),
+                        user=request.user if request.user.is_authenticated else None
+                    )
+                )
+            ).all()
         institute = None
         if kwargs.get('institute_id'):
             institute = institutes.get(id=kwargs['institute_id'])
@@ -133,6 +161,7 @@ class EmployerListView(View):
             'employers': employers
         })
 
+
 class ReplyDeleteView(View):
 
     def get(self, request, id):
@@ -230,7 +259,7 @@ class VacationUpdateView(View):
             "busyness": busyness
         })
 
-    def post(self, request,vacation_id):
+    def post(self, request, vacation_id):
         vacation = Vacation.objects.get(id=vacation_id)
         vacation.position = request.POST['position']
         vacation.description = request.POST['description'].strip()

@@ -33,7 +33,7 @@
             <div class="profile-GCv">
                 <div class="auto-group-jvis-y7L">
                     {% if request.user.is_authenticated %}
-                    <p class="item--6Sr"> {{ user.first_name}} {{ user.last_name}}</p>
+                    <p class="item--6Sr"> {{ request.user.first_name}} {{ request.user.last_name}}</p>
                     {% if request.user.employer %}
                     <p class="item--6Sr">Работодатель</p>
                     {% else %}
@@ -70,12 +70,16 @@
                         </div>
                     </div>
                 </div>
+                {% if request.user == user %}
                 <button type="submit" style="background:none;border:none;">
                     <div class="load-pic-tcv">Сохранить</div>
                 </button>
+                {% endif %}
             </div>
             <input type="file" class="load-pic-jWN" name="image" style="display:none;" id="imageInput">
+            {% if request.user == user %}
             <div onclick="document.getElementById('imageInput').click();" class="load-pic-wbC">Загрузить фото</div>
+            {% endif %}
             <div class="short-info-nLv">
                 <div class="auto-group-tssa-uwL">
                     <div class="auto-group-yuml-TT4">
@@ -106,7 +110,9 @@
                     {% endif %}
                 </div>
                 <input type="file" class="load-pic-jWN" name="resume" style="display:none;" id="resumeInput">
+                {% if request.user == user %}
                 <div onclick="document.getElementById('resumeInput').click();" class="load-pic-jWN">Загрузить</div>
+                {% endif %}
             </div>
             <div class="auto-group-ltun-SFg">
                 <p class="item--m34">Сопроводительное письмо:</p>
@@ -116,17 +122,21 @@
                  <a href="#"><p class="letterpdf-Sez">Загрузите cопроводительное письмо</p></a>
                 {% endif %}
                 <input type="file" class="load-pic-jWN" name="letter" style="display:none;" id="letterInput">
+                {% if request.user == user %}
                 <div onclick="document.getElementById('letterInput').click();" class="load-pic-AL6">Загрузить</div>
+                {% endif %}
             </div>
             <div class="auto-group-amcr-pXp">
                 <p class="item--idC">Телеграм:</p>
                 <input class="telegram-ELe" type="text" value="@{{ user.student.telegram}}" name="telegram">
                 <!--      <p class="telegram-ELe">@{{ .user.student.telegram}}</p>-->
             </div>
+            {% if request.user == user %}
             <p class="item--Zxa">Избранные вакансии:</p>
-
+            {% endif %}
 
             <div class="auto-group-r9h8-pSa">
+                {% if request.user == user %}
                 {% for vacation in vacations %}
                 <div class="group-7-VkJ">
                     <div class="auto-group-qfz8-d5p">
@@ -152,8 +162,13 @@
                     </div>
                 </div>
                 {% endfor %}
+                {% endif %}
             </div>
+            {% if request.user == user %}
             <a href="{% url 'logout' %}"><p class="item--qHg">Выйти &gt;</p></a>
+            {% else %}
+            <a href="{% url 'employerprofile' request.user.id %}"><p class="item--qHg">Назад &gt;</p></a>
+            {% endif %}
             <div class="support-zEA">
                 <div class="item--Vft">
                     <p class="item-2024--CKQ">@2024 Университет науки и технологий МИСИС</p>

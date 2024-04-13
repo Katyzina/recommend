@@ -59,6 +59,8 @@
                                 <p class="item--A"> {{request.user.first_name}} {{request.user.last_name}}</p>
                                 {% if request.user.employer %}
                                 <div class="div4"><a href="{% url 'employerprofile' request.user.id %}">Работодатель</a></div>
+                                {% else %}
+                                <div class="div4"><a href="{% url 'studprofile' request.user.id %}">Студент</a></div>
                                 {% endif %}
                                 {% else %}
                                 <a href="{% url 'login' %}"><p class="item--A">Войти</p></a>
@@ -91,11 +93,13 @@
                                 {% endif %}
                             </div>
                             <div class="load-pic-wrapper">
+                                {% if request.user == user %}
                                 <button class="load-pic" type="button">
                                     <div class="load-pic-child"></div>
                                     <input type="file" style="display:none;" name="image" id="imageInput">
                                     <div onclick="document.getElementById('imageInput').click();" class="div19">Загрузить фото</div>
                                 </button>
+                                {% endif %}
                             </div>
                             <div class="container">
                                 <h2 class="h2">Организация:</h2>
@@ -133,10 +137,12 @@
                         </div>
                     </div>
                 </div>
+                {% if request.user == user %}
                 <button class="load-pic1" type="submit">
                     <div class="load-pic-item"></div>
                     <div class="div20">Сохранить</div>
                 </button>
+                {% endif %}
             </div>
             <h2 class="h23">Проекты:</h2>
             <div class="frame-parent7">
@@ -157,7 +163,9 @@
                                     </div>
                                 </div>
                             </div>
+                            {% if request.user == user %}
                             <a href="{% url 'delete_vacation' vacation.id %}"><img class="image-2-icon" loading="lazy" alt="" src="{% static 'image-2@2x.png' %}"/></a>
+                            {% endif %}
                         </div>
                         <div class="frame-wrapper7">
                             <div class="parent3">
@@ -176,9 +184,11 @@
                                 </button>
                                 <div class="div24">
                                     <div class="div25">
+                                        {% if request.user == user %}
                                         <a href="{% url 'update_vacation' vacation.id %}">
                                             <div class="exclude-icon">Редактировать</div>
                                         </a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -186,6 +196,7 @@
                     </div>
                     {% endfor %}
                 </div>
+                {% if request.user == user %}
                 <div class="frame-wrapper17">
                     <div class="frame-parent9">
                         <div class="load-pic-container">
@@ -250,11 +261,18 @@
                 </div>
             </div>
             {% endif %}
+            {% endif %}
         </section>
     </main>
+     {% if request.user == user %}
     <div class="input-processor">
         <a href="{% url 'logout' %}"><p class="div52">Выйти ></p></a>
     </div>
+    {% else %}
+    <div class="input-processor">
+        <a href="{% url 'employerlist' %}"><p class="div52">Назад ></p></a>
+    </div>
+    {% endif %}
     <div class="div53">
         <div class="decision-maker">
             <div class="connector">

@@ -7,7 +7,7 @@ class Favourite(models.Model):
 
 
     def __str__(self):
-        return f"{self.user.fisrt_name} {self.vacation.position}"
+        return f"{self.user.first_name} {self.vacation.position}"
 
     class Meta:
         db_table = "favourites"
