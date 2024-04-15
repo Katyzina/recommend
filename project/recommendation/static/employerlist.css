@@ -203,6 +203,7 @@ body {
   flex-shrink: 0;
 }
 
+
 .users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--5om a {
    box-sizing: border-box;
    border-radius: 20rem;
@@ -214,6 +215,18 @@ body {
    letter-spacing: 1.2px;
    padding: 4.5px 40px;
    position: relative;
+}
+.users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--Ab {
+  margin: 1rem 0.1rem 1rem 0rem;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: underline white;
 }
 
 .users-JAi .frame-2-QDk .profile-un6 .auto-group-5fmx-qve .item--UTp {

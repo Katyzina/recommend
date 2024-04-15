@@ -221,7 +221,19 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
+.main-hr-7mx .frame-2-k4E .profile-9G2 .auto-group-ydhy-NPg .item--5om {
+  margin: 1rem -0.89rem 2rem -12rem;
+  text-align: right;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+   text-decoration: underline white;
 
+}
 .main-hr-7mx .frame-2-k4E .profile-9G2 .auto-group-ydhy-NPg .item--5ozz a {
    box-sizing: border-box;
    border-radius: 20rem;

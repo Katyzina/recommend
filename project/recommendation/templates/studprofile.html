@@ -35,7 +35,7 @@
                     {% if request.user.is_authenticated %}
                     <p class="item--6Sr"> {{ request.user.first_name}} {{ request.user.last_name}}</p>
                     {% if request.user.employer %}
-                    <p class="item--6Sr">Работодатель</p>
+                    <div class="item--6Srr"><a href="{% url 'employerprofile' request.user.id %}">Работодатель</a></div>
                     {% else %}
                     <div class="item--zYE"><a href="{% url 'studprofile' request.user.id %}">Студент</a></div>
                     {% endif %}
