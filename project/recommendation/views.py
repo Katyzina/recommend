@@ -16,9 +16,11 @@ class HomePageView(View):
         institutes = Institute.objects.all()
 
         # Загружаем все вакансии
-        all_vacations = list(Vacation.objects.all())
+        vacations = Vacation.objects.all()
+        vacations_list = list(vacations)
 
         recommended_vacations = []
+        recommended_vacations_pk = []
         if request.user.is_authenticated and request.user.student:
             # Предположим, что у пользователя уже есть избранные вакансии
             user_favorites = Vacation.objects.filter(favourite__user=request.user)
@@ -26,7 +28,7 @@ class HomePageView(View):
             if user_favorites.exists():
                 # Создаем TF-IDF векторы для описаний вакансий
                 tfidf_vectorizer = TfidfVectorizer()
-                descriptions = [vac.description for vac in all_vacations]
+                descriptions = [vac.description for vac in vacations_list]
                 tfidf_matrix = tfidf_vectorizer.fit_transform(descriptions)
 
                 # Вычисляем сходство с избранными вакансиями пользователя
@@ -37,27 +39,28 @@ class HomePageView(View):
                 # Суммируем оценки сходства для каждой вакансии
                 total_scores = np.sum(similarity_scores, axis=0)
 
-                # Получаем индексы k наиболее похожих вакансий
+                # Получаем k наиболее похожих вакансий
                 k = 5
                 similar_indices = np.argsort(total_scores)[::-1][:k]
-                recommended_vacations = [all_vacations[int(i)] for i in similar_indices]
-
-            # Получаем все остальные вакансии, исключая рекомендованные
-            recommended_ids = set(vac.id for vac in recommended_vacations)
-            other_vacations = Vacation.objects.exclude(id__in=recommended_ids)
-        else:
-            # Если пользователь не аутентифицирован, просто покажем первые 6 вакансий
-            recommended_vacations = all_vacations[:6]
-            recommended_ids = set(vac.id for vac in recommended_vacations)
-            other_vacations = Vacation.objects.exclude(id__in=recommended_ids)
-
-        # Объединяем рекомендованные и остальные вакансии
-        final_vacations = list(recommended_vacations) + list(other_vacations)
+                recommended_vacations_pk = [vacations_list[int(i)].pk for i in similar_indices]
+        vacations = Vacation.objects.annotate(
+            is_favourite=Exists(
+                Favourite.objects.filter(
+                    vacation_id=OuterRef('id'),
+                    user=request.user if request.user.is_authenticated else None
+                )
+            ),
+            is_recommend=Case(
+                When(id__in=recommended_vacations_pk, then=Value(True)),
+                default=Value(False),
+                output_field=BooleanField()
+            )
+        ).all().order_by('is_recommend', '-is_favourite', '-id')
 
         institute = None
         if kwargs.get('institute_id'):
             institute = institutes.get(id=kwargs['institute_id'])
-            vacations = Vacation.objects.filter(
+            vacations = vacations.filter(
                 institute_id=kwargs['institute_id'])
         if request.GET.get('search'):
             vacations = vacations.filter(
@@ -67,9 +70,9 @@ class HomePageView(View):
 
         return render(request, 'index.html', context={
             "institutes": institutes,
-            'vacations': final_vacations,
+            'vacations': vacations,
             "institute_id": kwargs.get('institute_id'),
-            "institute": kwargs.get('institute')
+            "institute": institute
         })
 
 
