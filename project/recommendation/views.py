@@ -1,66 +1,75 @@
+import numpy as np
 from django.contrib.auth import authenticate, login, logout
 from django.db import transaction
 from django.db.models import Q, Exists, OuterRef, Case, When, Value, BooleanField
 from django.shortcuts import render, redirect
 from django.views import View
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 from tables_app.models import Institute, Vacation, Student, User, Employer, Favourite, Reply, City
 
 
 class HomePageView(View):
-
     def get(self, request, *args, **kwargs):
+        # Загружаем все институты
         institutes = Institute.objects.all()
+
+        # Загружаем все вакансии
+        all_vacations = list(Vacation.objects.all())
+
+        recommended_vacations = []
         if request.user.is_authenticated and request.user.student:
-            similar_user = User.objects.filter(
-                Q(city=request.user.city) |
-                Q(student__institute=request.user.student.institute) |
-                Q(student__university=request.user.student.university)
-            ).exclude(
-                Q(id=request.user.id) |
-                Q(employer__isnull=False)
-            )
-            recommend_vacations_pk = []
-            for user in similar_user:
-                favorite_vacations_pk = user.favourite_set.all().values_list("vacation__pk", flat=True)
-                recommend_vacations_pk += favorite_vacations_pk
-            recommend_vacations_pk = list(set(recommend_vacations_pk))
-            vacations = Vacation.objects.annotate(
-                is_favourite=Exists(
-                    Favourite.objects.filter(
-                        vacation_id=OuterRef('id'),
-                        user=request.user if request.user.is_authenticated else None
-                    )
-                ),
-                is_recommend=Case(
-                    When(id__in=recommend_vacations_pk, then=Value(True)),
-                    default=Value(False),
-                    output_field=BooleanField()
-                )
-            ).all().order_by('-is_recommend', '-id')
+            # Предположим, что у пользователя уже есть избранные вакансии
+            user_favorites = Vacation.objects.filter(favourite__user=request.user)
+
+            if user_favorites.exists():
+                # Создаем TF-IDF векторы для описаний вакансий
+                tfidf_vectorizer = TfidfVectorizer()
+                descriptions = [vac.description for vac in all_vacations]
+                tfidf_matrix = tfidf_vectorizer.fit_transform(descriptions)
+
+                # Вычисляем сходство с избранными вакансиями пользователя
+                user_favorite_descriptions = [fav.description for fav in user_favorites]
+                user_favorite_vec = tfidf_vectorizer.transform(user_favorite_descriptions)
+                similarity_scores = cosine_similarity(user_favorite_vec, tfidf_matrix)
+
+                # Суммируем оценки сходства для каждой вакансии
+                total_scores = np.sum(similarity_scores, axis=0)
+
+                # Получаем индексы k наиболее похожих вакансий
+                k = 5
+                similar_indices = np.argsort(total_scores)[::-1][:k]
+                recommended_vacations = [all_vacations[int(i)] for i in similar_indices]
+
+            # Получаем все остальные вакансии, исключая рекомендованные
+            recommended_ids = set(vac.id for vac in recommended_vacations)
+            other_vacations = Vacation.objects.exclude(id__in=recommended_ids)
         else:
-            vacations = Vacation.objects.annotate(
-                is_favourite=Exists(
-                    Favourite.objects.filter(
-                        vacation_id=OuterRef('id'),
-                        user=request.user if request.user.is_authenticated else None
-                    )
-                )
-            ).all()
+            # Если пользователь не аутентифицирован, просто покажем первые 6 вакансий
+            recommended_vacations = all_vacations[:6]
+            recommended_ids = set(vac.id for vac in recommended_vacations)
+            other_vacations = Vacation.objects.exclude(id__in=recommended_ids)
+
+        # Объединяем рекомендованные и остальные вакансии
+        final_vacations = list(recommended_vacations) + list(other_vacations)
+
         institute = None
         if kwargs.get('institute_id'):
             institute = institutes.get(id=kwargs['institute_id'])
-            vacations = vacations.filter(institute_id=kwargs['institute_id'])
+            vacations = Vacation.objects.filter(
+                institute_id=kwargs['institute_id'])
         if request.GET.get('search'):
             vacations = vacations.filter(
                 Q(position__icontains=request.GET['search']) |
                 Q(description__icontains=request.GET['search'])
             )
+
         return render(request, 'index.html', context={
             "institutes": institutes,
-            "vacations": vacations,
-            "institute_id": kwargs['institute_id'] if kwargs.get('institute_id') else None,
-            "institute": institute
+            'vacations': final_vacations,
+            "institute_id": kwargs.get('institute_id'),
+            "institute": kwargs.get('institute')
         })
 
 
